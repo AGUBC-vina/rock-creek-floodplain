@@ -195,6 +195,14 @@ Three things stress-test the model:
 
 The core funding-strategy question: **how much of the $30M one-time capital is plausibly grant-fundable, and who absorbs the rest?**
 
+> **MAJOR SIMPLIFICATION — to be verified.** Preliminary intel: **~95% of the project area (both the north and south corridors) is owned by a single landowner who already holds an NRCS conservation easement on the property.** If confirmed, this changes three things materially:
+>
+> 1. **Land-control cost (Section 4.1, line G) drops from ~$2 M to ~$0.5–1 M.** Instead of negotiating new easements with many family trusts, the work is a single landowner partnership plus an NRCS easement amendment or supplemental management agreement. **Total capital could fall from ~$30 M to ~$27–28 M central.**
+> 2. **NRCS becomes a load-bearing permitting partner.** The existing easement has specific protection purposes (likely meadowfoam / vernal pool / general habitat). The Rock Creek concept must be **compatible** — for *habitat enhancement* this is usually achievable through an easement amendment, but the supplemental agreement must be negotiated early and is a critical-path item.
+> 3. **The mitigation-bank "additionality" question (Section 5.5) gets thornier.** If the land is already in an NRCS easement, baseline conservation value is already "captured" — Path A (full bank) becomes even less viable. Paths B (single-buyer Caltrans) and C (ILF) still work because they pay for *enhancement uplift above baseline*, not for baseline preservation.
+>
+> Verification path: confirm via Butte County Assessor records + NRCS Web Soil Survey + a single landowner conversation (Roadmap Step L-1 + L-3 + L-4). This is probably the **highest-value early-work item** because it dramatically reduces project complexity if confirmed.
+
 ### 5.1 Grant-eligibility by cost category
 
 Eligibility ranges are practitioner-judgment estimates, not formal program assessments. They reflect typical scope-fit between the Rock Creek concept and the current California / federal funding landscape (2026).
@@ -231,7 +239,7 @@ Eligibility ranges are practitioner-judgment estimates, not formal program asses
 
 ### 5.3 Beneficiary share — who pays the residual?
 
-If $8M one-time falls outside grants, who absorbs it? The beneficiary list (in rough proportion to benefit received):
+If $8M one-time falls outside grants, who absorbs it? The beneficiary list (in rough proportion to benefit received). **Note:** if the single-landowner / existing-NRCS-easement intel above is confirmed, the **landowner is a key project partner** (and may contribute through in-kind value such as easement co-management, parcel access, or staff time) rather than a paid party. Beneficiary allocation below assumes that.
 
 | Beneficiary | Benefit | Plausible share of beneficiary cost |
 | --- | --- | --- |
@@ -451,12 +459,13 @@ These are the **stretch / acceptable / minimum** targets that next-stage screeni
 
 Most-to-least-influential drivers, by central-case sensitivity:
 
-1. **Favorable-subsurface fraction** (currently 25% / 40% / 60% in the bracket). Doubling the favorable area roughly doubles recharge yield. **The single highest-value fieldwork investment is the FDEM survey + test pits** (Roadmap R-1 through R-3) because the answer here directly resolves a ~10× spread in projected yield.
-2. **Days of active inundation per year** (15 / 30 / 60). Hugely variable with annual rainfall. Long-term averages should rely on the 24-year CRG hourly record; design for the 25th-percentile (drier) year for conservative planning and the 75th-percentile (wetter) year for the upside.
-3. **Total corridor wetted area** (200 ac / 300 ac / 400 ac). A function of corridor width (assumed 240 ft; could be 200–400 ft depending on topography and landowner control). Wider corridors capture more water but cost more in easements.
-4. **Diversion design discharge Q_div.** Above ~2,500 cfs, additional diversion capacity doesn't add yield because the corridor saturates. Below ~1,500 cfs, the corridor is supply-limited in most years. The screening should test Q_div across this range.
-5. **Cost contingency.** A 50% contingency vs. 25% changes the total by ~20%. Concept-stage contingency should remain ≥25% until detailed design.
-6. **Phasing decisions.** Phase 1 only (north corridor) cuts cost roughly in half for ~55% of the yield; better cost-effectiveness per AF, but loses the south-corridor co-benefits.
+1. **Land-control structure** *(newly elevated — see Section 5 callout).* If the single-landowner / existing-NRCS-easement intel is confirmed, **two things change simultaneously**: land-control cost drops by ~$1–1.5M, and the landowner-coordination critical path collapses from years of multi-party negotiation to a single (still complex) NRCS-amendment conversation. This is **the highest-value early-work verification** — possibly more impactful than the FDEM survey because it changes both cost and timeline.
+2. **Favorable-subsurface fraction** (currently 25% / 50% / 60% in the bracket). Doubling the favorable area roughly doubles recharge yield. **The single highest-value fieldwork investment is the FDEM survey + test pits** (Roadmap R-1 through R-3) because the answer here directly resolves a ~10× spread in projected yield.
+3. **Days of active inundation per year** (15 / 40 / 60). Hugely variable with annual rainfall. Long-term averages should rely on the 24-year CRG hourly record; design for the 25th-percentile (drier) year for conservative planning and the 75th-percentile (wetter) year for the upside.
+4. **Total corridor wetted area** (200 ac / 300 ac / 400 ac). A function of corridor width (assumed 240 ft; could be 200–400 ft depending on topography and landowner control). Wider corridors capture more water but cost more in easements — and with a single landowner, the corridor width may be more flexible than with multiple owners.
+5. **Diversion design discharge Q_div.** Above ~2,500 cfs, additional diversion capacity doesn't add yield because the corridor saturates. Below ~1,500 cfs, the corridor is supply-limited in most years. The screening should test Q_div across this range.
+6. **Cost contingency.** A 50% contingency vs. 25% changes the total by ~20%. Concept-stage contingency should remain ≥25% until detailed design.
+7. **Phasing decisions.** Phase 1 only (north corridor) cuts cost roughly in half for ~55% of the yield; better cost-effectiveness per AF, but loses the south-corridor co-benefits.
 
 ---
 
