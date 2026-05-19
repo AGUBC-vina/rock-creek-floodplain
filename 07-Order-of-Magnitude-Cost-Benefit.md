@@ -16,7 +16,8 @@
 | **Likely grant-fundable share of capital** | 65–85% | **~75% (~$22 M)** | up to ~90% |
 | **Beneficiary share (one-time)** | ~$2 M | **~$8 M (incl. endowment)** | ~$17 M |
 | **Beneficiary share (annual)** | covered by endowment yield | **covered by endowment yield** | covered by endowment yield |
-| Levelized cost per AF of recharge (30-yr life, 4% discount) | ~$10,000+/AF | **~$300/AF** | ~$100/AF |
+| Levelized $/AF — **total project cost** (30-yr life, 4% discount) | ~$10,000+/AF | **~$308/AF** | ~$100/AF |
+| Levelized $/AF — **beneficiary share only** (the stakeholder-pitch number) | ~$3,500/AF | **~$77/AF** | ~$30/AF |
 
 The central case puts the concept at **~60–90% of the Vina Subbasin's current annual storage growth (~8,000 AF/yr per the WY 2025 Vina GSA Annual Report)** — a material contribution to GSP sustainability. The per-AF levelized cost (~$300/AF) is **well below the typical California surface-water transaction range ($300–2,000/AF)** and competitive with the most cost-effective groundwater-banking projects in the state. The bracket between low and high reflects honest uncertainty in three drivers — **favorable-subsurface fraction**, **infiltration rate**, and **days of available flow per year** — that the Roadmap's Phase 1 fieldwork (FDEM + test pits, Steps R-1 through R-3) is specifically designed to narrow. See **Section 2.3a** for the explicit defense of the central-case calibration.
 
@@ -283,18 +284,58 @@ These shares are **starting points for a cost-allocation conversation**, not fin
 
 ### 6.1 Levelized cost per acre-foot of recharge
 
-Annualizing the central-case capital over a 30-year project life at a 4% discount rate (capital recovery factor = 0.0578):
+Whose money you're counting changes the answer. Three framings — all legitimate, useful for different audiences:
+
+#### 6.1.1 Total project cost (society-wide levelized cost)
+
+Standard public-investment metric. Used for comparison to other water-supply projects regardless of who pays.
 
 | Term | Value |
 | --- | --- |
 | Capital | $30 M |
-| Annualized capital | $30 M × 0.0578 = **~$1.73 M/yr** |
-| Annual O&M (from endowment yield) | **~$120K/yr** |
+| Annualized capital (30-yr life, 4% discount, CRF = 0.0578) | $30 M × 0.0578 = **~$1.73 M/yr** |
+| Annual O&M (from endowment yield) | **~$120 K/yr** |
 | Total annual cost | **~$1.85 M/yr** |
 | Annual recharge (central) | **~6,000 AF/yr** |
-| **Levelized cost per AF** | **~$308/AF** |
+| **Total levelized cost per AF** | **~$308/AF** |
 
-The low and high scenarios bracket from ~$100/AF (high yield) to ~$10,000+/AF (low yield, in which case the project would be re-scoped or not built).
+Bracket: ~$100/AF (high yield) to ~$10,000+/AF (low yield — in which case the project would be re-scoped).
+
+#### 6.1.2 Beneficiary-share levelized cost — what AGUBC members + Vina GSA + Butte County actually pay
+
+For stakeholder conversations, this is the **more compelling number** because it isolates the local cash outlay from grant-funded portions.
+
+| Term | Value |
+| --- | --- |
+| Beneficiary capital share (one-time; includes endowment seed) | **~$8 M** |
+| Annualized at same terms | $8 M × 0.0578 = **~$462 K/yr** |
+| Annual O&M (covered by endowment yield) | **$0** (no recurring assessment) |
+| Total annual cost to beneficiaries | **~$462 K/yr** |
+| Annual recharge delivered | **~6,000 AF/yr** |
+| **Beneficiary levelized cost per AF** | **~$77/AF** |
+
+For stakeholder framing: ***"AGUBC and partners contribute ~$8M to a $30M project, and in return receive ~6,000 AF/yr of new recharge — a local cost of about $77 per acre-foot, well below the California surface-water market range of $300–2,000/AF."***
+
+#### 6.1.3 Grant-funded levelized cost — what state and federal taxpayers contribute
+
+Useful for grant-application framing (cost-effectiveness from the funder's perspective).
+
+| Term | Value |
+| --- | --- |
+| Grant-funded capital share | **~$22 M** |
+| Annualized | $22 M × 0.0578 = **~$1.27 M/yr** |
+| Annual recharge delivered | **~6,000 AF/yr** |
+| **Grant-funded levelized cost per AF** | **~$212/AF** |
+
+Combined with the unmonetized co-benefits (flood-damage avoidance, ~300 ac habitat, SGMA compliance, climate resilience), this lands well below the typical eligible-project benchmark grant funders look for.
+
+#### 6.1.4 Putting the three framings together
+
+| Framing | Capital share | Levelized $/AF | Audience |
+| --- | --- | --- | --- |
+| **Society-wide (total project)** | $30 M | **~$308/AF** | benchmarking against other water-supply projects |
+| **Beneficiary share** | $8 M (incl. $3M endowment) | **~$77/AF** | AGUBC stakeholder pitch; cost-allocation discussion |
+| **Grant-funded share** | $22 M | **~$212/AF** | grant application benefit-cost framing |
 
 ### 6.2 Comparison to alternatives
 
