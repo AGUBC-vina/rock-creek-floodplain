@@ -124,36 +124,38 @@ R-1 first; R-2 second; R-3 only at the most-favorable subset identified by R-1/R
 
 ### 3.1 What would have to be true
 
-The two corridors must traverse parcels under landowner agreement — willing-landowner easement, conservation easement, fee acquisition, or a working-lands instrument — sufficient to allow rock-weir construction, periodic maintenance, and any seasonal flooding that would result from operation. Multiple existing instruments (NRCS conservation easements, mitigation easements, family-trust ownership patterns) must be navigated rather than overridden.
+The two corridors must traverse parcels under landowner agreement — willing-landowner easement, conservation easement, fee acquisition, or a working-lands instrument — sufficient to allow rock-weir construction, periodic maintenance, and any seasonal flooding that would result from operation.
+
+> **MAJOR SIMPLIFICATION (to be verified).** Updated landowner intel — the project area has only **4 landowners total**, with the **major landowner holding ~9 mi (~87%) of the ~10.4 mi corridor under an existing NRCS conservation easement**. Three smaller landowners hold the rest: 1–2 at the diversion intake on Rock Creek, 1 along a segment of the south route, 1 along a segment of the north route. This is a dramatic departure from the "many family-trust ownerships" pattern Nord identified at the watershed scale, and it materially simplifies the Land-Control work below. See Deliverable 07 Section 5 callout for the cost / risk implications.
 
 ### 3.2 What the source documents already answer
 
-- **Nord identified a pattern of multiple family ownerships across the corridor area** (per concept draft and Nord environmental constraints; *Nord_PartB_3_Environmental_Constraints.md*).
-- **Most Sand Creek candidate sites are within NRCS conservation easements** — "will require extensive coordination with this agency and the property owner to ensure compliance with the intent of the easement or agreement that benefits will outweigh impacts" (*Sand Creek Infiltration Study*, Sec. 8.0).
-- **Singer Creek demonstrates a perpetual-protection model** that combines fee acquisition + conservation easement held by an LTA-accredited non-profit + endowment fund (*Singer Creek HDP*, Sec. 1.2, Sec. 8.0).
+- **Nord identified a pattern of multiple family ownerships across the broader Rock Creek / Sand Creek watershed area** (*Nord_PartB_3_Environmental_Constraints.md*). The 4-landowner corridor footprint is a much smaller and simpler subset of that pattern.
+- **The major Sand Creek candidate sites in the RCRD Infiltration Study were within NRCS conservation easements** — "will require extensive coordination with this agency and the property owner to ensure compliance with the intent of the easement or agreement that benefits will outweigh impacts" (*Sand Creek Infiltration Study*, Sec. 8.0). The major landowner's existing NRCS easement on this concept's corridor is consistent with that broader pattern.
+- **Singer Creek demonstrates a perpetual-protection model** that combines fee acquisition + conservation easement held by an LTA-accredited non-profit + endowment fund (*Singer Creek HDP*, Sec. 1.2, Sec. 8.0). The Rock Creek concept may or may not need a parallel LTA-stewardship entity, depending on whether the existing NRCS easement structure can continue as the steward.
 
 ### 3.3 What remains open
 
-- **Landowner inventory along both corridors** — names, parcel APNs, ownership type (fee / trust / easement), current land use.
-- **Willingness assessment** — which landowners are open to easements; which have existing NRCS or other conservation easements that already cover compatible uses; which are not feasible.
-- **Easement instrument and compensation structure** — what compensates a landowner for accepting a flood-flow easement plus rock-weir maintenance access; whether the working-lands grazing pattern continues; one-time payment vs. annual.
-- **NRCS coordination** for parcels already in conservation easements — whether rock-weir flooding is compatible with the existing easement purpose (in most cases meadowfoam / vernal pool protection — habitat enhancement *may* be compatible).
-- **Long-term stewardship entity.** If easements are perpetual, the steward should be an LTA-accredited non-profit on the Singer Creek model.
+- **Verification of the 4-landowner / major-NRCS-easement intel** — confirm via Butte County Assessor + NRCS easement records. **Highest-value early-work item** per the Deliverable 07 sensitivity analysis.
+- **Compatibility of the existing NRCS easement with the rock-weir project** — the easement's stated protection purpose (likely meadowfoam / vernal pool / general habitat) must align with seasonal flooding for habitat enhancement. NRCS coordination determines whether the project proceeds via easement amendment, supplemental management agreement, or new instrument.
+- **Major landowner partnership terms** — in-kind contribution vs. paid easement; access rights for construction and maintenance; potential for joint-stewardship structure.
+- **Three smaller-landowner easements** — separate negotiations on the diversion-intake parcel(s), the south-route segment, the north-route segment. Each is a single-party conversation but each is individually a segment-blocker for its reach.
+- **Long-term stewardship entity** — if the existing NRCS easement remains in place on the major reach, the NRCS framework can continue as the steward there; an LTA-accredited non-profit may only be needed for the three smaller-landowner reaches (or for the full corridor if a unified stewardship structure is preferred for simplicity).
 
-### 3.4 Next steps
+### 3.4 Next steps (updated to reflect 4-landowner reality)
 
 | Step | Action | Output |
 | --- | --- | --- |
-| L-1 | Build a parcel inventory along both corridors using Butte County Assessor data. | Inventory spreadsheet with APN, owner, area, current use, existing easements. |
-| L-2 | Confirm the existing NRCS conservation easements that overlap the corridors. | NRCS easement footprint map. |
-| L-3 | Begin discreet, low-formality conversations with the largest / most-pivotal landowners (relationship-led, no signed instruments). | Landowner-willingness assessment. |
-| L-4 | Engage NRCS regional office about compatibility of seasonal flooding for habitat enhancement within existing meadowfoam-protection easements. | NRCS coordination memo. |
-| L-5 | Identify an LTA-accredited non-profit candidate to hold any new conservation easements (Wildlife Heritage Foundation held Singer Creek Phase 1A and is the local incumbent). | Stewardship-entity letter of interest. |
-| L-6 | Draft an easement framework (compensation, access, weir maintenance, seasonal flooding, term). | Standard-form easement draft. |
+| L-1 | Verify the 4-landowner picture against Butte County Assessor records; obtain APNs, area, and current-use detail for all 4 ownerships. | Confirmed inventory (1–2 days of GIS work, not the multi-week effort previously assumed). |
+| L-2 | Pull NRCS easement records for the major landowner — easement boundary, protected resource(s), management plan, contact at NRCS local office. | NRCS easement summary. |
+| L-3 | Conduct **four landowner conversations**: major landowner (highest priority — go/no-go for ~87% of project), diversion-intake landowner(s), south-route landowner, north-route landowner. Relationship-led, low-formality, no signed instruments. | Landowner-willingness assessment per landowner. |
+| L-4 | Engage NRCS regional office on compatibility of seasonal flooding + rock-weir habitat enhancement with the existing easement. This is **critical path** for ~87% of the corridor and must precede meaningful Phase 1 engineering commitment. | NRCS compatibility memo + draft easement-amendment language if compatible. |
+| L-5 | Decide stewardship structure: (a) keep NRCS framework on major reach + add LTA non-profit on the three smaller reaches, or (b) unify under one LTA-accredited steward. Tradeoffs: option (a) is simpler if NRCS remains a willing partner; option (b) is simpler administratively long-term. | Stewardship-structure memo. |
+| L-6 | Draft easement framework(s) — likely two templates: NRCS-amendment for the major reach, working-lands easement for the three smaller reaches. | Draft instruments. |
 
 ### 3.5 Sequence
 
-L-1 / L-2 in parallel. L-3 after L-1 / L-2 are in hand (so the conversations are well-informed). L-4 in parallel with L-3 (different counterparty). L-5 / L-6 after L-3 / L-4 progress, before any project-level commitments.
+L-1 / L-2 in parallel (both are cheap and bounded — a few days each). **L-3 with the major landowner becomes the project's primary go/no-go gate** — should happen early, before significant engineering or grant-application investment. L-3 with the three smaller landowners can follow. L-4 (NRCS) runs in parallel with the major-landowner conversation and is interdependent with it. L-5 / L-6 after L-3 / L-4 results are clear.
 
 ### 3.6 Likely responsible party
 
@@ -310,7 +312,7 @@ C-1 after R-4 (recharge volume estimate) and H-3 (peak attenuation estimate) —
 | --- | --- | --- | --- |
 | **0 — Concept Synthesis (current)** | 0–3 | Deliverables 1–5; stakeholder discussion | Concept documents + 4-dataset screen |
 | **1 — Foundational Data & Relationships** | 3–9 | H-1, H-2, R-1, R-2, L-1, L-2, P-3, C-1, P-7 (bifurcation MOU) | Corridor DEMs; SAGBI / NRCS / FDEM screen; landowner inventory; CVFPB confirmation; OOM cost; bifurcation MOU concept |
-| **2 — Hydraulic Screening + Subsurface Confirmation** | 6–18 | H-3, H-4 (in parallel), R-3, R-4, S-1, L-3 (landowner conversations) | Screening + 2D routing results; reach-by-reach recharge model; pilot-reach selection; willingness assessment |
+| **2 — Hydraulic Screening + Subsurface Confirmation** | 6–18 | H-3, H-4 (in parallel), R-3, R-4, S-1, **L-3 with major landowner (project go/no-go gate)**, L-3 with the three smaller landowners, L-4 (NRCS) | Screening + 2D routing results; reach-by-reach recharge model; pilot-reach selection; willingness assessment; **major-landowner gate cleared (or project re-scoped)** |
 | **3 — Regulatory Pathway + Detailed Design (phased)** | 12–30 | H-5, H-6, R-5, R-6, P-1, P-2, P-4, P-5, P-6, L-4, L-5, L-6, S-2, C-2, C-3 | No-rise demonstration; mounding analysis; water-rights theory; CEQA scoping; ESA / CDFW pre-consultation; CLOMR sequencing; easement framework; sediment-management philosophy; funding-fit matrix |
 | **4 — Phase-1 Construction (likely north corridor pilot reach)** | 30–48 | S-3 pilot reach + first construction; companion monitoring | Built reach + monitoring data |
 | **5 — Long-term Stewardship** | 48 + perpetuity | S-4, S-5; phased expansion to south corridor | Singer-Creek-style perpetual stewardship plan + endowment |
@@ -323,6 +325,6 @@ C-1 after R-4 (recharge volume estimate) and H-3 (peak attenuation estimate) —
 2. **The discharge-dataset disagreement is unresolved.** See Deliverable 2 — the screening must run against both Track A (Nord HEC-HMS) and Track B (DWR HEC-RAS 2D) hydrology and report results in both terms.
 3. **The diminishing-attenuation finding at extreme events is real.** See Deliverable 3, Tier D. The headline flood-safety claim should be qualified accordingly — "meaningful peak reduction at frequent-to-moderate events; modeled (not assumed) result at Q100 / Q500."
 4. **The bifurcation problem is partly separate.** Sediment / vegetation maintenance at the bifurcation alone (the Caltrans memo's MOU recommendation) materially reduces Keefer Slough flooding. The concept can advance and benefit from a parallel bifurcation MOU; it does not solve the bifurcation problem on its own.
-5. **NRCS conservation easements are a major constraint.** Most candidate Sand Creek sites are within existing easements; the concept's corridor likely intersects more easements that the source documents have not enumerated. Early NRCS engagement is non-optional.
+5. **NRCS conservation easements are a major constraint AND a major simplification.** Per updated landowner intel, ~87% of the corridor (~9 mi held by the major landowner) is already under an existing NRCS conservation easement — making NRCS coordination both critical-path and the load-bearing permitting partner for the bulk of the project (see Section 3). Early NRCS engagement is non-optional.
 6. **Singer Creek is not a flood precedent.** It is a habitat / land-control / stewardship precedent. Cite it for those purposes; do not cite it for flood-attenuation precedent.
 7. **A bifurcation cleanup happened in February 2025.** The 39/61 split presumably reflects post-cleanup conditions or recent post-cleanup conditions (*Flooding_Issues_Along_Hwy99...*, "Butte County, DWR and FEMA"). If subsequent cleanups occur on a schedule, the design baseline will shift again.
