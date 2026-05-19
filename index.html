@@ -736,6 +736,26 @@
   // Configure marked
   marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
 
+  // Override del (strikethrough) tokenizer to require DOUBLE tildes (~~text~~)
+  // not single. Default marked v13 matches ~text~ which collides with our
+  // heavy use of "~" as the "approximately" symbol (e.g. "~5,000 AF/yr").
+  marked.use({
+    tokenizer: {
+      del(src) {
+        const cap = /^~~(?=\S)([\s\S]*?\S)~~/.exec(src);
+        if (cap) {
+          return {
+            type: 'del',
+            raw: cap[0],
+            text: cap[1],
+            tokens: this.lexer.inlineTokens(cap[1])
+          };
+        }
+        return false;
+      }
+    }
+  });
+
   const tabMap = {
     readme: '00-README-Deliverables.md',
     d01: '01-Refined-Concept-and-Parameter-Table.md',
