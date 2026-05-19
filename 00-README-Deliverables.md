@@ -20,6 +20,8 @@ The five deliverables are designed to be read in order, but each stands alone. T
 
 6. **[06-Typical-Reach-Design-Concept.md](06-Typical-Reach-Design-Concept.md)** — concept-stage best-guess illustration of one 600 ft reach at 200 ft weir spacing. Plan view + two cross sections (at a weir, mid-pool between weirs) with planting palette by hydrologic zone, habitat / wildlife design notes, weir construction details, and `[VERIFY]` table. Concept-stage only — not engineering.
 
+7. **[07-Order-of-Magnitude-Cost-Benefit.md](07-Order-of-Magnitude-Cost-Benefit.md)** — three-scenario bracket (low / central / high) of annual water recharge and total capital cost. Central case: **~2,500–3,000 AF/yr recharge at ~$25–35 M total capital, ~$650/AF levelized**. Includes target framework for screening modeling to test against.
+
 ---
 
 ## Key Findings — Headlines
