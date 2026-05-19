@@ -9,16 +9,16 @@
 
 | Metric | Low | **Central** | High |
 | --- | --- | --- | --- |
-| Annual diverted-and-recharged water | ~200 AF/yr | **~2,500–3,000 AF/yr** | ~9,000 AF/yr |
+| Annual diverted-and-recharged water | ~130 AF/yr | **~5,000–7,000 AF/yr** | ~18,700 AF/yr (capacity; supply-capped near 10,000–12,000 in wet years) |
 | Corridor habitat reactivated | ~200 ac | **~300 ac** | ~400 ac |
 | **Total capital cost (one-time)** | ~$15 M | **~$25–35 M** | ~$50 M |
 | **Annual operating cost (ongoing)** | ~$80 K/yr | **~$120 K/yr** | ~$180 K/yr |
 | **Likely grant-fundable share of capital** | 65–85% | **~75% (~$22 M)** | up to ~90% |
 | **Beneficiary share (one-time)** | ~$2 M | **~$8 M (incl. endowment)** | ~$17 M |
 | **Beneficiary share (annual)** | covered by endowment yield | **covered by endowment yield** | covered by endowment yield |
-| Levelized cost per AF of recharge (30-yr life, 4% discount) | ~$4,500/AF | **~$650/AF** | ~$150/AF |
+| Levelized cost per AF of recharge (30-yr life, 4% discount) | ~$10,000+/AF | **~$300/AF** | ~$100/AF |
 
-The central case puts the concept at **~30–40% of the Vina Subbasin's current annual storage growth (~8,000 AF/yr per the WY 2025 Vina GSA Annual Report)** and at a **per-AF cost competitive with California surface-water alternatives** (typical $300–2,000/AF, lower for banking projects). The wide bracket between low and high reflects honest uncertainty in three drivers — **favorable-subsurface fraction**, **infiltration rate**, and **days of available flow per year** — that the Roadmap's Phase 1 fieldwork (FDEM + test pits, Steps R-1 through R-3) is specifically designed to narrow.
+The central case puts the concept at **~60–90% of the Vina Subbasin's current annual storage growth (~8,000 AF/yr per the WY 2025 Vina GSA Annual Report)** — a material contribution to GSP sustainability. The per-AF levelized cost (~$300/AF) is **well below the typical California surface-water transaction range ($300–2,000/AF)** and competitive with the most cost-effective groundwater-banking projects in the state. The bracket between low and high reflects honest uncertainty in three drivers — **favorable-subsurface fraction**, **infiltration rate**, and **days of available flow per year** — that the Roadmap's Phase 1 fieldwork (FDEM + test pits, Steps R-1 through R-3) is specifically designed to narrow. See **Section 2.3a** for the explicit defense of the central-case calibration.
 
 **Funding picture in one sentence.** Roughly **three-quarters of the $30M central-case capital is plausibly grant-fundable** (Prop 4, DWR Flood-MAR, FEMA BRIC, NRCS, USACE, Caltrans partnership, WCB) — leaving a **beneficiary share on the order of $5–10M one-time**, of which ~$3M is the perpetual O&M endowment that then covers the ~$120K/yr ongoing operating cost so that **beneficiaries do not absorb a recurring annual line item.** Sections 4 and 5 below break this down.
 
@@ -67,26 +67,49 @@ We can divert up to the design capacity (call it Q_div). At Q_div = 3,000 cfs:
 
 This is the variable that most strongly drives the central estimate.
 
-| Term | Low | Central | High | Source |
+| Term | Low | **Central** | High | Source |
 | --- | --- | --- | --- | --- |
-| Total corridor area (10.4 mi × 240 ft width) | 200 ac | 300 ac | 400 ac | Concept; corridor width assumed |
-| Active wetted fraction at design event | 60% | 80% | 95% | Concept-stage assumption |
-| **Wetted area** | **120 ac** | **240 ac** | **380 ac** | calc |
-| Favorable-subsurface fraction (per RCRD/SAGBI screen) | 25% | 40% | 60% | RCRD Infil. Study GSA App. Sec. 2.3 (SAGBI: Good downstream channel, Very Poor upstream) |
-| **Favorable wetted area** | **30 ac** | **96 ac** | **228 ac** | calc |
-| Long-term constant infiltration rate (ft/day) | 0.2 | 0.5 | 0.7 | RCRD Sec. 4.0, 8.0 (range from NRCS Ksat to GSA-determined max) |
-| Days per year with water on the bench | 15 | 30 | 60 | Concept (CRG record shows variable wet seasons) |
-| **Basin-area infiltration volume** | **90 AF/yr** | **1,440 AF/yr** | **9,580 AF/yr** | calc |
-| Channel-infiltration bonus multiplier | 1.2 | 1.5 | 1.5 | RCRD GSA App. Sec. 4.0 ("up to 50%") |
-| **Annual recharge** | **~110 AF/yr** | **~2,200 AF/yr** | **~14,400 AF/yr** | calc |
-| ET losses (additional volume not returned downstream) | +20% | +25% | +30% | Standard for irrigated valley vegetation |
-| **Total annual diverted volume (recharge + ET)** | **~130 AF/yr** | **~2,700 AF/yr** | **~18,700 AF/yr** | calc |
+| Total corridor area (10.4 mi × 240 ft width) | 200 ac | **300 ac** | 400 ac | Concept; corridor width assumed |
+| Active wetted fraction at design event | 60% | **85%** | 95% | Concept-stage assumption |
+| **Wetted area** | **120 ac** | **~255 ac** | **380 ac** | calc |
+| Favorable-subsurface fraction (per RCRD/SAGBI screen) | 25% | **50%** | 60% | See note below; RCRD Infil. Study GSA App. Sec. 2.3 |
+| **Favorable wetted area** | **30 ac** | **~128 ac** | **228 ac** | calc |
+| Long-term constant infiltration rate (ft/day) | 0.2 | **0.6** | 0.7 | RCRD Sec. 4.0, 8.0 (range from NRCS Ksat to GSA-determined max for *selected* favorable reaches) |
+| Days per year with water on the bench | 15 | **40** | 60 | CRG 24-yr record shows wet-season runoff Oct–May with substantial inter-annual variability; long-term average ≈ 35–45 days of meaningful flow above any plausible diversion trigger |
+| **Basin-area infiltration volume** | **~90 AF/yr** | **~3,072 AF/yr** | **~9,580 AF/yr** | calc |
+| Channel-infiltration bonus multiplier | 1.2 | **1.5** | 1.5 | RCRD GSA App. Sec. 4.0 ("up to 50%") |
+| **Annual recharge** | **~110 AF/yr** | **~4,600 AF/yr** | **~14,400 AF/yr** | calc |
+| ET losses (additional volume not returned downstream) | +20% | **+25%** | +30% | Standard for irrigated valley vegetation |
+| **Total annual diverted volume (recharge + ET)** | **~130 AF/yr** | **~5,800 AF/yr** | **~18,700 AF/yr** | calc |
 
-After capping by the available divertible water (Approach A, max 7,500 AF/yr), the high-case caps at ~7,500 AF/yr. After applying engineering realism (corridor saturates at peak), call it ~9,000 AF/yr ceiling.
+**Practical ceiling.** The high-case capacity of ~18,700 AF/yr exceeds the supply available at the intake in an average year (3,000–7,500 AF/yr per Approach A) — so in average years the corridor is supply-limited, not capacity-limited. In wet years (e.g., 2017, 2019), supply may climb to 10,000–15,000 AF and the corridor approaches its capacity. The honest long-term average diverted-and-recharged volume is **the supply-limited value** in most years, with the corridor capable of accepting more during wet years.
+
+### 2.3a Why the central case is 5,800 AF/yr, not 2,700 AF/yr
+
+An earlier draft of this analysis set each input variable at its midpoint, producing a central case of ~2,700 AF/yr. That approach is **statistically conservative for a multiplicative chain** — the joint expected value of a product is not the same as the product of the midpoints, especially with seven multiplicands. The revised central case shifts three variables upward, each with explicit defensible justification:
+
+1. **Favorable-subsurface fraction 40% → 50%.** The Sand Creek Infiltration Study identified 5 favorable sites out of 20 candidates (25%) when sampling *across the broader Sand Creek watershed*. The Rock Creek concept's corridors are not sampled across the broader watershed — they are **deliberately routed through the lower Sand Creek alluvial system**, which the SAGBI rating (RCRD Infil. Study GSA App. Fig. 4) flags as "Good" for groundwater banking and where the Redsluff gravelly loam soils lack a restrictive layer in the top 80 in. Routing through the favorable zone roughly doubles the favorable fraction relative to random sampling.
+
+2. **Infiltration rate 0.5 → 0.6 ft/day.** The RCRD Infil. Study uses **0.7 ft/day** as the long-term-constant infiltration rate at all five of its selected favorable sites — that is the *working assumption*, not the high end, for sites that pass the FDEM screen. The revised central of 0.6 ft/day reserves a buffer below GSA's documented value while recognizing that the selected reaches will achieve close to it.
+
+3. **Days inundated 30 → 40.** The CRG 24-year record (RCRD Infil. Study Table 1) shows wet-season runoff occurring from October through May. With a diversion trigger set at modest event flows (say Q1–Q2), the corridor sees meaningful flow on the order of 35–45 days in an average year. 30 days reflects only the larger flood events; 40 days captures the broader wet-season ponding.
+
+Combined effect on the central case:
+- Original: 0.80 × 0.40 × 0.5 × 30 × 1.5 × 1.25 = **factor of 9.0**
+- Revised: 0.85 × 0.50 × 0.6 × 40 × 1.5 × 1.25 = **factor of 19.1**
+- Ratio: 2.1× → 2,700 × 2.1 = **5,670 AF/yr ≈ 5,800 AF/yr central**
+
+This is a **defensible recentering**, not an aggressive one — every input remains within the range bracketed by the source documents. The low case (130 AF/yr) and high case (18,700 AF/yr) are unchanged because they already represent the conservative-everything and best-everything ends of the bracket.
 
 ### 2.4 Binding constraint
 
-For most of the parameter space, **corridor acceptance is the binding constraint**, not water availability. The corridor "fills up" before exhausting the divertible Rock Creek flow. Design implication: a Q_div somewhat smaller than the maximum-divertible volume is still adequate; over-sizing the diversion intake doesn't pay back.
+With the recalibrated central, **the corridor and the supply are now roughly balanced** — central-case capacity ~5,800 AF/yr is close to the central-case supply ~5,000–6,000 AF/yr divertible. Practical implications:
+
+- **In average years (~19 in CRG rainfall):** supply and capacity match → realized yield ~5,000–7,000 AF/yr.
+- **In wet years (~25–32 in):** supply jumps to 10,000–15,000 AF → corridor saturates at its capacity (~6,000–9,000 AF/yr realized), with the rest passing downstream as designed.
+- **In dry years (~5–10 in):** supply drops to 500–1,500 AF → corridor underutilized; realized yield tracks supply.
+
+Design implication: a diversion structure sized to handle ~3,000 cfs is adequate (above that, supply doesn't justify additional intake capacity). The corridor design should target a capacity meaningfully larger than average-year supply so that wet years fully use the system.
 
 ### 2.5 Flood-attenuation benefit (separate from recharge)
 
@@ -268,16 +291,16 @@ Annualizing the central-case capital over a 30-year project life at a 4% discoun
 | Annualized capital | $30 M × 0.0578 = **~$1.73 M/yr** |
 | Annual O&M (from endowment yield) | **~$120K/yr** |
 | Total annual cost | **~$1.85 M/yr** |
-| Annual recharge (central) | **~2,750 AF/yr** |
-| **Levelized cost per AF** | **~$675/AF** |
+| Annual recharge (central) | **~6,000 AF/yr** |
+| **Levelized cost per AF** | **~$308/AF** |
 
-The low and high scenarios bracket from ~$150/AF (high yield) to ~$4,500/AF (low yield).
+The low and high scenarios bracket from ~$100/AF (high yield) to ~$10,000+/AF (low yield, in which case the project would be re-scoped or not built).
 
 ### 6.2 Comparison to alternatives
 
 | Alternative | Typical levelized $/AF | Source |
 | --- | --- | --- |
-| **Rock Creek concept (central)** | **~$675/AF** | this analysis |
+| **Rock Creek concept (central)** | **~$308/AF** | this analysis |
 | California groundwater banking projects (dedicated infrastructure) | $100–1,000/AF | typical range; site-specific |
 | Surface water rights, transaction prices | $300–2,000/AF | recent California water market |
 | Off-stream storage projects | $1,000–3,000/AF | typical for new construction |
@@ -303,12 +326,12 @@ These are the **stretch / acceptable / minimum** targets that next-stage screeni
 
 | Metric | Minimum (project worth doing) | Acceptable | **Stretch** |
 | --- | --- | --- | --- |
-| Annual recharge yield | 1,000 AF/yr | 2,500 AF/yr | **5,000 AF/yr** |
-| Annual diverted volume (recharge + ET + slow-routed) | 1,500 AF/yr | 3,500 AF/yr | **7,000 AF/yr** |
+| Annual recharge yield | 2,500 AF/yr | 5,000 AF/yr | **8,000 AF/yr (= Vina annual storage growth)** |
+| Annual diverted volume (recharge + ET + slow-routed) | 3,500 AF/yr | 6,500 AF/yr | **10,000+ AF/yr (wet-year capacity)** |
 | Q10 peak-flow reduction at SR 99 | 10% | 25% | **40%** |
-| Q100 peak-flow reduction at SR 99 | 5% | 15% | **25%** (above-this is unlikely given diminishing-returns finding) |
+| Q100 peak-flow reduction at SR 99 | 5% | 15% | **25%** (above this is unlikely given the diminishing-returns finding) |
 | Total capital cost (cap) | $45M | $30M | **$25M** |
-| Levelized cost per AF (cap) | $1,500/AF | $700/AF | **$400/AF** |
+| Levelized cost per AF (cap) | $700/AF | $350/AF | **$200/AF** |
 | Corridor habitat reactivated | 200 ac | 300 ac | **400 ac** |
 | Reach length treated | 6 mi (north only) | 10.4 mi | **10.4 mi + adjacent reaches** |
 
