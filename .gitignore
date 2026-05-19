@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local Claude config (do not commit)
+.claude/
+
+# Secondary / large source materials kept in iCloud, not in the repo
+z - secondary/
+
+# Source-document markdown conversions kept in iCloud (deliverables cite these but
+# the repo intentionally only ships dashboard + deliverables + assets)
+Nord_Feasibility_Study_Part_A.md
+Nord_PartB_1_Geotechnical_Memo.md
+Nord_PartB_2_Geomorphic_Assessment.md
+Nord_PartB_3_Environmental_Constraints.md
+Nord_PartB_4_Appendix7.md
+Nord_PartB_5_Appendices_8-11.md
+RockCreek_Reclamation_District-Infiltration_Feasibility_Study_Oct2023.md
+Singer_Creek_HDP_Vol_1.md
+Flooding_Issues_Along_Hwy99_Mud_Creek_to_Rock_Creek.md
+
+# Python cache (in case any scripts get added)
+__pycache__/
+*.pyc
