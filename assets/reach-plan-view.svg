@@ -5,7 +5,7 @@
   <rect width="1000" height="460" fill="#f7f5f0"/>
 
   <!-- Title -->
-  <text x="500" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2a33">Plan view &mdash; typical 600 ft reach, three weirs at 200 ft spacing</text>
+  <text x="500" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2a33">Plan view &#x2014; typical 600 ft reach, three weirs at 200 ft spacing</text>
   <text x="500" y="40" text-anchor="middle" font-size="11" fill="#4a5a66">Corridor ~240 ft wide. Flow left to right. Scale: 1 px ≈ 0.6 ft both axes.</text>
 
   <!-- ====== Define gradients / patterns ====== -->

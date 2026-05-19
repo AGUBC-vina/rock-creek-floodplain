@@ -3,8 +3,8 @@
 
   <!-- ====== Header ====== -->
   <rect width="1000" height="460" fill="#f7f5f0"/>
-  <text x="500" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2a33">Section B&ndash;B &mdash; mid-pool between two weirs (100 ft upstream of next weir)</text>
-  <text x="500" y="40" text-anchor="middle" font-size="11" fill="#4a5a66">Looking downstream. Vertical scale exaggerated ~8&times;. Datum = channel bed (0.0 ft).</text>
+  <text x="500" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2a33">Section B&#x2013;B &#x2014; mid-pool between two weirs (100 ft upstream of next weir)</text>
+  <text x="500" y="40" text-anchor="middle" font-size="11" fill="#4a5a66">Looking downstream. Vertical scale exaggerated ~8&#xD7;. Datum = channel bed (0.0 ft).</text>
 
   <!-- ====== Patterns ====== -->
   <defs>
@@ -37,7 +37,7 @@
   <!-- Shallow hardpan / duripan layer -->
   <rect x="0" y="380" width="1000" height="14" fill="url(#hardpan-b)" opacity="0.85"/>
   <text x="990" y="404" text-anchor="end" font-size="9" font-style="italic" fill="#3a3128">
-    Shallow restrictive layer (per RCRD Infil. Study) &mdash; depth varies; presence reach-specific
+    Shallow restrictive layer (per RCRD Infil. Study) &#x2014; depth varies; presence reach-specific
   </text>
 
   <!-- ====== Surface profile (no weir at this station) ====== -->
@@ -51,7 +51,7 @@
         fill="#7fb1c8" opacity="0.7"/>
   <line x1="360" y1="231" x2="640" y2="231" stroke="#2c5f73" stroke-width="2"/>
   <text x="500" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#2c5f73">
-    Low-flow backwater pool, WS &asymp; 2.3 ft (sustained from downstream weir)
+    Low-flow backwater pool, WS &#x2248; 2.3 ft (sustained from downstream weir)
   </text>
 
   <!-- Design event WS: ~el 3.7 ft (y=189) — slightly higher than at-weir section due to backwater rise -->
@@ -59,7 +59,7 @@
   <path d="M 60 189 L 940 189 L 940 285 L 800 280 L 640 282 L 560 285 L 560 300 L 440 300 L 440 285 L 360 282 L 200 280 L 40 285 L 60 189 Z"
         fill="#7fb1c8" opacity="0.35"/>
   <text x="500" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#2c5f73">
-    Design event WS &asymp; 3.7 ft (slightly above the at-weir section &mdash; backwater profile)
+    Design event WS &#x2248; 3.7 ft (slightly above the at-weir section &#x2014; backwater profile)
   </text>
 
   <!-- ====== Planting zone labels (along bottom) ====== -->
