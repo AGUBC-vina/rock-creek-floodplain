@@ -6,6 +6,9 @@
 <title>Rock Creek Floodplain Reactivation Concept &mdash; AGUBC</title>
 <meta name="description" content="Concept-stage technical synthesis for a flood-diversion, groundwater-recharge, and floodplain-reactivation project on Rock Creek, Butte County, California. Prepared for stakeholder review by AGUBC.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preconnect" href="https://basemaps.cartocdn.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <style>
   :root {
     --bg: #f7f5f0;
@@ -285,6 +288,75 @@
     line-height: 1.5;
   }
   .hero-fig .cap strong { color: var(--ink); }
+
+  /* Interactive vicinity map */
+  #vicinity-map {
+    height: 580px;
+    width: 100%;
+    border-radius: 4px;
+    background: #f4f0e6;
+    z-index: 1;
+  }
+  .leaflet-container {
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+  }
+  .leaflet-control-layers {
+    border-radius: 6px !important;
+    box-shadow: var(--shadow) !important;
+    border: 1px solid var(--rule-strong) !important;
+  }
+  .leaflet-control-layers-expanded {
+    padding: 10px 12px !important;
+    font-size: 13px;
+    background: #fff !important;
+  }
+  .leaflet-control-layers-base label {
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .leaflet-control-attribution {
+    font-size: 10px !important;
+    background: rgba(255,255,255,0.85) !important;
+  }
+  /* Map tooltips — three label styles */
+  .leaflet-tooltip.map-label-pin {
+    background: #fff4b8;
+    border: 1.5px solid #b08d4a;
+    color: #4a3d1e;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    white-space: nowrap;
+  }
+  .leaflet-tooltip.map-label-pin::before { display: none; }
+  .leaflet-tooltip.map-label-route {
+    background: rgba(20,20,20,0.82);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #ff9166;
+    font-weight: 700;
+    font-size: 12.5px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+  .leaflet-tooltip.map-label-route::before { display: none; }
+  .leaflet-tooltip.map-label-stream {
+    background: rgba(20,20,20,0.65);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #6ed3da;
+    font-weight: 600;
+    font-size: 11.5px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    white-space: nowrap;
+  }
+  .leaflet-tooltip.map-label-stream::before { display: none; }
   .callouts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -392,9 +464,9 @@
       </div>
 
       <figure class="hero-fig">
-        <img src="assets/project-vicinity-map.png" alt="Project vicinity map showing the proposed Diversion point on Rock Creek, the existing Rock Creek / Keefer Slough Bifurcation, and the two overland diversion corridors (Sand Creek North ~6 mi and Sand Creek South ~4.4 mi), with Rock Creek and Keefer Slough labeled and parcel ownership shown.">
+        <div id="vicinity-map" role="img" aria-label="Interactive vicinity map showing the proposed Rock Creek diversion, the existing Rock Creek / Keefer Slough bifurcation, and the two overland diversion corridors with Rock Creek and Keefer Slough traced downstream"></div>
         <div class="cap">
-          <strong>Project vicinity.</strong> Yellow pins mark the proposed <strong>Diversion</strong> on Rock Creek (upper right) and the existing <strong>Rock Creek / Keefer Slough Bifurcation</strong>. Red dashed lines show the two overland corridors: <strong>Sand Creek North (~6 mi)</strong>, rejoining Rock Creek near SR 99 via Sand Creek, and <strong>Sand Creek South (~4.4 mi)</strong>. Cyan dashed lines trace Rock Creek and Keefer Slough downstream of the bifurcation. Hundreds of low rock weirs along both corridors would slow flow, spread it, and promote infiltration. Orange parcel boundaries show current landownership; land control through willing-landowner easements is a foundational early-work item.
+          <strong>Project vicinity &mdash; interactive map.</strong> Toggle the basemap (<strong>Carto</strong> default / <strong>Street</strong> / <strong>Standard</strong>) using the control in the upper right. Yellow pins mark the proposed <strong>Diversion</strong> on Rock Creek and the existing <strong>Rock Creek / Keefer Slough Bifurcation</strong>. Red dashed lines show the two overland corridors: <strong>Sand Creek North (~6 mi)</strong>, rejoining Rock Creek near SR 99 via Sand Creek, and <strong>Sand Creek South (~4.4 mi)</strong>. Cyan dashed lines trace <strong>Rock Creek</strong> and <strong>Keefer Slough</strong>. Hundreds of low rock weirs along both corridors would slow flow, spread it, and promote infiltration. Land control across the 4 corridor landowners (1 major NRCS-easement holder + 3 smaller) is a foundational early-work item.
         </div>
       </figure>
 
@@ -538,6 +610,125 @@
   Prepared as concept-stage technical synthesis for AGUBC stakeholder discussion. Not engineering, legal, or water-rights advice.
   &nbsp;&middot;&nbsp; Repository: <a href="https://github.com/AGUBC-vina/rock-creek-floodplain">AGUBC-vina/rock-creek-floodplain</a>
 </footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+// ===== Vicinity map =====
+(function buildVicinityMap() {
+  if (typeof L === 'undefined') {
+    window.addEventListener('load', buildVicinityMap);
+    return;
+  }
+  const mapEl = document.getElementById('vicinity-map');
+  if (!mapEl) return;
+
+  const map = L.map(mapEl, { zoomControl: true, scrollWheelZoom: true, attributionControl: true });
+
+  // Basemaps
+  const carto = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd', maxZoom: 20
+  });
+  const street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  });
+  const standard = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics',
+    maxZoom: 19
+  });
+  carto.addTo(map);
+  L.control.layers({ 'Carto': carto, 'Street': street, 'Standard': standard }, null,
+    { position: 'topright', collapsed: false }).addTo(map);
+  L.control.scale({ position: 'bottomleft', metric: false }).addTo(map);
+
+  // Helper — parse KML <coordinates> into [lat, lng] array
+  function parseCoords(text) {
+    return text.trim().split(/\s+/).map(pt => {
+      const parts = pt.split(',');
+      return [parseFloat(parts[1]), parseFloat(parts[0])];
+    }).filter(c => isFinite(c[0]) && isFinite(c[1]));
+  }
+
+  // Place an invisible marker that carries a permanent text label
+  function placeLabel(latlng, text, klass, dir) {
+    L.marker(latlng, { opacity: 0, interactive: false, keyboard: false })
+      .addTo(map)
+      .bindTooltip(text, { permanent: true, direction: dir || 'top', offset: [0, 0], className: klass });
+  }
+
+  fetch('assets/RC-SC-Diversion.kml?_=' + Date.now())
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+    .then(text => {
+      const dom = new DOMParser().parseFromString(text, 'text/xml');
+      const layers = [];
+
+      dom.querySelectorAll('Placemark').forEach(p => {
+        const name = (p.querySelector('name') || {}).textContent || '';
+        // Skip the small Polygon markers — we use our own pins
+        if (p.querySelector('Polygon')) return;
+
+        const lineEl = p.querySelector('LineString coordinates');
+        const pointEl = p.querySelector('Point coordinates');
+
+        if (lineEl) {
+          const coords = parseCoords(lineEl.textContent);
+          if (!coords.length) return;
+          let style;
+          if (name === 'Rock Creek' || name.toLowerCase() === 'keefer slough') {
+            style = { color: '#00d2e6', weight: 3.5, dashArray: '8 6', opacity: 0.9, lineCap: 'round' };
+          } else if (name === 'Rock-Sand Diversion' || name === 'Rock Sand 2 Diversion') {
+            style = { color: '#ff3300', weight: 5, dashArray: '12 8', opacity: 0.92, lineCap: 'round' };
+          } else {
+            style = { color: '#666', weight: 2, opacity: 0.7 };
+          }
+          const layer = L.polyline(coords, style).addTo(map);
+          layers.push(layer);
+
+          // Route labels at midpoint
+          if (name === 'Rock-Sand Diversion') {
+            placeLabel(coords[Math.floor(coords.length * 0.45)], 'Sand Creek North (~6 mi)', 'map-label-route', 'top');
+          } else if (name === 'Rock Sand 2 Diversion') {
+            placeLabel(coords[Math.floor(coords.length * 0.55)], 'Sand Creek South (~4.4 mi)', 'map-label-route', 'bottom');
+          } else if (name === 'Rock Creek') {
+            // Three labels along the long Rock Creek line
+            [0.08, 0.55, 0.92].forEach(f => {
+              placeLabel(coords[Math.floor(coords.length * f)], 'Rock Creek', 'map-label-stream', 'top');
+            });
+          } else if (name.toLowerCase() === 'keefer slough') {
+            [0.18, 0.6].forEach(f => {
+              placeLabel(coords[Math.floor(coords.length * f)], 'Keefer Slough', 'map-label-stream', 'top');
+            });
+          }
+        }
+
+        if (pointEl) {
+          const parts = pointEl.textContent.trim().split(',');
+          const ll = [parseFloat(parts[1]), parseFloat(parts[0])];
+          if (!isFinite(ll[0]) || !isFinite(ll[1])) return;
+          const pin = L.circleMarker(ll, {
+            radius: 8, fillColor: '#ffd400', color: '#1a1a1a', weight: 2.2,
+            opacity: 1, fillOpacity: 1
+          }).addTo(map);
+          pin.bindTooltip(name, { permanent: true, direction: 'right', offset: [10, 0], className: 'map-label-pin' });
+          layers.push(pin);
+        }
+      });
+
+      if (layers.length) {
+        const group = L.featureGroup(layers);
+        map.fitBounds(group.getBounds(), { padding: [40, 40] });
+      } else {
+        map.setView([39.832, -121.875], 13);
+      }
+    })
+    .catch(err => {
+      console.error('Failed to load KML:', err);
+      mapEl.innerHTML = '<div style="padding:40px;text-align:center;color:#b35c1e;font-size:14px;">'
+        + 'Failed to load vicinity map. ' + (err.message || err) + '</div>';
+    });
+})();
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/marked@13.0.3/marked.min.js"></script>
 <script>

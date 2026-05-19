@@ -13,6 +13,9 @@
 # Secondary / large source materials kept in iCloud, not in the repo
 z - secondary/
 
+# Source KML (deployed copy lives in assets/)
+RC-SC-Diversion-kml.kml
+
 # Source-document markdown conversions kept in iCloud (deliverables cite these but
 # the repo intentionally only ships dashboard + deliverables + assets)
 Nord_Feasibility_Study_Part_A.md
