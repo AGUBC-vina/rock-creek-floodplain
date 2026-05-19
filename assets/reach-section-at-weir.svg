@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" font-family="ui-sans-serif, -apple-system, Helvetica, Arial, sans-serif" font-size="12" role="img" aria-label="Cross section A-A through a rock weir showing the 2.5-foot weir structure, channel, floodplain benches, water surfaces, and planting zones">
+
+  <!-- ====== Header ====== -->
+  <rect width="1000" height="460" fill="#f7f5f0"/>
+  <text x="500" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2a33">Section A&ndash;A &mdash; through a rock weir</text>
+  <text x="500" y="40" text-anchor="middle" font-size="11" fill="#4a5a66">Looking downstream. Vertical scale exaggerated ~8&times;. Datum = channel bed (0.0 ft).</text>
+
+  <!-- ====== Patterns ====== -->
+  <defs>
+    <pattern id="subsurface" patternUnits="userSpaceOnUse" width="14" height="10">
+      <rect width="14" height="10" fill="#d9c9a6"/>
+      <line x1="0" y1="5" x2="14" y2="5" stroke="#b8a370" stroke-width="0.4"/>
+      <line x1="7" y1="0" x2="7" y2="10" stroke="#b8a370" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="hardpan" patternUnits="userSpaceOnUse" width="10" height="6">
+      <rect width="10" height="6" fill="#9a8866"/>
+      <line x1="0" y1="3" x2="10" y2="3" stroke="#6b5d52" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="weir-rocks" patternUnits="userSpaceOnUse" width="18" height="14">
+      <rect width="18" height="14" fill="#7a6b5e"/>
+      <circle cx="5" cy="4" r="3.5" fill="#5c4f43" stroke="#3a3128" stroke-width="0.5"/>
+      <circle cx="14" cy="6" r="3" fill="#67594d" stroke="#3a3128" stroke-width="0.5"/>
+      <circle cx="9" cy="11" r="3.5" fill="#5c4f43" stroke="#3a3128" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- ====== Sky / above-ground background ====== -->
+  <rect x="0" y="50" width="1000" height="250" fill="#f1ece0" opacity="0.4"/>
+
+  <!-- ====== Subsurface ====== -->
+  <!-- Datum (channel bed) at y=300. 1 ft = 30 px vertical. -->
+  <!-- Subsurface from y=300 (el 0 ft channel bed) to y=420 (el -4 ft) -->
+  <path d="M 0 300 L 40 290 L 200 285 L 440 285 L 440 300 L 560 300 L 560 285 L 800 285 L 960 290 L 1000 300 L 1000 420 L 0 420 Z"
+        fill="url(#subsurface)" stroke="#a08f5e" stroke-width="0.8"/>
+
+  <!-- Shallow hardpan / duripan layer (per Sand Creek Infiltration Study finding) -->
+  <rect x="0" y="380" width="1000" height="14" fill="url(#hardpan)" opacity="0.85"/>
+  <text x="990" y="404" text-anchor="end" font-size="9" font-style="italic" fill="#3a3128">
+    Shallow restrictive layer (per RCRD Infil. Study) &mdash; depth varies; presence reach-specific
+  </text>
+
+  <!-- ====== Surface profile (ground line on top of subsurface) ====== -->
+  <!-- Outer terrace L (slightly elevated), bench L, channel banks, channel bed (with weir),
+       channel banks R, bench R, terrace R -->
+  <path d="M 0 290 L 40 285 L 200 280 L 360 282 L 440 285 L 440 300 L 560 300 L 560 285 L 640 282 L 800 280 L 960 285 L 1000 290"
+        fill="none" stroke="#4a3d2e" stroke-width="2.5"/>
+
+  <!-- ====== Rock weir (across channel + keyed into banks) ====== -->
+  <!-- Channel from x=440 to x=560 (30 ft); weir crest at el 2.5 ft (y=225) -->
+  <!-- Visible weir face: trapezoid with downstream face slope visible -->
+  <path d="M 440 300 L 560 300 L 560 225 L 440 225 Z" fill="url(#weir-rocks)" stroke="#3a3128" stroke-width="1"/>
+
+  <!-- Weir keys / abutments into banks (visible as triangular wedges) -->
+  <path d="M 420 285 L 440 285 L 440 225 Z" fill="#5c4f43" stroke="#3a3128" stroke-width="0.8"/>
+  <path d="M 580 285 L 560 285 L 560 225 Z" fill="#5c4f43" stroke="#3a3128" stroke-width="0.8"/>
+
+  <!-- Subsurface key (footings extend below channel bed) -->
+  <path d="M 440 300 L 440 335 L 560 335 L 560 300 Z" fill="#5c4f43" stroke="#3a3128" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ====== Water surfaces ====== -->
+  <!-- Low-flow / impounded at crest: el 2.5 ft (y=225), held within channel zone -->
+  <path d="M 410 225 L 590 225" stroke="#3a6a7e" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="600" y="222" font-size="10" fill="#3a6a7e" font-style="italic">Low flow / at-crest impoundment, WS = 2.5 ft</text>
+
+  <!-- Design event water surface: el 3.5 ft (y=195), spreading laterally to outer floodplain -->
+  <path d="M 60 195 L 940 195" stroke="#2c5f73" stroke-width="2"/>
+  <text x="500" y="190" text-anchor="middle" font-size="10" font-weight="600" fill="#2c5f73">Design event WS &asymp; el 3.5 ft &mdash; spreads laterally onto bench</text>
+  <!-- Shaded water body -->
+  <path d="M 60 195 L 940 195 L 940 285 L 800 280 L 640 282 L 560 285 L 560 225 L 440 225 L 440 285 L 360 282 L 200 280 L 40 285 L 60 195 Z"
+        fill="#7fb1c8" opacity="0.45"/>
+
+  <!-- ====== Planting zone labels (along bottom of section) ====== -->
+  <g font-size="10" fill="#1f2a33" font-weight="600">
+    <!-- L side -->
+    <text x="20" y="440" text-anchor="start">Terrace</text>
+    <text x="120" y="440" text-anchor="middle">Grassland</text>
+    <text x="280" y="440" text-anchor="middle">Riparian</text>
+    <text x="400" y="440" text-anchor="middle">Wetland fringe</text>
+    <text x="500" y="440" text-anchor="middle">Channel</text>
+    <text x="600" y="440" text-anchor="middle">Wetland fringe</text>
+    <text x="720" y="440" text-anchor="middle">Riparian</text>
+    <text x="880" y="440" text-anchor="middle">Grassland</text>
+    <text x="980" y="440" text-anchor="end">Terrace</text>
+  </g>
+
+  <!-- Planting zone dividers (vertical dashed lines) -->
+  <g stroke="#7a8894" stroke-width="0.5" stroke-dasharray="2 3" opacity="0.6">
+    <line x1="40" y1="285" x2="40" y2="425"/>
+    <line x1="200" y1="280" x2="200" y2="425"/>
+    <line x1="360" y1="282" x2="360" y2="425"/>
+    <line x1="440" y1="300" x2="440" y2="425"/>
+    <line x1="560" y1="300" x2="560" y2="425"/>
+    <line x1="640" y1="282" x2="640" y2="425"/>
+    <line x1="800" y1="280" x2="800" y2="425"/>
+    <line x1="960" y1="285" x2="960" y2="425"/>
+  </g>
+
+  <!-- ====== Vegetation icons (simple silhouettes) ====== -->
+  <g fill="#5a7a3a" opacity="0.8">
+    <!-- Grassland (small clumps) -->
+    <path d="M 100 280 q -2 -8 -1 -12 q 2 -3 4 0 q 1 4 -1 12 Z"/>
+    <path d="M 140 280 q -2 -8 -1 -12 q 2 -3 4 0 q 1 4 -1 12 Z"/>
+    <path d="M 180 280 q -2 -8 -1 -12 q 2 -3 4 0 q 1 4 -1 12 Z"/>
+    <path d="M 820 280 q -2 -8 -1 -12 q 2 -3 4 0 q 1 4 -1 12 Z"/>
+    <path d="M 860 280 q -2 -8 -1 -12 q 2 -3 4 0 q 1 4 -1 12 Z"/>
+    <path d="M 900 280 q -2 -8 -1 -12 q 2 -3 4 0 q 1 4 -1 12 Z"/>
+  </g>
+  <!-- Riparian (small trees) -->
+  <g>
+    <!-- Tree 1 L -->
+    <line x1="250" y1="280" x2="250" y2="252" stroke="#5a4a3a" stroke-width="1.5"/>
+    <circle cx="250" cy="245" r="10" fill="#3f6b3a" opacity="0.85"/>
+    <!-- Tree 2 L -->
+    <line x1="310" y1="282" x2="310" y2="250" stroke="#5a4a3a" stroke-width="1.5"/>
+    <circle cx="310" cy="242" r="11" fill="#3f6b3a" opacity="0.85"/>
+    <!-- Tree 1 R -->
+    <line x1="680" y1="282" x2="680" y2="252" stroke="#5a4a3a" stroke-width="1.5"/>
+    <circle cx="680" cy="245" r="10" fill="#3f6b3a" opacity="0.85"/>
+    <!-- Tree 2 R -->
+    <line x1="750" y1="280" x2="750" y2="246" stroke="#5a4a3a" stroke-width="1.5"/>
+    <circle cx="750" cy="240" r="12" fill="#3f6b3a" opacity="0.85"/>
+  </g>
+  <!-- Wetland fringe (sedges / rushes) -->
+  <g stroke="#5a7a3a" stroke-width="1.2" stroke-linecap="round" fill="none">
+    <path d="M 380 285 v -10 M 385 285 v -12 M 390 285 v -8 M 395 285 v -11 M 400 285 v -9 M 405 285 v -12 M 410 285 v -8 M 415 285 v -10 M 420 285 v -11"/>
+    <path d="M 580 285 v -10 M 585 285 v -12 M 590 285 v -8 M 595 285 v -11 M 600 285 v -9 M 605 285 v -12 M 610 285 v -8 M 615 285 v -10 M 620 285 v -11"/>
+  </g>
+
+  <!-- ====== Dimensions / annotations ====== -->
+  <!-- Weir height -->
+  <g stroke="#b35c1e" stroke-width="1" fill="none">
+    <line x1="385" y1="225" x2="385" y2="300"/>
+    <line x1="382" y1="225" x2="388" y2="225"/>
+    <line x1="382" y1="300" x2="388" y2="300"/>
+  </g>
+  <text x="378" y="265" text-anchor="end" font-size="11" font-weight="600" fill="#b35c1e">2.5 ft</text>
+  <text x="378" y="278" text-anchor="end" font-size="9" font-style="italic" fill="#b35c1e">weir height</text>
+
+  <!-- Channel width -->
+  <g stroke="#1f2a33" stroke-width="1" fill="none">
+    <line x1="440" y1="320" x2="560" y2="320"/>
+    <line x1="440" y1="316" x2="440" y2="324"/>
+    <line x1="560" y1="316" x2="560" y2="324"/>
+  </g>
+  <text x="500" y="332" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2a33">~30 ft channel</text>
+
+  <!-- Total corridor width -->
+  <g stroke="#1f2a33" stroke-width="1" fill="none">
+    <line x1="40" y1="60" x2="960" y2="60"/>
+    <line x1="40" y1="56" x2="40" y2="64"/>
+    <line x1="960" y1="56" x2="960" y2="64"/>
+  </g>
+  <text x="500" y="74" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2a33">~240 ft active corridor (within ~250 ft easement)</text>
+
+  <!-- Setback fence indicators -->
+  <g stroke="#7a8894" stroke-width="1" stroke-dasharray="2 2">
+    <line x1="20" y1="290" x2="20" y2="270"/>
+    <line x1="980" y1="290" x2="980" y2="270"/>
+  </g>
+  <text x="20" y="265" text-anchor="middle" font-size="9" font-style="italic" fill="#7a8894">setback fence</text>
+  <text x="980" y="265" text-anchor="middle" font-size="9" font-style="italic" fill="#7a8894">setback fence</text>
+
+  <!-- Datum label -->
+  <line x1="0" y1="300" x2="20" y2="300" stroke="#1f2a33" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <text x="5" y="313" font-size="9" font-style="italic" fill="#1f2a33">0.0 ft (bed)</text>
+
+  <!-- Scale bar -->
+  <g transform="translate(60 95)">
+    <rect x="0" y="0" width="100" height="5" fill="#1f2a33"/>
+    <rect x="0" y="0" width="50" height="5" fill="#fff" stroke="#1f2a33" stroke-width="0.4"/>
+    <text x="0" y="-3" font-size="9" fill="#1f2a33">0</text>
+    <text x="100" y="-3" text-anchor="end" font-size="9" fill="#1f2a33">25 ft (horiz)</text>
+  </g>
+  <g transform="translate(60 110)">
+    <rect x="0" y="0" width="60" height="5" fill="#1f2a33"/>
+    <rect x="0" y="0" width="30" height="5" fill="#fff" stroke="#1f2a33" stroke-width="0.4"/>
+    <text x="0" y="-3" font-size="9" fill="#1f2a33">0</text>
+    <text x="60" y="-3" text-anchor="end" font-size="9" fill="#1f2a33">2 ft (vert)</text>
+  </g>
+
+</svg>

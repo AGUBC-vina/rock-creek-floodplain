@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" font-family="ui-sans-serif, -apple-system, Helvetica, Arial, sans-serif" font-size="12" role="img" aria-label="Plan view of a typical 600-foot rock-weir reach with three weirs at 200-foot spacing">
+
+  <!-- Background -->
+  <rect width="1000" height="460" fill="#f7f5f0"/>
+
+  <!-- Title -->
+  <text x="500" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2a33">Plan view &mdash; typical 600 ft reach, three weirs at 200 ft spacing</text>
+  <text x="500" y="40" text-anchor="middle" font-size="11" fill="#4a5a66">Corridor ~240 ft wide. Flow left to right. Scale: 1 px ≈ 0.6 ft both axes.</text>
+
+  <!-- ====== Define gradients / patterns ====== -->
+  <defs>
+    <pattern id="grassland" patternUnits="userSpaceOnUse" width="14" height="14" patternTransform="rotate(35)">
+      <rect width="14" height="14" fill="#d4c98a"/>
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#b8a86a" stroke-width="0.7"/>
+    </pattern>
+    <pattern id="terrace" patternUnits="userSpaceOnUse" width="12" height="12">
+      <rect width="12" height="12" fill="#c4b27a"/>
+      <circle cx="3" cy="3" r="0.8" fill="#a08f5e"/>
+      <circle cx="9" cy="9" r="0.8" fill="#a08f5e"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c5f73"/>
+    </marker>
+  </defs>
+
+  <!-- ====== Terrace (outer corridor, dry / upland) ====== -->
+  <rect x="50" y="55" width="900" height="350" fill="url(#terrace)" stroke="none"/>
+
+  <!-- ====== Grassland buffer (inner ring) ====== -->
+  <path d="M 50 80 L 950 80 L 950 380 L 50 380 Z" fill="url(#grassland)" stroke="none" opacity="0.95"/>
+
+  <!-- ====== Riparian zone (gently undulating around channel) ====== -->
+  <path d="M 50 130
+           C 200 115, 350 145, 500 125
+           C 650 110, 800 140, 950 125
+           L 950 335
+           C 800 320, 650 350, 500 335
+           C 350 320, 200 350, 50 330
+           Z"
+        fill="#7a9456" opacity="0.85"/>
+
+  <!-- ====== Wetland fringe (close to channel) ====== -->
+  <path d="M 50 160
+           C 200 150, 350 175, 500 160
+           C 650 145, 800 170, 950 160
+           L 950 300
+           C 800 290, 650 315, 500 300
+           C 350 285, 200 310, 50 300
+           Z"
+        fill="#86a070" opacity="0.95"/>
+
+  <!-- ====== Backwater pools (upstream of each weir) ====== -->
+  <!-- Each pool stretches ~150 ft (250 px) upstream of weir, narrowing -->
+  <!-- Weirs at x = 230, 563, 897 (using 200 ft spacing scaled by 1.667 px/ft, with some left-margin) -->
+  <!-- Actually using 600 ft over (50,950): x scale = 900/600 = 1.5 px/ft, so 200 ft = 300 px -->
+  <!-- Weirs at x = 263, 563, 863 (100 ft from left, 300 ft, 500 ft from left) -->
+
+  <path d="M 263 175 L 113 195 Q 75 222 113 250 L 263 270 Z" fill="#7fb1c8" opacity="0.75"/>
+  <path d="M 563 175 L 413 195 Q 375 222 413 250 L 563 270 Z" fill="#7fb1c8" opacity="0.75"/>
+  <path d="M 863 175 L 713 195 Q 675 222 713 250 L 863 270 Z" fill="#7fb1c8" opacity="0.75"/>
+
+  <!-- ====== Low-flow channel (meandering centerline) ====== -->
+  <path d="M 50 222
+           Q 150 218, 263 222
+           Q 400 235, 563 222
+           Q 700 210, 863 222
+           Q 925 228, 950 222"
+        fill="none" stroke="#6294a8" stroke-width="10" stroke-linecap="round"/>
+  <!-- Channel bed line -->
+  <path d="M 50 222
+           Q 150 218, 263 222
+           Q 400 235, 563 222
+           Q 700 210, 863 222
+           Q 925 228, 950 222"
+        fill="none" stroke="#3a6a7e" stroke-width="1" opacity="0.7"/>
+
+  <!-- ====== Rock weirs ====== -->
+  <!-- Each weir spans the entire channel + keys into both benches. Show as bold line. -->
+  <g stroke="#5a4a3a" stroke-width="4" stroke-linecap="round" fill="none">
+    <line x1="263" y1="160" x2="263" y2="285"/>
+    <line x1="563" y1="160" x2="563" y2="285"/>
+    <line x1="863" y1="160" x2="863" y2="285"/>
+  </g>
+  <!-- Weir rocks (texture) -->
+  <g fill="#6b5d52" stroke="#3d342c" stroke-width="0.5">
+    <!-- Weir 1 rock cluster (channel portion) -->
+    <circle cx="259" cy="210" r="3.5"/><circle cx="266" cy="216" r="3"/><circle cx="263" cy="223" r="3.5"/>
+    <circle cx="260" cy="230" r="3"/><circle cx="266" cy="236" r="3.5"/>
+    <!-- Weir 2 -->
+    <circle cx="559" cy="210" r="3.5"/><circle cx="566" cy="216" r="3"/><circle cx="563" cy="223" r="3.5"/>
+    <circle cx="560" cy="230" r="3"/><circle cx="566" cy="236" r="3.5"/>
+    <!-- Weir 3 -->
+    <circle cx="859" cy="210" r="3.5"/><circle cx="866" cy="216" r="3"/><circle cx="863" cy="223" r="3.5"/>
+    <circle cx="860" cy="230" r="3"/><circle cx="866" cy="236" r="3.5"/>
+  </g>
+
+  <!-- ====== Outer corridor boundary (dashed) ====== -->
+  <rect x="50" y="55" width="900" height="350" fill="none" stroke="#4a5a66" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- ====== Cross-section cut lines ====== -->
+  <!-- Section A-A through weir 2 -->
+  <line x1="563" y1="50" x2="563" y2="55" stroke="#b35c1e" stroke-width="2"/>
+  <line x1="563" y1="405" x2="563" y2="410" stroke="#b35c1e" stroke-width="2"/>
+  <text x="555" y="48" text-anchor="end" font-size="11" font-weight="700" fill="#b35c1e">A</text>
+  <text x="555" y="420" text-anchor="end" font-size="11" font-weight="700" fill="#b35c1e">A</text>
+  <text x="570" y="48" text-anchor="start" font-size="11" font-weight="700" fill="#b35c1e">A'</text>
+  <text x="570" y="420" text-anchor="start" font-size="11" font-weight="700" fill="#b35c1e">A'</text>
+
+  <!-- Section B-B between weirs 1 and 2 -->
+  <line x1="413" y1="50" x2="413" y2="55" stroke="#b35c1e" stroke-width="2"/>
+  <line x1="413" y1="405" x2="413" y2="410" stroke="#b35c1e" stroke-width="2"/>
+  <text x="405" y="48" text-anchor="end" font-size="11" font-weight="700" fill="#b35c1e">B</text>
+  <text x="405" y="420" text-anchor="end" font-size="11" font-weight="700" fill="#b35c1e">B</text>
+  <text x="420" y="48" text-anchor="start" font-size="11" font-weight="700" fill="#b35c1e">B'</text>
+  <text x="420" y="420" text-anchor="start" font-size="11" font-weight="700" fill="#b35c1e">B'</text>
+
+  <!-- ====== Annotations: weir labels, distances ====== -->
+  <text x="263" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#3d342c">Weir 1</text>
+  <text x="563" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#3d342c">Weir 2</text>
+  <text x="863" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#3d342c">Weir 3</text>
+
+  <!-- Spacing dimensions -->
+  <g stroke="#1f2a33" stroke-width="1" fill="none">
+    <line x1="263" y1="394" x2="563" y2="394"/>
+    <line x1="263" y1="391" x2="263" y2="397"/>
+    <line x1="563" y1="391" x2="563" y2="397"/>
+    <line x1="563" y1="394" x2="863" y2="394"/>
+    <line x1="863" y1="391" x2="863" y2="397"/>
+  </g>
+  <text x="413" y="390" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2a33">200 ft</text>
+  <text x="713" y="390" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2a33">200 ft</text>
+
+  <!-- Flow arrow -->
+  <line x1="80" y1="100" x2="170" y2="100" stroke="#2c5f73" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="178" y="104" font-size="11" font-weight="600" fill="#2c5f73">FLOW</text>
+
+  <!-- North arrow (rotated; rough — flow is general westward in real geometry, but show abstract N) -->
+  <g transform="translate(910 100)">
+    <circle r="14" fill="#fff" stroke="#1f2a33" stroke-width="1"/>
+    <path d="M 0 -10 L 4 4 L 0 0 L -4 4 Z" fill="#1f2a33"/>
+    <text y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#1f2a33">N*</text>
+  </g>
+
+  <!-- Scale bar -->
+  <g transform="translate(60 432)">
+    <rect x="0" y="0" width="150" height="6" fill="#1f2a33"/>
+    <rect x="0" y="0" width="75" height="6" fill="#fff" stroke="#1f2a33" stroke-width="0.5"/>
+    <text x="0" y="20" font-size="10" fill="#1f2a33">0</text>
+    <text x="75" y="20" text-anchor="middle" font-size="10" fill="#1f2a33">50</text>
+    <text x="150" y="20" text-anchor="middle" font-size="10" fill="#1f2a33">100 ft</text>
+  </g>
+
+  <!-- Corridor width dimension -->
+  <g stroke="#1f2a33" stroke-width="1" fill="none">
+    <line x1="35" y1="55" x2="35" y2="405"/>
+    <line x1="32" y1="55" x2="38" y2="55"/>
+    <line x1="32" y1="405" x2="38" y2="405"/>
+  </g>
+  <text x="20" y="232" text-anchor="middle" font-size="11" font-weight="600" fill="#1f2a33" transform="rotate(-90 20 232)">~240 ft corridor</text>
+
+  <!-- Legend -->
+  <g transform="translate(700 425)" font-size="10" fill="#1f2a33">
+    <rect x="-8" y="-12" width="305" height="30" fill="#fff" stroke="#c9c0ac" stroke-width="0.5" rx="3"/>
+    <rect x="0" y="-5" width="14" height="10" fill="#7fb1c8" opacity="0.75"/>
+    <text x="18" y="3">Backwater pool</text>
+    <rect x="100" y="-5" width="14" height="10" fill="#86a070" opacity="0.95"/>
+    <text x="118" y="3">Wetland fringe</text>
+    <rect x="200" y="-5" width="14" height="10" fill="#7a9456" opacity="0.85"/>
+    <text x="218" y="3">Riparian</text>
+  </g>
+  <g transform="translate(700 458)" font-size="10" fill="#1f2a33" display="none">
+    <rect x="0" y="-5" width="14" height="10" fill="url(#grassland)"/>
+    <text x="18" y="3">Native grassland</text>
+    <rect x="100" y="-5" width="14" height="10" fill="url(#terrace)"/>
+    <text x="118" y="3">Terrace / upland</text>
+  </g>
+
+</svg>

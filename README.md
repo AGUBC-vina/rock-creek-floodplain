@@ -17,6 +17,7 @@ The dashboard renders this repository's six markdown deliverables as a single ta
 | `03-Benchmarking-Matrix.md` | Concept benchmarked against Nord, Sand Creek Infiltration Study, Singer Creek, Flood-MAR, USGS RDS pilots, BDA literature. |
 | `04-Feasibility-and-Next-Steps-Roadmap.md` | Six feasibility domains; what would have to be true; what's open; sequence and responsible parties. |
 | `05-Flood-Routing-Screening-Spreadsheet-Structure.md` | Five-sheet spreadsheet logic with cited inputs and calculation rules. |
+| `06-Typical-Reach-Design-Concept.md` | Concept-stage best-guess illustration of one 600-ft reach (plan view + two cross sections + planting palette + species notes). |
 | `Rock-Creek-Floodplain-Reactivation-Concept-DRAFT.md` | Original stakeholder-facing concept draft (predecessor to the deliverables). |
 | `assets/` | Project vicinity map and figures extracted from the Caltrans D3 memorandum. |
 

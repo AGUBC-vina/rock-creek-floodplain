@@ -18,6 +18,8 @@ The five deliverables are designed to be read in order, but each stands alone. T
 
 5. **[05-Flood-Routing-Screening-Spreadsheet-Structure.md](05-Flood-Routing-Screening-Spreadsheet-Structure.md)** — five-sheet spreadsheet logic with cited inputs; calculation rules for peak reduction and annual recharge; single-page output template. Ready to export to .xlsx.
 
+6. **[06-Typical-Reach-Design-Concept.md](06-Typical-Reach-Design-Concept.md)** — concept-stage best-guess illustration of one 600 ft reach at 200 ft weir spacing. Plan view + two cross sections (at a weir, mid-pool between weirs) with planting palette by hydrologic zone, habitat / wildlife design notes, weir construction details, and `[VERIFY]` table. Concept-stage only — not engineering.
+
 ---
 
 ## Key Findings — Headlines
