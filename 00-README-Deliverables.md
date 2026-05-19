@@ -6,21 +6,21 @@
 
 ## How to Read These
 
-The five deliverables are designed to be read in order, but each stands alone. The chain of reasoning:
+Seven deliverables. Stand alone, but read best in order — each answers one question:
 
-1. **[01-Refined-Concept-and-Parameter-Table.md](01-Refined-Concept-and-Parameter-Table.md)** — refines the concept into a structured technical description; a 50-row parameter table with source citations or `[VERIFY]` flags; explicit list of what is NOT transferable from the source projects.
+1. **What is the concept?** → **[01 — Concept & Parameters](01-Refined-Concept-and-Parameter-Table.md)** — refined description + 50-row parameter table with source citations and `[VERIFY]` flags.
 
-2. **[02-Discharge-Dataset-Comparison.md](02-Discharge-Dataset-Comparison.md)** — three-way (in practice four-way) comparison of the disagreeing peak-flow datasets; recommends a **two-track approach** — Nord HEC-HMS "Current Study" governs upstream hydrology, DWR HEC-RAS 2D governs downstream impact / Keefer Slough / FEMA no-rise.
+2. **How much water is at stake?** → **[02 — Discharge Comparison](02-Discharge-Dataset-Comparison.md)** — four datasets disagree by ~43% at Q100. Use Nord HEC-HMS upstream, DWR HEC-RAS 2D downstream.
 
-3. **[03-Benchmarking-Matrix.md](03-Benchmarking-Matrix.md)** — concept positioned against Tier A (Nord, Sand Creek Infiltration, Singer Creek), Tier B (Flood-MAR), Tier C (USGS RDS pilots), Tier D (BDA literature); explicit dam-vs-rock-weir contrast; diminishing-attenuation-at-extremes discussion.
+3. **Has anyone done this before?** → **[03 — Benchmarking](03-Benchmarking-Matrix.md)** — Nord (dam-based, don't transfer), Sand Creek Infiltration (recharge primary), Singer Creek (habitat / land control), Flood-MAR, RDS pilots, BDA literature.
 
-4. **[04-Feasibility-and-Next-Steps-Roadmap.md](04-Feasibility-and-Next-Steps-Roadmap.md)** — six feasibility domains (hydraulics, recharge, land control, water rights / CEQA / permitting, sediment / maintenance, cost / funding); for each: what would have to be true, what the sources already answer, what's open, next steps, sequence, responsible parties; ends with a master sequence (Phase 0 – Phase 5).
+4. **What would have to be true?** → **[04 — Feasibility & Roadmap](04-Feasibility-and-Next-Steps-Roadmap.md)** — six domains (hydraulics, recharge, land control, permits, sediment, cost); master sequence Phase 0–5.
 
-5. **[05-Flood-Routing-Screening-Spreadsheet-Structure.md](05-Flood-Routing-Screening-Spreadsheet-Structure.md)** — five-sheet spreadsheet logic with cited inputs; calculation rules for peak reduction and annual recharge; single-page output template. Ready to export to .xlsx.
+5. **How do we screen it?** → **[05 — Screening Spreadsheet](05-Flood-Routing-Screening-Spreadsheet-Structure.md)** — five-sheet logic with cited inputs; ready to export to .xlsx.
 
-6. **[06-Typical-Reach-Design-Concept.md](06-Typical-Reach-Design-Concept.md)** — concept-stage best-guess illustration of one 600 ft reach at 200 ft weir spacing. Plan view + two cross sections (at a weir, mid-pool between weirs) with planting palette by hydrologic zone, habitat / wildlife design notes, weir construction details, and `[VERIFY]` table. Concept-stage only — not engineering.
+6. **What does a reach look like?** → **[06 — Reach Design (200 ft)](06-Typical-Reach-Design-Concept.md)** — plan view + two cross sections + planting palette + species notes at 200 ft weir spacing.
 
-7. **[07-Order-of-Magnitude-Cost-Benefit.md](07-Order-of-Magnitude-Cost-Benefit.md)** — three-scenario bracket (low / central / high) of annual water recharge and total capital cost. Central case: **~5,000–7,000 AF/yr recharge at ~$25–35 M total capital, ~$300/AF levelized**. Includes capital-vs-annual cost split (Section 4), grant-eligibility & beneficiary-share analysis with best-fit programs (Section 5) — central case **~75% grant-fundable** leaving **~$8M beneficiary share** with **annual O&M fully covered by endowment yield**, and target framework for screening modeling (Section 7). Section 2.3a explicitly defends the central-case calibration (favorable-fraction shift from 40% → 50% reflects deliberate corridor routing through SAGBI-favorable Sand Creek zones; infiltration rate shift from 0.5 → 0.6 ft/day reflects GSA's documented working assumption for selected favorable sites; days inundated 30 → 40 reflects the full October–May wet-season window).
+7. **Is it cost-effective?** → **[07 — Cost & Benefit (OOM)](07-Order-of-Magnitude-Cost-Benefit.md)** — central case **~6,000 AF/yr at ~$30 M total capital, ~75% plausibly grant-fundable**. Levelized cost: **~$77/AF** to AGUBC + Vina GSA + Butte County (beneficiary share only — the stakeholder pitch), **~$308/AF** society-wide. **No recurring annual assessment** — the endowment yield covers O&M.
 
 ---
 

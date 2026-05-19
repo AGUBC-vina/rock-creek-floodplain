@@ -736,25 +736,17 @@
   // Configure marked
   marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
 
-  // Override del (strikethrough) tokenizer to require DOUBLE tildes (~~text~~)
-  // not single. Default marked v13 matches ~text~ which collides with our
-  // heavy use of "~" as the "approximately" symbol (e.g. "~5,000 AF/yr").
-  marked.use({
-    tokenizer: {
-      del(src) {
-        const cap = /^~~(?=\S)([\s\S]*?\S)~~/.exec(src);
-        if (cap) {
-          return {
-            type: 'del',
-            raw: cap[0],
-            text: cap[1],
-            tokens: this.lexer.inlineTokens(cap[1])
-          };
-        }
-        return false;
-      }
-    }
-  });
+  // Preprocess markdown to escape single tildes so marked doesn't render
+  // "~5,000 AF/yr ... ~$25 M" as strikethrough. marked v13's del tokenizer
+  // greedily matches ~text~ on top of GFM's intended ~~text~~. We use "~"
+  // heavily as the "approximately" symbol throughout the deliverables.
+  //
+  // Strategy: replace every single tilde (not part of ~~) with \~ so marked
+  // sees an escaped literal. Pairs of tildes (~~) are preserved in case
+  // strikethrough is ever intentional.
+  function escapeApproxTildes(md) {
+    return md.replace(/(^|[^~])~(?!~)/g, '$1\\~');
+  }
 
   const tabMap = {
     readme: '00-README-Deliverables.md',
@@ -784,7 +776,7 @@
       const resp = await fetch(file + cacheBust, { cache: 'no-cache' });
       if (!resp.ok) throw new Error(resp.status + ' ' + resp.statusText);
       const text = await resp.text();
-      target.innerHTML = marked.parse(text);
+      target.innerHTML = marked.parse(escapeApproxTildes(text));
       loaded.add(key);
     } catch (e) {
       target.innerHTML = '<p style="color:#b35c1e"><strong>Could not load <code>' + file + '</code>.</strong> ' +
