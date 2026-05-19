@@ -11,10 +11,16 @@
 | --- | --- | --- | --- |
 | Annual diverted-and-recharged water | ~200 AF/yr | **~2,500–3,000 AF/yr** | ~9,000 AF/yr |
 | Corridor habitat reactivated | ~200 ac | **~300 ac** | ~400 ac |
-| Total capital cost (one-time) | ~$15 M | **~$25–35 M** | ~$50 M |
+| **Total capital cost (one-time)** | ~$15 M | **~$25–35 M** | ~$50 M |
+| **Annual operating cost (ongoing)** | ~$80 K/yr | **~$120 K/yr** | ~$180 K/yr |
+| **Likely grant-fundable share of capital** | 65–85% | **~75% (~$22 M)** | up to ~90% |
+| **Beneficiary share (one-time)** | ~$2 M | **~$8 M (incl. endowment)** | ~$17 M |
+| **Beneficiary share (annual)** | covered by endowment yield | **covered by endowment yield** | covered by endowment yield |
 | Levelized cost per AF of recharge (30-yr life, 4% discount) | ~$4,500/AF | **~$650/AF** | ~$150/AF |
 
 The central case puts the concept at **~30–40% of the Vina Subbasin's current annual storage growth (~8,000 AF/yr per the WY 2025 Vina GSA Annual Report)** and at a **per-AF cost competitive with California surface-water alternatives** (typical $300–2,000/AF, lower for banking projects). The wide bracket between low and high reflects honest uncertainty in three drivers — **favorable-subsurface fraction**, **infiltration rate**, and **days of available flow per year** — that the Roadmap's Phase 1 fieldwork (FDEM + test pits, Steps R-1 through R-3) is specifically designed to narrow.
+
+**Funding picture in one sentence.** Roughly **three-quarters of the $30M central-case capital is plausibly grant-fundable** (Prop 4, DWR Flood-MAR, FEMA BRIC, NRCS, USACE, Caltrans partnership, WCB) — leaving a **beneficiary share on the order of $5–10M one-time**, of which ~$3M is the perpetual O&M endowment that then covers the ~$120K/yr ongoing operating cost so that **beneficiaries do not absorb a recurring annual line item.** Sections 4 and 5 below break this down.
 
 ---
 
@@ -117,9 +123,142 @@ Phasing matches the AGUBC-vina funding pathway pattern (Prop 4 / WaterSMART / SG
 
 ---
 
-## 4. Cost-Benefit Ratios
+## 4. Capital vs. Annual — What's One-Time, What Recurs
 
-### 4.1 Levelized cost per acre-foot of recharge
+Every line item in Section 3 is **one-time capital expenditure** (project creation). The Rock Creek concept also generates a **small recurring annual operating cost** of approximately **$120K/yr (central case)**, which is intentionally covered by the **perpetual O&M endowment** that is itself a one-time capital line item (category I above). The design intent: pay all the one-time capital, fund the endowment once, and have no recurring assessment on AGUBC members, Vina GSA payers, or other beneficiaries.
+
+### 4.1 One-time capital by category
+
+| Category | Central capital ($M) | Cost timing |
+| --- | --- | --- |
+| A. Intake / diversion structure | 4.5 | Pre-construction + construction year |
+| B. Conveyance to corridor heads | 2.5 | Construction year |
+| C. Rock weirs (~275 weirs at 200 ft spacing) | 3.5 | Construction year (phased over 1–3 yr) |
+| D. Plantings + corridor restoration (~300 ac) | 3.5 | Construction year + 5-yr establishment |
+| E. Engineering / design / project management | 1.5 | Pre-construction (1–2 yr ahead) |
+| F. Permitting + CEQA + ESA + CDFW + FEMA CLOMR | 2.0 | Pre-construction (1–2 yr) |
+| G. Land control (easements, ~700–1,000 ac corridor + buffer) | 2.0 | Pre-construction + ongoing acquisition |
+| H. Pre-construction monitoring + 5-yr establishment | 0.7 | Years 1–5 after construction |
+| I. Perpetual O&M endowment seed | 3.0 | Capitalized at project completion |
+| J. Contingency (~25–30% of A–I) | 6.5 | Distributed across construction |
+| **TOTAL ONE-TIME CAPITAL (central)** | **~$30 M** | spread over ~3–5 yr project window |
+
+### 4.2 Annual ongoing operating cost
+
+Funded from the **endowment yield** (~4% annual return on the $3M endowment seed = ~$120K/yr).
+
+| Recurring activity | Annual ($K/yr, central) | Notes |
+| --- | --- | --- |
+| Sediment / vegetation management (corridor) | 30–50 | Rotational grazing, invasive removal, periodic sediment-removal cycle |
+| Structure inspections + minor repairs | 15–25 | Biennial weir inspections; repair after major flow events |
+| Post-establishment monitoring (Years 6+) | 20–30 | Photo points, hydrologic / habitat metrics |
+| Stewardship organization fee | 15–25 | LTA-accredited non-profit overhead (Singer Creek model) |
+| Insurance / liability | 10–20 | General + environmental liability |
+| Reserve for major-event repairs (avg over time) | 15–25 | Smooths years with no damage vs. flood-year repair spikes |
+| **TOTAL ANNUAL O&M (central)** | **~$120 K/yr** | matches endowment yield → net zero recurring cost to beneficiaries |
+
+### 4.3 Resilience of the funding model
+
+Three things stress-test the model:
+
+1. **If the endowment underperforms** (e.g., 2% real return instead of 4%): annual yield drops to ~$60K/yr; the gap (~$60K/yr) falls to beneficiaries or to additional grant cycles.
+2. **If a 100-yr-class flood damages multiple structures**: one-time repair costs of $500K–$2M are possible, exceeding the reserve. Either FEMA disaster-recovery funding (post-event) or a sinking-fund line item in the endowment covers this.
+3. **If land-control easements include annual lease payments instead of one-time purchase**: shifts G from capital to a recurring annual line item. This would meaningfully change the cost shape. The base assumption here is one-time easement payments — to be confirmed in landowner conversations (Roadmap L-3).
+
+---
+
+## 5. Grant-Eligibility & Beneficiary Share
+
+The core funding-strategy question: **how much of the $30M one-time capital is plausibly grant-fundable, and who absorbs the rest?**
+
+### 5.1 Grant-eligibility by cost category
+
+Eligibility ranges are practitioner-judgment estimates, not formal program assessments. They reflect typical scope-fit between the Rock Creek concept and the current California / federal funding landscape (2026).
+
+| Category | Central cost ($M) | Typical grant-eligible % | Best-fit programs | Beneficiary share ($M) |
+| --- | --- | --- | --- | --- |
+| A. Intake / diversion | 4.5 | **75–100%** | Prop 4 (groundwater $386M / regional conveyance $75M lines), DWR Flood-MAR Resilience Grants, FEMA BRIC, USACE Sec. 1135, Caltrans partnership (SR 99 protection) | 0–1.1 |
+| B. Conveyance to corridor heads | 2.5 | **75–100%** | Same as above | 0–0.6 |
+| C. Rock weirs | 3.5 | **80–100%** | Prop 4, NRCS EQIP, NRCS RCPP, CDFW Stream Flow Enhancement, USACE Sec. 1135 | 0–0.7 |
+| D. Plantings + restoration | 3.5 | **80–100%** | Prop 4, CA Wildlife Conservation Board (WCB) restoration grants, CDFW, NRCS RCPP, ACEP-WRE | 0–0.7 |
+| E. Engineering / design | 1.5 | **75–90%** | Typically bundled with the construction grant; some programs cap design at 10–15% of construction | 0.15–0.38 |
+| F. Permitting + CEQA + ESA + FEMA CLOMR | 2.0 | **50–90%** | Bundled; some require local cost share | 0.2–1.0 |
+| G. Land control (easements) | 2.0 | **50–100%** | NRCS ACEP-ALE (Agricultural Land Easements), NRCS ACEP-WRE (Wetland Reserve Easements), WCB conservation easement acquisition | 0–1.0 |
+| H. Monitoring (5-yr establishment) | 0.7 | **75–100%** | Bundled with construction grant; WaterSMART Applied Science Grant for specific science questions | 0–0.18 |
+| I. Endowment seed | 3.0 | **0–30%** | **Generally not grant-eligible** — private foundations (California Water Foundation, Resources Legacy Fund) occasionally seed perpetual endowments | **2.1–3.0** |
+| J. Contingency | 6.5 | Follows underlying mix | Proportional | 1.0–1.5 |
+| **TOTAL** | **$30 M** | **~70–90% blended grant-eligible** | | **~$3–7 M (excl. endowment) / ~$5–10 M (incl. endowment)** |
+
+### 5.2 What the central-case funding picture looks like
+
+| Source | Central ($M) | Notes |
+| --- | --- | --- |
+| Prop 4 (CA Climate Resilience Bond) | 10–14 | Multiple tranches across construction years; covers A, B, C, D, parts of E |
+| DWR Flood-MAR Resilience Grants | 3–5 | Targeted program; strong fit |
+| FEMA BRIC | 3–5 | Requires benefit-cost analysis demonstrating flood-damage avoidance |
+| NRCS programs (EQIP / RCPP / ACEP) | 2–4 | Covers parts of C, D, G; ag-land working-easement pathway |
+| WCB / CDFW habitat grants | 1–3 | Covers parts of D, G |
+| USACE Sec. 1135 (if pursued) | 0–3 | Adds capacity if the Corps takes interest |
+| Caltrans partnership (SR 99 protection) | 0–2 | If Caltrans treats the project as a flood-defense investment for SR 99 |
+| Private foundations (e.g., California Water Foundation) | 0–1 | Mainly for endowment / public-engagement |
+| **TOTAL GRANT** | **~$22 M (~75%)** | **multi-tranche, multi-year** |
+| | | |
+| **Beneficiary share** | **~$8 M** | of which ~$3 M is endowment seed |
+
+### 5.3 Beneficiary share — who pays the residual?
+
+If $8M one-time falls outside grants, who absorbs it? The beneficiary list (in rough proportion to benefit received):
+
+| Beneficiary | Benefit | Plausible share of beneficiary cost |
+| --- | --- | --- |
+| **Vina Subbasin landowners / Vina GSA payers** | Recharge yield (~3,000 AF/yr) → SGMA compliance + groundwater reliability | 35–50% |
+| **Butte County (general fund or special district)** | Flood-risk reduction, avoided emergency response, SR 99 protection | 15–25% |
+| **Caltrans (District 3)** | SR 99 grade-raise avoidance value per the D3 memorandum (Lee, Nov 2025) | 10–20% |
+| **AGUBC members** | SGMA / advocacy value + recharge for member operations | 10–15% |
+| **Tuscan Water District (TWD)** | Recharge contribution that aligns with TWD implementation mission | 5–15% |
+| **Private foundations / public-good donors** | Habitat + climate-resilience values | 0–15% |
+
+These shares are **starting points for a cost-allocation conversation**, not final allocations. Several beneficiaries will likely also provide *in-kind contributions* (staff time, parcel access, landowner outreach) that reduce the cash share.
+
+### 5.4 Funding-strategy notes
+
+1. **Multi-tranche grant strategy beats single big ask.** Prop 4 IRWM rounds typically cap individual projects at $5–10M; FEMA BRIC similarly caps. A $30M project benefits from **3–5 separate grant tranches**, ideally aligned with phasing (north corridor first, south corridor follow-on — see Deliverable 06 phased budget).
+
+2. **Match-stacking rules vary.** Most California state grants allow federal match (and vice versa). Some programs prohibit it. Verify against each program's specific terms; never assume.
+
+3. **Required local match is meetable from beneficiaries.** Typical local match requirements are 25–50%. For a $30M project with 75% grant coverage, ~$7.5M in local match is needed. This aligns closely with the $8M central-case beneficiary share — i.e., the beneficiary share substantially **IS** the local match, not separate.
+
+4. **Endowment is hardest to grant-fund.** Plan to raise the endowment seed (~$3M) from a combination of: AGUBC member capital, Vina GSA reserves, private-foundation lead gift (e.g., California Water Foundation has funded perpetual stewardship in similar contexts), and bond-funded reserve allocation if a special district forms.
+
+5. **Phased construction de-risks all of this.** Build the north corridor (Phase 1, ~$15–20M, ~1,500 AF/yr) with the first 2–3 grant tranches. Demonstrated success — monitored recharge, habitat establishment, no FEMA no-rise issues — strengthens applications for Phase 2 (south corridor) and the endowment ask.
+
+6. **AGUBC's 501(c)(6) status.** Most state and federal water/habitat grants require a public agency co-applicant or fiscal agent. Vina GSA, Tuscan Water District, or Butte County are obvious co-applicants. The Canella Act TAP pathway (noted in CLAUDE.md) may also be relevant.
+
+### 5.5 Best-fit programs — quick reference
+
+| Program | Sponsor | Typical award | Fit |
+| --- | --- | --- | --- |
+| **Prop 4 — Groundwater Management ($386M)** | DWR | $2–15M | Strong; primary candidate |
+| **Prop 4 — IRWM ($100M)** | DWR | $1–10M | Strong; regional water-management framing |
+| **Prop 4 — Regional Conveyance ($75M)** | DWR | $5–25M | Strong fit for intake + conveyance |
+| **DWR Flood-MAR Resilience** | DWR | $3–15M | Direct fit; targeted program for projects of exactly this type |
+| **DWR SGMA Implementation Grants** | DWR | $1–10M | Mid-strong; recharge contribution to GSP sustainability |
+| **FEMA BRIC** | FEMA | $1–10M | Strong if benefit-cost analysis demonstrates flood-damage avoidance |
+| **WaterSMART (Bureau of Reclamation)** | USBR | $0.1–2M per program | Mid; deadline July 8, 2026 for Applied Science Grant |
+| **USACE Sec. 1135** | USACE | $5–15M | Strong if Corps takes interest; framed as ecosystem restoration |
+| **NRCS EQIP** | NRCS | $0.1–1M per landowner | Mid; on-farm conservation practices |
+| **NRCS RCPP** | NRCS | $1–10M | Strong; partnership program supporting multi-landowner projects |
+| **NRCS ACEP-ALE / WRE** | NRCS | varies (per-easement) | Strong fit for land control + wetland restoration |
+| **CA Wildlife Conservation Board** | WCB | $0.5–5M | Mid-strong; habitat restoration + conservation easements |
+| **CDFW Stream Flow Enhancement** | CDFW | $0.5–3M | Mid; restoration for instream flow + habitat |
+| **Caltrans partnership** | Caltrans D3 | varies | Direct connection to SR 99 flood-defense |
+| **California Water Foundation** | private | $0.1–2M | Habitat / capacity / endowment seed |
+
+---
+
+## 6. Cost-Benefit Ratios
+
+### 6.1 Levelized cost per acre-foot of recharge
 
 Annualizing the central-case capital over a 30-year project life at a 4% discount rate (capital recovery factor = 0.0578):
 
@@ -134,7 +273,7 @@ Annualizing the central-case capital over a 30-year project life at a 4% discoun
 
 The low and high scenarios bracket from ~$150/AF (high yield) to ~$4,500/AF (low yield).
 
-### 4.2 Comparison to alternatives
+### 6.2 Comparison to alternatives
 
 | Alternative | Typical levelized $/AF | Source |
 | --- | --- | --- |
@@ -147,7 +286,7 @@ The low and high scenarios bracket from ~$150/AF (high yield) to ~$4,500/AF (low
 
 **The Rock Creek concept's per-AF cost lands in the competitive middle of this range**, with the bonus of bundled flood-attenuation and habitat-creation benefits not captured in the $/AF metric.
 
-### 4.3 Unmonetized co-benefits
+### 6.3 Unmonetized co-benefits
 
 Not in the per-AF number above, but real:
 
@@ -158,7 +297,7 @@ Not in the per-AF number above, but real:
 
 ---
 
-## 5. Target Framework — Numbers to Work Against
+## 7. Target Framework — Numbers to Work Against
 
 These are the **stretch / acceptable / minimum** targets that next-stage screening modeling (Deliverable 5) and detailed design should aim at:
 
@@ -177,7 +316,7 @@ These are the **stretch / acceptable / minimum** targets that next-stage screeni
 
 ---
 
-## 6. Key Sensitivities (What Moves the Answer)
+## 8. Key Sensitivities (What Moves the Answer)
 
 Most-to-least-influential drivers, by central-case sensitivity:
 
@@ -190,7 +329,7 @@ Most-to-least-influential drivers, by central-case sensitivity:
 
 ---
 
-## 7. Open `[VERIFY]` Items Specific to This OOM
+## 9. Open `[VERIFY]` Items Specific to This OOM
 
 | Item | Resolution path |
 | --- | --- |
@@ -206,7 +345,7 @@ Most-to-least-influential drivers, by central-case sensitivity:
 
 ---
 
-## 8. Cross-References
+## 10. Cross-References
 
 - **Deliverable 1** — Parameter table rows 30–33, 36–40 (infiltration and aquifer parameters used here).
 - **Deliverable 2** — Hydrology dataset comparison and bifurcation-split values used in the water-availability calc.
