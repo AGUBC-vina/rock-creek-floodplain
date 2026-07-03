@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 320" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Bar chart comparing the Q100 discharge on Keefer Slough near Garner Lane: FEMA 2011 FIS effective value of 680 cfs versus DWR HEC-RAS 2D model value of 2,391 cfs, a 3.52 times difference at the same cross-section">
+
+  <!-- ====== Title ====== -->
+  <text x="8" y="18" font-size="16" font-weight="700" fill="#1f2a33">Keefer Slough Q100 near Garner Lane</text>
+
+  <!-- ====== Difference bracket / annotation ====== -->
+  <text x="200" y="45" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2a33">3.52&#xD7;</text>
+  <g stroke="#1f2a33" stroke-width="1.2" fill="none">
+    <line x1="131.8" y1="58" x2="268.2" y2="58"/>
+    <line x1="131.8" y1="58" x2="131.8" y2="65"/>
+    <line x1="268.2" y1="58" x2="268.2" y2="65"/>
+  </g>
+  <text x="200" y="83" text-anchor="middle" font-size="13" fill="#4a5a66">same Keefer Slough cross-section, upstream of Garner Lane</text>
+
+  <!-- ====== Gridlines (0&#x2013;2,600 cfs, 500-cfs interval) ====== -->
+  <g stroke="#e2dccf" stroke-width="1">
+    <line x1="45" y1="236.35" x2="355" y2="236.35"/>
+    <line x1="45" y1="202.69" x2="355" y2="202.69"/>
+    <line x1="45" y1="169.04" x2="355" y2="169.04"/>
+    <line x1="45" y1="135.38" x2="355" y2="135.38"/>
+    <line x1="45" y1="101.73" x2="355" y2="101.73"/>
+  </g>
+  <g font-size="13" fill="#7a8894" text-anchor="end">
+    <text x="40" y="274">0</text>
+    <text x="40" y="240.35">500</text>
+    <text x="40" y="206.69">1,000</text>
+    <text x="40" y="173.04">1,500</text>
+    <text x="40" y="139.38">2,000</text>
+    <text x="40" y="105.73">2,500</text>
+  </g>
+
+  <!-- ====== Axis baseline ====== -->
+  <line x1="45" y1="270" x2="355" y2="270" stroke="#1f2a33" stroke-width="1.5"/>
+
+  <!-- ====== Bars ====== -->
+  <!-- FEMA 2011 FIS (effective): 680 cfs -->
+  <rect x="96.8" y="224.23" width="70" height="45.77" fill="#7a8894"/>
+  <text x="131.8" y="215.23" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2a33">680 cfs</text>
+
+  <!-- DWR HEC-RAS 2D: 2,391 cfs -->
+  <rect x="233.2" y="109.07" width="70" height="160.93" fill="#b35c1e"/>
+  <text x="268.2" y="100.07" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2a33">2,391 cfs</text>
+
+  <!-- ====== Category labels ====== -->
+  <g font-size="13" fill="#1f2a33" text-anchor="middle">
+    <text x="131.8" y="287">FEMA 2011 FIS</text>
+    <text x="131.8" y="307">(effective)</text>
+    <text x="268.2" y="287">DWR HEC-RAS 2D</text>
+  </g>
+
+</svg>

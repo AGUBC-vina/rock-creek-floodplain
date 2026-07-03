@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Bar chart: levelized cost per acre-foot of recharge under three framings. Beneficiary share ~$77/AF ($8M one-time, including $3M endowment). Grant-funded share ~$212/AF ($22M). Total project ~$308/AF ($30M). A shaded band marks the typical California surface-water transaction range of $300 to 2,000 per acre-foot.">
+
+  <!-- ===================== Background band (painted first, bars sit on top) ===================== -->
+  <!-- Band spans from y-value 300 up to the top of the plot area (y=40), i.e. the CA surface-water transaction floor -->
+  <rect x="40" y="40" width="690" height="161.54" fill="#e6eef1" fill-opacity="0.65"/>
+
+  <!-- Band label (two lines), positioned in upper band area, clear of bar 3's value label (~y=184) -->
+  <text x="460" y="60" text-anchor="middle" font-size="13" fill="#4a5a66">typical California surface-water transaction range</text>
+  <text x="460" y="77" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5a66">— $300&#8211;2,000/AF</text>
+
+  <!-- Small upward arrow annotation near the top edge of the band -->
+  <line x1="695" y1="108" x2="695" y2="86" stroke="#4a5a66" stroke-width="1.5"/>
+  <path d="M 695 86 L 691 94 L 699 94 Z" fill="#4a5a66"/>
+  <text x="695" y="122" text-anchor="middle" font-size="13" fill="#4a5a66">range extends</text>
+  <text x="695" y="137" text-anchor="middle" font-size="13" fill="#4a5a66">to $2,000</text>
+
+  <!-- ===================== Gridlines (y-axis 0-650 $/AF, every 100) ===================== -->
+  <!-- y=340 is 0; scale = 300px / 650 units -->
+  <g stroke="#e2dccf" stroke-width="1">
+    <line x1="70" y1="340.00" x2="730" y2="340.00"/>
+    <line x1="70" y1="293.85" x2="730" y2="293.85"/>
+    <line x1="70" y1="247.69" x2="730" y2="247.69"/>
+    <line x1="70" y1="201.54" x2="730" y2="201.54"/>
+    <line x1="70" y1="155.38" x2="730" y2="155.38"/>
+    <line x1="70" y1="109.23" x2="730" y2="109.23"/>
+    <line x1="70" y1="63.08" x2="730" y2="63.08"/>
+  </g>
+
+  <!-- Tick labels for gridlines -->
+  <g font-size="13" fill="#7a8894" text-anchor="end">
+    <text x="62" y="344.00">0</text>
+    <text x="62" y="297.85">100</text>
+    <text x="62" y="251.69">200</text>
+    <text x="62" y="205.54">300</text>
+    <text x="62" y="159.38">400</text>
+    <text x="62" y="113.23">500</text>
+    <text x="62" y="67.08">600</text>
+  </g>
+
+  <!-- ===================== Bars ===================== -->
+  <!-- Bar 1 (leftmost): Beneficiary share — value 77 -->
+  <rect x="160" y="304.46" width="100" height="35.54" fill="#1e4554"/>
+  <text x="210" y="290" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2a33">~$77/AF</text>
+
+  <!-- Bar 2: Grant-funded share — value 212 -->
+  <rect x="350" y="242.15" width="100" height="97.85" fill="#2c5f73"/>
+  <text x="400" y="228" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2a33">~$212/AF</text>
+
+  <!-- Bar 3: Total project — value 308 -->
+  <rect x="540" y="197.85" width="100" height="142.15" fill="#7a8894"/>
+  <text x="590" y="184" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2a33">~$308/AF</text>
+
+  <!-- Baseline (x-axis) -->
+  <line x1="70" y1="340" x2="730" y2="340" stroke="#1f2a33" stroke-width="1.5"/>
+
+  <!-- ===================== Below-axis labels ===================== -->
+  <g text-anchor="middle" font-size="13" fill="#1f2a33">
+    <text x="210" y="360" font-weight="700">Beneficiary share</text>
+    <text x="210" y="377">$8 M one-time (incl. $3 M endowment)</text>
+
+    <text x="400" y="360" font-weight="700">Grant-funded share</text>
+    <text x="400" y="377">$22 M</text>
+
+    <text x="590" y="360" font-weight="700">Total project</text>
+    <text x="590" y="377">$30 M</text>
+  </g>
+
+  <!-- ===================== Title ===================== -->
+  <text x="12" y="24" font-size="16" font-weight="700" fill="#1f2a33">Levelized cost per acre-foot — three framings (whose money is counted)</text>
+
+</svg>

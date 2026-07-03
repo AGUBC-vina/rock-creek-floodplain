@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 320" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Stacked bar chart comparing the Rock Creek / Keefer Slough bifurcation flow split between the 2011 FEMA FIS (56% Rock Creek, 44% Keefer Slough) and the current DWR HEC-RAS 2D model (39% Rock Creek, 61% Keefer Slough)">
+
+  <!-- Title -->
+  <text x="185" y="20" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2a33">Bifurcation flow split — then and now</text>
+
+  <!-- Annotation arrow between the two bars -->
+  <line x1="128" y1="52" x2="242" y2="52" stroke="#4a5a66" stroke-width="1.5"/>
+  <path d="M 242 52 L 235 48 L 235 56 Z" fill="#4a5a66"/>
+  <text x="185" y="42" text-anchor="middle" font-size="13" fill="#4a5a66">sediment + vegetation</text>
+  <text x="185" y="66" text-anchor="middle" font-size="13" fill="#4a5a66">at the bifurcation</text>
+
+  <!-- Baseline for both bars -->
+  <line x1="30" y1="275" x2="340" y2="275" stroke="#e2dccf" stroke-width="1.5"/>
+
+  <!-- ===================== LEFT BAR: 2011 FEMA FIS ===================== -->
+  <!-- Bar x=45 width=110; total height 190 (y=85 to y=275) -->
+
+  <!-- Keefer Slough segment (top), 44% -->
+  <rect x="45" y="85" width="110" height="83.6" fill="#b08d4a"/>
+  <!-- Rock Creek segment (bottom), 56% -->
+  <rect x="45" y="168.6" width="110" height="106.4" fill="#2c5f73"/>
+
+  <!-- Segment labels -->
+  <text x="100" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2a33">Keefer Slough</text>
+  <text x="100" y="138" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2a33">44%</text>
+
+  <text x="100" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Rock Creek</text>
+  <text x="100" y="232" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">56%</text>
+
+  <!-- Left bar title -->
+  <text x="100" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2a33">2011 FEMA FIS</text>
+
+  <!-- ===================== RIGHT BAR: DWR HEC-RAS 2D (current) ===================== -->
+  <!-- Bar x=215 width=110; total height 190 (y=85 to y=275) -->
+
+  <!-- Keefer Slough segment (top), 61% -->
+  <rect x="215" y="85" width="110" height="115.9" fill="#b08d4a"/>
+  <!-- Rock Creek segment (bottom), 39% -->
+  <rect x="215" y="200.9" width="110" height="74.1" fill="#2c5f73"/>
+
+  <!-- Segment labels -->
+  <text x="270" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2a33">Keefer Slough</text>
+  <text x="270" y="150" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2a33">61%</text>
+
+  <text x="270" y="230" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Rock Creek</text>
+  <text x="270" y="249" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">39%</text>
+
+  <!-- Right bar title (two lines to avoid overflow) -->
+  <text x="270" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2a33">DWR HEC-RAS 2D</text>
+  <text x="270" y="311" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2a33">(current)</text>
+
+  <!-- Bar outlines for crispness -->
+  <rect x="45" y="85" width="110" height="190" fill="none" stroke="#1f2a33" stroke-width="1"/>
+  <rect x="215" y="85" width="110" height="190" fill="none" stroke="#1f2a33" stroke-width="1"/>
+
+</svg>

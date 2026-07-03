@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Stacked bar showing who funds the approximately 30 million dollar central-case capital cost for the Rock Creek concept: approximately 22 million dollars, about 75 percent, is grant-fundable across Prop 4, DWR Flood-MAR, FEMA BRIC, NRCS, Wildlife Conservation Board and CDFW, USACE, and Caltrans; the remaining approximately 8 million dollar beneficiary share is a one-time cost, of which approximately 3 million dollars seeds a perpetual operations and maintenance endowment whose approximately 4 percent annual yield on 3 million dollars, about 120 thousand dollars per year, covers annual operations and maintenance so there is no recurring assessment on beneficiaries">
+
+  <defs>
+    <pattern id="endowment-hatch" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#1f2a33" stroke-width="1" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Title -->
+  <text x="24" y="26" font-size="16" font-weight="700" fill="#1f2a33">Who funds the ~$30 M central case</text>
+
+  <!-- ===================== STACKED BAR ===================== -->
+  <!-- Bar spans x=40 to x=720 (680 units = $30 M); y=70 to y=134 (height 64) -->
+
+  <!-- Grant-funded segment: ~$22 M (22/30 of bar) -->
+  <rect x="40" y="70" width="498.67" height="64" fill="#2c5f73"/>
+
+  <!-- Beneficiary segment: ~$8 M (8/30 of bar) -->
+  <rect x="538.67" y="70" width="181.33" height="64" fill="#b08d4a"/>
+
+  <!-- Endowment sub-portion overlay: rightmost ~$3 M of the beneficiary segment, diagonal hatch texture -->
+  <rect x="652" y="70" width="68" height="64" fill="url(#endowment-hatch)"/>
+
+  <!-- Divider between the two main segments -->
+  <line x1="538.67" y1="70" x2="538.67" y2="134" stroke="#1f2a33" stroke-width="1"/>
+
+  <!-- Divider between beneficiary base and endowment sub-portion -->
+  <line x1="652" y1="70" x2="652" y2="134" stroke="#1f2a33" stroke-width="1"/>
+
+  <!-- Bar outline for crispness -->
+  <rect x="40" y="70" width="680" height="64" fill="none" stroke="#1f2a33" stroke-width="1"/>
+
+  <!-- Grant segment internal labels (white, centered in segment) -->
+  <text x="289.33" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Grant-funded — ~$22 M (~75%)</text>
+  <text x="289.33" y="116" text-anchor="middle" font-size="13" fill="#ffffff">Prop 4 · DWR Flood-MAR · FEMA BRIC · NRCS · WCB/CDFW · USACE · Caltrans</text>
+
+  <!-- ===================== BRACKET UNDER BENEFICIARY SEGMENT ===================== -->
+  <!-- Spans x=538.67 to x=720, sitting just below the bar -->
+  <path d="M 538.67 144 L 538.67 150 L 720 150 L 720 144" fill="none" stroke="#1f2a33" stroke-width="1"/>
+  <text x="720" y="167" text-anchor="end" font-size="15" font-weight="700" fill="#1f2a33">~$8 M beneficiary share</text>
+  <text x="720" y="184" text-anchor="end" font-size="15" font-weight="700" fill="#1f2a33">— one-time</text>
+
+  <!-- ===================== ENDOWMENT LEADER LINE + LABEL ===================== -->
+  <!-- Leader from the hatched sub-portion (top edge) down to its label -->
+  <line x1="686" y1="70" x2="686" y2="58" stroke="#1f2a33" stroke-width="1"/>
+  <line x1="686" y1="58" x2="612" y2="58" stroke="#1f2a33" stroke-width="1"/>
+  <text x="608" y="61" text-anchor="end" font-size="13.5" fill="#1f2a33">~$3 M perpetual O&amp;M endowment seed</text>
+
+  <!-- ===================== BOTTOM DISCLOSURE LINE ===================== -->
+  <line x1="24" y1="216" x2="736" y2="216" stroke="#e2dccf" stroke-width="1"/>
+  <text x="24" y="238" font-size="13.5" fill="#4a5a66">Endowment yield (~4% on $3 M ≈ ~$120 K/yr) covers annual O&amp;M — no recurring assessment on beneficiaries.</text>
+
+</svg>

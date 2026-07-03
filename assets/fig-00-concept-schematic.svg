@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-label="Schematic of the Rock Creek floodwater diversion, spreading, and recharge concept: a proposed diversion on Rock Creek feeds two overland corridors lined with distributed rock weirs that recharge the Tuscan aquifer, while Rock Creek continues downstream to its bifurcation with Keefer Slough near SR 99">
+  <defs>
+    <marker id="rechargeArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c5f73"/>
+    </marker>
+  </defs>
+
+  <style>
+    text { font-family: ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: #1f2a33; }
+    .title { font-size: 16px; font-weight: 700; }
+    .node-title { font-size: 15px; font-weight: 700; }
+    .label { font-size: 13px; }
+    .sublabel { font-size: 13px; fill: #4a5a66; }
+    .tag { font-size: 13px; fill: #7a8894; font-weight: 700; }
+    .weir-label { font-size: 13px; fill: #4a5a66; }
+    .annotation { font-size: 13px; font-style: italic; fill: #4a5a66; }
+  </style>
+
+  <!-- ============ BACKGROUND ============ -->
+  <rect x="0" y="0" width="760" height="420" fill="#ffffff"/>
+
+  <!-- ============ TITLE ============ -->
+  <text x="380" y="16" text-anchor="middle" class="title">Rock Creek floodwater diversion, spreading &amp; recharge — concept schematic</text>
+  <line x1="20" y1="28" x2="740" y2="28" stroke="#e2dccf" stroke-width="1"/>
+
+  <!-- ============================================================ -->
+  <!-- NORTH CORRIDOR — title and sub-label (above the band)         -->
+  <!-- ============================================================ -->
+  <text x="330" y="52" text-anchor="middle" class="node-title">Sand Creek North — ~6 mi</text>
+  <text x="330" y="66" text-anchor="middle" class="sublabel">rejoins Rock Creek near SR 99 via Sand Creek</text>
+
+  <!-- ============================================================ -->
+  <!-- NORTH CORRIDOR BAND (soft fill, accent stroke) — y 74 to 114  -->
+  <!-- ============================================================ -->
+  <path d="M 230 78
+           C 320 72, 460 73, 560 82
+           C 605 86, 632 91, 648 98
+           L 648 114
+           C 632 107, 605 102, 560 98
+           C 460 89, 320 88, 230 94
+           Z"
+        fill="#e6eef1" stroke="#2c5f73" stroke-width="1.5"/>
+
+  <!-- North band weir ticks (gold, solid) -->
+  <g stroke="#b08d4a" stroke-width="2.5" stroke-linecap="round">
+    <line x1="252" y1="83" x2="252" y2="93"/>
+    <line x1="282" y1="81" x2="282" y2="91"/>
+    <line x1="312" y1="80" x2="312" y2="90"/>
+    <line x1="342" y1="79" x2="342" y2="89"/>
+    <line x1="372" y1="78" x2="372" y2="88"/>
+    <line x1="402" y1="78" x2="402" y2="88"/>
+    <line x1="432" y1="79" x2="432" y2="89"/>
+    <line x1="462" y1="80" x2="462" y2="90"/>
+    <line x1="492" y1="82" x2="492" y2="92"/>
+    <line x1="522" y1="85" x2="522" y2="95"/>
+    <line x1="552" y1="88" x2="552" y2="98"/>
+    <line x1="580" y1="92" x2="580" y2="102"/>
+    <line x1="608" y1="97" x2="608" y2="107"/>
+    <line x1="632" y1="102" x2="632" y2="112"/>
+  </g>
+
+  <!-- North band recharge arrows (downward, out of band) -->
+  <g stroke="#2c5f73" stroke-width="2" fill="none">
+    <path d="M 372 114 L 372 128" marker-end="url(#rechargeArrow)"/>
+    <path d="M 462 111 L 462 128" marker-end="url(#rechargeArrow)"/>
+  </g>
+  <text x="417" y="144" text-anchor="middle" class="label" fill="#2c5f73">recharge to the Tuscan aquifer</text>
+
+  <!-- ============================================================ -->
+  <!-- SHARED WEIR LABEL (applies to weir ticks in both bands)       -->
+  <!-- ============================================================ -->
+  <text x="425" y="190" text-anchor="middle" class="weir-label">hundreds of low rock weirs, 2–3 ft (200 ft spacing illustrative — Deliverable 06)</text>
+
+  <!-- ============================================================ -->
+  <!-- MAINSTEM: Rock Creek in, diversion, bifurcation, onward       -->
+  <!-- ============================================================ -->
+
+  <!-- Rock Creek inflow label (above the line, clear of the north conveyance curve) -->
+  <text x="14" y="196" class="label" fill="#4a5a66">Rock Creek — from the</text>
+  <text x="14" y="211" class="label" fill="#4a5a66">upper watershed</text>
+
+  <!-- Rock Creek inflow segment (left edge to diversion node) -->
+  <path d="M 14 240 L 150 240" fill="none" stroke="#2c5f73" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Conveyance: diversion node to the two corridor heads (curves END at the band caps) -->
+  <path d="M 150 240
+           C 175 205, 195 150, 228 92"
+        fill="none" stroke="#2c5f73" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 150 240
+           C 175 272, 195 295, 228 312"
+        fill="none" stroke="#2c5f73" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Rock Creek mainstem continuing past diversion to bifurcation -->
+  <path d="M 150 240 L 380 240" fill="none" stroke="#2c5f73" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Diversion node marker -->
+  <circle cx="150" cy="240" r="7" fill="#1e4554" stroke="#1e4554" stroke-width="1.5"/>
+
+  <!-- Diversion node title + sub-label (below the line, right of the south conveyance curve) -->
+  <text x="185" y="266" class="node-title">Proposed diversion — ~1.1 mi upstream of bifurcation</text>
+  <text x="185" y="281" class="sublabel">activates only above a flow trigger;</text>
+  <text x="185" y="296" class="sublabel">normal &amp; low flows pass downstream</text>
+
+  <!-- Bifurcation node marker -->
+  <circle cx="380" cy="240" r="7" fill="#1e4554" stroke="#1e4554" stroke-width="1.5"/>
+
+  <!-- Bifurcation node title + sub-label (above the line, right of node) -->
+  <text x="392" y="215" class="node-title">Rock Creek / Keefer Slough bifurcation</text>
+  <text x="392" y="229" class="sublabel">currently splitting 39 / 61</text>
+
+  <!-- Post-bifurcation: Rock Creek continues (thinner), gently onward to SR 99 area -->
+  <path d="M 380 240 L 672 240" fill="none" stroke="#2c5f73" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="630" y="233" text-anchor="middle" class="label" fill="#2c5f73">Rock Creek</text>
+
+  <!-- Post-bifurcation: Keefer Slough peels toward SR 99 (thinner) -->
+  <path d="M 380 240
+           C 460 240, 540 250, 610 260
+           C 636 264, 656 268, 672 272"
+        fill="none" stroke="#2c5f73" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="530" y="284" text-anchor="middle" class="label" fill="#2c5f73">Keefer Slough (toward SR 99)</text>
+
+  <!-- ============================================================ -->
+  <!-- SR 99 MARKER (right side, where mainstem and corridors meet)  -->
+  <!-- ============================================================ -->
+  <g transform="translate(704,240)">
+    <rect x="-24" y="-13" width="48" height="26" rx="4" fill="#ffffff" stroke="#7a8894" stroke-width="1.5"/>
+    <text x="0" y="5" text-anchor="middle" class="tag" fill="#7a8894">SR 99</text>
+  </g>
+
+  <!-- Corridor bands visually rejoin the system at the SR 99 marker -->
+  <path d="M 648 100 C 672 130, 690 175, 702 226" fill="none" stroke="#2c5f73" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 648 300 C 672 282, 690 266, 702 254" fill="none" stroke="#2c5f73" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- ============================================================ -->
+  <!-- SOUTH CORRIDOR BAND (soft fill, accent stroke) — y 280 to 320 -->
+  <!-- ============================================================ -->
+  <path d="M 230 306
+           C 320 312, 460 311, 560 302
+           C 605 298, 632 293, 648 286
+           L 648 302
+           C 632 309, 605 314, 560 318
+           C 460 327, 320 328, 230 322
+           Z"
+        fill="#e6eef1" stroke="#2c5f73" stroke-width="1.5"/>
+
+  <!-- South band weir ticks (gold, solid) -->
+  <g stroke="#b08d4a" stroke-width="2.5" stroke-linecap="round">
+    <line x1="252" y1="317" x2="252" y2="307"/>
+    <line x1="282" y1="319" x2="282" y2="309"/>
+    <line x1="312" y1="320" x2="312" y2="310"/>
+    <line x1="342" y1="321" x2="342" y2="311"/>
+    <line x1="372" y1="322" x2="372" y2="312"/>
+    <line x1="402" y1="322" x2="402" y2="312"/>
+    <line x1="432" y1="321" x2="432" y2="311"/>
+    <line x1="462" y1="320" x2="462" y2="310"/>
+    <line x1="492" y1="318" x2="492" y2="308"/>
+    <line x1="522" y1="315" x2="522" y2="305"/>
+    <line x1="552" y1="312" x2="552" y2="302"/>
+    <line x1="580" y1="308" x2="580" y2="298"/>
+    <line x1="608" y1="303" x2="608" y2="293"/>
+    <line x1="632" y1="298" x2="632" y2="288"/>
+  </g>
+
+  <!-- South band recharge arrows (downward, away from mainstem) -->
+  <g stroke="#2c5f73" stroke-width="2" fill="none">
+    <path d="M 372 322 L 372 336" marker-end="url(#rechargeArrow)"/>
+    <path d="M 462 320 L 462 336" marker-end="url(#rechargeArrow)"/>
+  </g>
+  <text x="417" y="350" text-anchor="middle" class="label" fill="#2c5f73">recharge to the Tuscan aquifer</text>
+
+  <!-- ============================================================ -->
+  <!-- SOUTH CORRIDOR — title and sub-label (below the band)         -->
+  <!-- ============================================================ -->
+  <text x="330" y="368" text-anchor="middle" class="node-title">Sand Creek South — ~4.4 mi</text>
+  <text x="330" y="382" text-anchor="middle" class="sublabel">returns to Rock Creek</text>
+
+  <!-- ============================================================ -->
+  <!-- BOTTOM ANNOTATION (set apart, italic)                         -->
+  <!-- ============================================================ -->
+  <line x1="20" y1="390" x2="740" y2="390" stroke="#e2dccf" stroke-width="1"/>
+  <text x="380" y="406" text-anchor="middle" class="annotation">Concept intent: trade flood intensity for flood duration — and extract a recharge + habitat dividend.</text>
+
+</svg>
