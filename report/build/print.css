@@ -1,0 +1,44 @@
+@page {
+  size: letter;
+  margin: 1in 0.9in 1.05in 0.9in;
+  @bottom-left { content: "Rock Creek Concept Evaluation Report"; font-family: Georgia, serif; font-size: 8.5pt; color: #5a6a75; }
+  @bottom-right { content: "July 2026  \00b7  Page " counter(page); font-family: Georgia, serif; font-size: 8.5pt; color: #5a6a75; }
+}
+html { font-size: 10.5pt; }
+body { font-family: Georgia, 'Times New Roman', serif; line-height: 1.5; color: #1f2a33; margin: 0; }
+
+header#title-block-header {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 8.4in; text-align: center; page-break-after: always;
+}
+h1.title { font-size: 25pt; line-height: 1.25; margin: 0 0 0.35in; color: #1e4554; border: none; }
+p.subtitle { font-size: 13.5pt; color: #4a5a66; margin: 0 0 0.9in; }
+p.author { font-size: 12pt; margin: 0.08in 0; }
+p.date { font-size: 12pt; color: #4a5a66; margin: 0.08in 0; }
+
+nav#TOC { page-break-after: always; }
+nav#TOC::before { content: "TABLE OF CONTENTS"; display: block; font-weight: bold; font-size: 13pt; color: #1e4554; text-align: center; margin-bottom: 0.25in; }
+nav#TOC ul { list-style: none; padding-left: 0.28in; margin: 0.04in 0; }
+nav#TOC > ul { padding-left: 0; }
+nav#TOC li { margin: 0.055in 0; }
+nav#TOC a { text-decoration: none; color: #1f2a33; }
+
+h1 { font-size: 15.5pt; color: #1e4554; border-bottom: 2px solid #2c5f73; padding-bottom: 4px; margin: 0.42in 0 0.16in; page-break-after: avoid; }
+h2 { font-size: 12pt; color: #2c5f73; margin: 0.28in 0 0.1in; page-break-after: avoid; }
+p { text-align: justify; margin: 0.09in 0; }
+li { margin: 0.04in 0; }
+
+img { max-width: 100%; display: block; margin: 0.12in auto 0.06in; }
+figure { margin: 0.22in 0; page-break-inside: avoid; }
+figcaption { font-size: 9pt; color: #4a5a66; text-align: left; line-height: 1.4; margin-top: 5px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 0.14in 0; page-break-inside: avoid; line-height: 1.35; }
+th { background: #e6eef1; color: #1e4554; text-align: left; }
+th, td { border: 1px solid #c9d4da; padding: 4.5px 7px; vertical-align: top; }
+td p, th p { text-align: left; margin: 0; }
+
+blockquote { border: 1.5px solid #b35c1e; background: #fdf6ef; padding: 9px 13px; margin: 0.16in 0; font-size: 9.5pt; page-break-inside: avoid; }
+blockquote p { text-align: left; margin: 0.05in 0; }
+
+hr { border: none; border-top: 1px solid #c9d4da; margin: 0.25in 0; }
+code { font-family: 'SF Mono', Menlo, monospace; font-size: 0.9em; }

@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rock Creek Floodplain Reactivation Concept &mdash; AGUBC</title>
-<meta name="description" content="Concept-stage technical synthesis for a flood-diversion, groundwater-recharge, and floodplain-reactivation project on Rock Creek, Butte County, California. Prepared for stakeholder review by AGUBC.">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<title>Rock Creek Floodplain Reactivation &mdash; AGUBC</title>
+<meta name="description" content="Divert Rock Creek flood peaks a mile upstream of the Keefer Slough bifurcation and spread them across ten miles of floodplain: ~6,000 AF/yr of recharge, flood relief for SR 99, and reactivated habitat. Concept overview by AGUBC; detail in the July 2026 Concept Evaluation Report.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="preconnect" href="https://basemaps.cartocdn.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
@@ -18,14 +17,13 @@
     --muted: #7a8894;
     --rule: #e2dccf;
     --rule-strong: #c9c0ac;
-    --accent: #2c5f73;      /* deep water blue-green */
+    --accent: #2c5f73;
     --accent-dark: #1e4554;
     --accent-soft: #e6eef1;
     --gold: #b08d4a;
     --warn: #b35c1e;
-    --code-bg: #f3efe7;
     --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(31,42,51,.06);
-    --max: 1080px;
+    --max: 1000px;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -34,496 +32,127 @@
     background: var(--bg);
     color: var(--ink);
     line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(44,95,115,.25); }
-  a:hover { color: var(--accent-dark); border-bottom-color: var(--accent-dark); }
-  header.site {
-    background: linear-gradient(180deg, #243a45 0%, #2c5f73 100%);
-    color: #fff;
-    padding: 26px 24px 22px;
-    border-bottom: 1px solid #1a2a32;
-  }
-  header.site .wrap {
-    max-width: var(--max);
-    margin: 0 auto;
-  }
-  header.site .eyebrow {
-    font-size: 12px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.7);
-    margin-bottom: 6px;
-  }
-  header.site h1 {
-    font-size: 26px;
-    line-height: 1.2;
-    margin: 0 0 6px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-  header.site .sub {
-    font-size: 14px;
-    color: rgba(255,255,255,.82);
-  }
-  nav.tabs {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--panel);
-    border-bottom: 1px solid var(--rule);
-    box-shadow: 0 1px 0 rgba(0,0,0,.02);
-  }
-  nav.tabs .wrap {
-    max-width: var(--max);
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-  }
-  nav.tabs button {
-    appearance: none;
-    background: transparent;
-    border: 0;
-    color: var(--ink-soft);
-    padding: 14px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    transition: color .15s, border-color .15s, background .15s;
-    font-family: inherit;
-  }
-  nav.tabs button .tnum {
-    color: var(--muted);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .06em;
-    margin-right: 6px;
-  }
-  nav.tabs button:hover { color: var(--ink); background: var(--accent-soft); }
-  nav.tabs button[aria-selected="true"] {
-    color: var(--accent-dark);
-    border-bottom-color: var(--accent);
-    background: var(--accent-soft);
-  }
-  nav.tabs button[aria-selected="true"] .tnum { color: var(--accent); }
-  main {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 24px 24px 80px;
-  }
-  .panel {
-    background: var(--panel);
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-    padding: 28px 32px 32px;
-    box-shadow: var(--shadow);
-  }
-  section.tab-panel { display: none; }
-  section.tab-panel.active { display: block; }
-  .status-banner {
-    margin: -8px 0 22px;
-    padding: 12px 14px;
-    background: #fcf6e8;
-    border: 1px solid #ecddb5;
-    border-radius: 6px;
-    color: #6f5a25;
-    font-size: 13px;
-    line-height: 1.5;
-  }
-  .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
-    font-weight: 600;
-    line-height: 1.25;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-  .markdown-body h1 {
-    font-size: 24px;
-    margin: 0 0 8px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .markdown-body h2 {
-    font-size: 19px;
-    margin: 36px 0 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .markdown-body h3 {
-    font-size: 16px;
-    margin: 28px 0 8px;
-    color: var(--accent-dark);
-  }
-  .markdown-body h4 {
-    font-size: 14px;
-    margin: 22px 0 6px;
-    color: var(--accent-dark);
-    text-transform: none;
-  }
-  .markdown-body p { margin: 0 0 14px; }
-  .markdown-body ul, .markdown-body ol { margin: 0 0 14px; padding-left: 22px; }
-  .markdown-body li { margin: 0 0 6px; }
-  .markdown-body li > p { margin-bottom: 8px; }
-  .markdown-body strong { color: var(--ink); }
-  .markdown-body em { color: var(--ink-soft); }
-  .markdown-body code {
-    background: var(--code-bg);
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-size: 13px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    color: var(--accent-dark);
-  }
-  .markdown-body pre {
-    background: var(--code-bg);
-    padding: 14px 16px;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-size: 12.5px;
-    border: 1px solid var(--rule);
-    line-height: 1.5;
-  }
-  .markdown-body pre code { background: transparent; padding: 0; color: inherit; }
-  .markdown-body blockquote {
-    margin: 14px 0;
-    padding: 6px 14px;
-    border-left: 3px solid var(--accent);
-    background: var(--accent-soft);
-    color: var(--ink-soft);
-    font-style: italic;
-    border-radius: 0 4px 4px 0;
-  }
-  .markdown-body blockquote p { margin-bottom: 6px; }
-  .markdown-body hr {
-    border: 0;
-    border-top: 1px solid var(--rule);
-    margin: 28px 0;
-  }
-  .markdown-body table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 14px 0 20px;
-    font-size: 13px;
-    background: #fff;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    overflow: hidden;
-    display: block;
-    overflow-x: auto;
-    max-width: 100%;
-  }
-  .markdown-body table thead { background: var(--accent-soft); }
-  .markdown-body table th, .markdown-body table td {
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--rule);
-    text-align: left;
-    vertical-align: top;
-  }
-  .markdown-body table th {
-    font-weight: 600;
-    color: var(--accent-dark);
-    font-size: 12.5px;
-    letter-spacing: .01em;
-  }
-  .markdown-body table tr:last-child td { border-bottom: 0; }
-  .markdown-body table tbody tr:nth-child(even) { background: #fafaf6; }
-  .figure,
-  .markdown-body figure {
-    margin: 22px 0;
-    background: #fff;
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 12px;
-    box-shadow: var(--shadow);
-  }
-  .figure img,
-  .markdown-body figure img,
-  .markdown-body img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
-  }
-  .figure figcaption,
-  .markdown-body figure figcaption {
-    font-size: 12.5px;
-    color: var(--ink-soft);
-    padding: 10px 4px 2px;
-    line-height: 1.5;
-  }
-  .figure figcaption strong,
-  .markdown-body figure figcaption strong { color: var(--ink); }
-  .figure-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin: 22px 0;
-  }
-  .figure-grid .figure { margin: 0; }
-  @media (max-width: 720px) {
-    .figure-grid { grid-template-columns: 1fr; }
-    nav.tabs button { padding: 10px 10px; font-size: 12.5px; }
-    nav.tabs button .tnum { margin-right: 4px; }
-  }
-  .hero-fig {
-    margin: 0 0 24px;
-    background: #fff;
-    border: 1px solid var(--rule-strong);
-    border-radius: 8px;
-    padding: 14px;
-    box-shadow: var(--shadow);
-  }
-  .hero-fig img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
-  }
-  .hero-fig .cap {
-    font-size: 13px;
-    color: var(--ink-soft);
-    padding-top: 12px;
-    line-height: 1.5;
-  }
-  .hero-fig .cap strong { color: var(--ink); }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 
-  /* Interactive vicinity map */
-  #vicinity-map {
-    height: 580px;
-    width: 100%;
-    border-radius: 4px;
-    background: #f4f0e6;
-    z-index: 1;
+  header.site { background: var(--accent-dark); color: #fff; padding: 34px 0 30px; }
+  header.site .eyebrow {
+    font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase;
+    color: #cbb98a; font-weight: 600; margin-bottom: 10px;
   }
-  .leaflet-container {
-    font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 12px;
+  header.site h1 { margin: 0 0 8px; font-size: clamp(21px, 3.4vw, 30px); line-height: 1.22; font-weight: 750; }
+  header.site .sub { color: #b9c9d2; font-size: 15px; }
+
+  nav.tabs {
+    position: sticky; top: 0; z-index: 500;
+    background: #fff; border-bottom: 1px solid var(--rule-strong);
+    box-shadow: 0 2px 10px rgba(31,42,51,.05);
   }
-  .leaflet-control-layers {
-    border-radius: 6px !important;
-    box-shadow: var(--shadow) !important;
-    border: 1px solid var(--rule-strong) !important;
+  nav.tabs .wrap { display: flex; flex-wrap: wrap; gap: 2px; padding-top: 6px; padding-bottom: 6px; }
+  nav.tabs button {
+    appearance: none; background: none; border: none; cursor: pointer;
+    font-family: inherit; font-size: 14px; font-weight: 600; color: var(--ink-soft);
+    padding: 9px 13px; border-radius: 6px; line-height: 1;
   }
-  .leaflet-control-layers-expanded {
-    padding: 10px 12px !important;
-    font-size: 13px;
-    background: #fff !important;
+  nav.tabs button:hover { background: var(--accent-soft); color: var(--accent-dark); }
+  nav.tabs button[aria-selected="true"] { background: var(--accent); color: #fff; }
+
+  main { padding: 34px 0 30px; }
+  section.panel { display: none; }
+  section.panel.active { display: block; }
+
+  .message {
+    margin: 4px 0 10px; font-size: clamp(21px, 3.2vw, 29px); line-height: 1.25;
+    color: var(--accent-dark); font-weight: 750; letter-spacing: -0.01em; max-width: 30em;
   }
-  .leaflet-control-layers-base label {
-    font-weight: 500;
-    cursor: pointer;
+  .lede { font-size: 16px; color: var(--ink-soft); max-width: 66em; margin: 0 0 22px; }
+  .lede strong { color: var(--ink); }
+
+  .stat-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px; margin: 0 0 24px;
   }
-  .leaflet-control-attribution {
-    font-size: 10px !important;
-    background: rgba(255,255,255,0.85) !important;
+  .stat {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 8px;
+    box-shadow: var(--shadow); padding: 16px 16px 13px;
   }
-  /* Map tooltips — three label styles */
+  .stat-num { font-size: clamp(23px, 2.6vw, 30px); font-weight: 760; color: var(--accent-dark); line-height: 1.1; }
+  .stat-num .unit { font-size: 0.62em; font-weight: 650; color: var(--accent); }
+  .stat-lbl { font-size: 12.8px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+  figure.fig {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 8px;
+    box-shadow: var(--shadow); padding: 16px; margin: 0 0 20px;
+  }
+  figure.fig img { width: 100%; height: auto; display: block; border-radius: 3px; }
+  figure.fig figcaption { font-size: 13px; color: var(--ink-soft); margin-top: 10px; line-height: 1.5; }
+  figure.fig figcaption strong { color: var(--ink); }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; }
+  a.btn {
+    display: inline-block; text-decoration: none; font-weight: 650; font-size: 14.5px;
+    padding: 10px 16px; border-radius: 7px; line-height: 1.2;
+  }
+  a.btn.primary { background: var(--accent); color: #fff; }
+  a.btn.primary:hover { background: var(--accent-dark); }
+  a.btn.ghost { background: #fff; color: var(--accent-dark); border: 1.5px solid var(--accent); }
+  a.btn.ghost:hover { background: var(--accent-soft); }
+
+  .detail-line { font-size: 13.5px; color: var(--muted); margin: -8px 0 26px; }
+  .detail-line a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .detail-line a:hover { text-decoration: underline; }
+
+  .note {
+    background: #fdf6ef; border: 1.5px solid var(--warn); border-radius: 8px;
+    padding: 12px 16px; font-size: 13.5px; color: var(--ink-soft); margin: 0 0 24px; max-width: 62em;
+  }
+  .note strong { color: var(--warn); }
+
+  ul.srcs { list-style: none; padding: 0; margin: 0 0 24px; max-width: 62em; }
+  ul.srcs li {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 7px;
+    padding: 11px 15px; margin-bottom: 9px; font-size: 14px; color: var(--ink-soft);
+  }
+  ul.srcs li strong { color: var(--ink); }
+  ul.srcs li a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  ul.srcs li a:hover { text-decoration: underline; }
+
+  h3.blockhead { font-size: 15.5px; color: var(--accent-dark); margin: 26px 0 12px; }
+
+  #vicinity-map { height: 560px; width: 100%; border-radius: 4px; background: #f4f0e6; z-index: 1; }
+  .leaflet-container { font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; }
+  .leaflet-control-layers { border-radius: 6px !important; box-shadow: var(--shadow) !important; border: 1px solid var(--rule-strong) !important; }
+  .leaflet-control-layers-expanded { padding: 10px 12px !important; font-size: 13px; background: #fff !important; }
+  .leaflet-control-layers-base label { font-weight: 500; cursor: pointer; }
+  .leaflet-control-attribution { font-size: 10px !important; background: rgba(255,255,255,0.85) !important; }
   .leaflet-tooltip.map-label-pin {
-    background: #fff4b8;
-    border: 1.5px solid #b08d4a;
-    color: #4a3d1e;
-    font-weight: 700;
-    font-size: 13px;
-    padding: 3px 9px;
-    border-radius: 3px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-    white-space: nowrap;
+    background: #fff4b8; border: 1.5px solid #b08d4a; color: #4a3d1e; font-weight: 700; font-size: 13px;
+    padding: 3px 9px; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,0.3); white-space: nowrap;
   }
   .leaflet-tooltip.map-label-pin::before { display: none; }
   .leaflet-tooltip.map-label-route {
-    background: rgba(20,20,20,0.82);
-    border: 1px solid rgba(255,255,255,0.25);
-    color: #ff9166;
-    font-weight: 700;
-    font-size: 12.5px;
-    padding: 3px 10px;
-    border-radius: 3px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-    white-space: nowrap;
-    letter-spacing: 0.01em;
+    background: rgba(20,20,20,0.82); border: 1px solid rgba(255,255,255,0.25); color: #ff9166;
+    font-weight: 700; font-size: 12.5px; padding: 3px 10px; border-radius: 3px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6); white-space: nowrap; letter-spacing: 0.01em;
   }
   .leaflet-tooltip.map-label-route::before { display: none; }
   .leaflet-tooltip.map-label-stream {
-    background: rgba(20,20,20,0.65);
-    border: 1px solid rgba(255,255,255,0.18);
-    color: #6ed3da;
-    font-weight: 600;
-    font-size: 11.5px;
-    padding: 2px 7px;
-    border-radius: 3px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-    white-space: nowrap;
+    background: rgba(20,20,20,0.65); border: 1px solid rgba(255,255,255,0.18); color: #6ed3da;
+    font-weight: 600; font-size: 11.5px; padding: 2px 7px; border-radius: 3px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6); white-space: nowrap;
   }
   .leaflet-tooltip.map-label-stream::before { display: none; }
-  .callouts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-    margin: 18px 0 26px;
-  }
-  .callout {
-    background: var(--accent-soft);
-    border: 1px solid #cfdce0;
-    border-left: 3px solid var(--accent);
-    border-radius: 6px;
-    padding: 14px 16px;
-  }
-  .callout .h {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent-dark);
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .callout .v {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-    line-height: 1.1;
-    margin-bottom: 4px;
-  }
-  .callout .l {
-    font-size: 12.5px;
-    color: var(--ink-soft);
-  }
-  details.source-list {
-    margin: 18px 0;
-    background: #fafaf6;
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 10px 14px;
-  }
-  details.source-list summary {
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 13px;
-    color: var(--accent-dark);
-  }
-  details.source-list ul { margin-top: 10px; }
+
   footer.site {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 20px 24px 60px;
-    font-size: 12px;
-    color: var(--muted);
-    text-align: center;
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--rule-strong); margin-top: 26px; padding: 22px 20px 34px;
+    text-align: center; font-size: 12.5px; color: var(--muted); line-height: 1.6;
   }
-  /* loading placeholder */
-  .md-loading {
-    padding: 40px 0;
-    text-align: center;
-    color: var(--muted);
-    font-size: 14px;
-    font-style: italic;
-  }
-  /* ----- Progressive-disclosure folds (generated post-render; see fold config in script) ----- */
-  details.fold {
-    margin: 16px 0;
-    background: #fafaf6;
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-  }
-  details.fold.fold-h2 { margin: 24px 0; }
-  details.fold > summary {
-    cursor: pointer;
-    padding: 11px 14px;
-    border-radius: 6px;
-  }
-  details.fold.fold-h3 > summary,
-  details.fold.fold-h4 > summary { padding: 8px 12px; }
-  details.fold > summary:hover { background: var(--accent-soft); }
-  details.fold[open] > summary {
-    border-bottom: 1px solid var(--rule);
-    border-radius: 6px 6px 0 0;
-  }
-  .markdown-body details.fold > summary h2,
-  .markdown-body details.fold > summary h3,
-  .markdown-body details.fold > summary h4 {
-    display: inline;
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-  .fold-hint {
-    margin-left: 10px;
-    font-size: 12.5px;
-    font-weight: 400;
-    color: var(--muted);
-  }
-  .fold-body { padding: 2px 16px 12px; }
-  .fold-body > :first-child { margin-top: 12px; }
-  .fold-toggle { text-align: right; margin: 0 0 10px; }
-  .fold-toggle button {
-    appearance: none;
-    background: none;
-    border: 0;
-    color: var(--accent);
-    font-size: 12.5px;
-    font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
-    padding: 2px 0;
-    border-bottom: 1px solid rgba(44,95,115,.25);
-  }
-  .fold-toggle button:hover { color: var(--accent-dark); border-bottom-color: var(--accent-dark); }
-  .domain-tiles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    margin: 0 0 20px;
-  }
-  .domain-tiles button {
-    appearance: none;
-    font-family: inherit;
-    text-align: left;
-    background: var(--accent-soft);
-    border: 1px solid #cfdce0;
-    border-left: 3px solid var(--accent);
-    border-radius: 6px;
-    padding: 10px 12px;
-    cursor: pointer;
-  }
-  .domain-tiles button:hover { background: #dbe7ec; }
-  .domain-tiles button .n {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent-dark);
-    letter-spacing: .08em;
-  }
-  .domain-tiles button .t {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-top: 2px;
-  }
-  /* print friendly */
+
   @media print {
-    nav.tabs, header.site, footer.site, .status-banner, .fold-toggle, .domain-tiles { display: none; }
-    section.tab-panel { display: block !important; page-break-after: always; }
-    .panel { box-shadow: none; border: 0; padding: 0; }
-    body { background: #fff; }
-    /* Folds are force-opened by JS on beforeprint; strip their chrome so printed
-       sections are indistinguishable from normal document flow. */
-    details.fold { background: none; border: 0; margin: 0; }
-    details.fold > summary { padding: 0; cursor: default; list-style: none; }
-    details.fold > summary::-webkit-details-marker { display: none; }
-    details.fold[open] > summary { border-bottom: 0; }
-    .fold-hint { display: none; }
-    .fold-body { padding: 0; }
-    .markdown-body details.fold > summary h2 {
-      display: block; margin: 36px 0 10px; padding-bottom: 6px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .markdown-body details.fold > summary h3 { display: block; margin: 28px 0 8px; }
-    .markdown-body details.fold > summary h4 { display: block; margin: 22px 0 6px; }
+    nav.tabs, .actions { display: none; }
+    section.panel { display: block !important; page-break-before: always; }
+    section.panel:first-of-type { page-break-before: avoid; }
+    #vicinity-map { display: none; }
   }
 </style>
 </head>
@@ -531,342 +160,209 @@
 
 <header class="site">
   <div class="wrap">
-    <div class="eyebrow">AGUBC &nbsp;&middot;&nbsp; Concept-Stage Technical Synthesis &nbsp;&middot;&nbsp; May 2026</div>
-    <h1>Rock Creek Floodwater Spreading, Recharge &amp; Floodplain Reactivation Concept</h1>
+    <div class="eyebrow">AGUBC &nbsp;&middot;&nbsp; Concept Overview &nbsp;&middot;&nbsp; July 2026</div>
+    <h1>Rock Creek Floodwater Spreading, Recharge &amp; Floodplain Reactivation</h1>
     <div class="sub">North &amp; South Diversion Corridors &mdash; Butte County, California</div>
   </div>
 </header>
 
-<nav class="tabs" role="tablist" aria-label="Deliverables">
+<nav class="tabs" role="tablist" aria-label="Overview sections">
   <div class="wrap">
-    <button role="tab" data-tab="readme" aria-selected="true"><span class="tnum">00</span>Overview</button>
-    <button role="tab" data-tab="d01" aria-selected="false"><span class="tnum">01</span>Concept &amp; Parameters</button>
-    <button role="tab" data-tab="d02" aria-selected="false"><span class="tnum">02</span>Discharge Comparison</button>
-    <button role="tab" data-tab="d03" aria-selected="false"><span class="tnum">03</span>Benchmarking</button>
-    <button role="tab" data-tab="d04" aria-selected="false"><span class="tnum">04</span>Feasibility &amp; Roadmap</button>
-    <button role="tab" data-tab="d05" aria-selected="false"><span class="tnum">05</span>Screening Spreadsheet</button>
-    <button role="tab" data-tab="d06" aria-selected="false"><span class="tnum">06</span>Reach Design (200 ft)</button>
-    <button role="tab" data-tab="d07" aria-selected="false"><span class="tnum">07</span>Cost &amp; Benefit (OOM)</button>
+    <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button role="tab" data-tab="problem" aria-selected="false">The Problem</button>
+    <button role="tab" data-tab="concept" aria-selected="false">The Concept</button>
+    <button role="tab" data-tab="water" aria-selected="false">The Water</button>
+    <button role="tab" data-tab="money" aria-selected="false">The Money</button>
+    <button role="tab" data-tab="path" aria-selected="false">The Path</button>
+    <button role="tab" data-tab="methods" aria-selected="false">Report &amp; Methods</button>
   </div>
 </nav>
 
 <main>
+<div class="wrap">
 
-  <!-- README / OVERVIEW TAB -->
-  <section class="tab-panel active" id="tab-readme" role="tabpanel" aria-labelledby="tab-readme">
-    <div class="panel">
-      <div class="status-banner">
-        <strong>Status:</strong> Concept-stage technical synthesis. Not engineering, legal, or water-rights advice.
-        All quantitative values flagged <code>[VERIFY]</code> require technical confirmation; source-cited values are tied to documents listed in the Sources section below.
-      </div>
+<!-- ============ OVERVIEW ============ -->
+<section class="panel active" id="tab-overview" role="tabpanel">
+  <h2 class="message">Turn a flooding problem into roughly 6,000 acre-feet a year of recharge</h2>
+  <p class="lede">Rock Creek's flood peaks now pour into Keefer Slough and against State Route&nbsp;99. This concept diverts part of those peaks a mile upstream and spreads them across ten miles of floodplain through hundreds of low rock weirs &mdash; recharging the Vina Subbasin aquifer, flattening the flood wave, and reactivating habitat. The full case, with every number cited to a published study, is in the <strong>July 2026 Concept Evaluation Report</strong>.</p>
 
-      <figure class="hero-fig">
-        <div id="vicinity-map" role="img" aria-label="Interactive vicinity map showing the proposed Rock Creek diversion, the existing Rock Creek / Keefer Slough bifurcation, and the two overland diversion corridors with Rock Creek and Keefer Slough traced downstream"></div>
-        <div class="cap">
-          <strong>Project vicinity &mdash; interactive map.</strong> Toggle the basemap (<strong>Carto</strong> default / <strong>Street</strong> / <strong>Standard</strong> / <strong>Topo</strong>) using the control in the upper right. Yellow pins mark the proposed <strong>Diversion</strong> on Rock Creek and the existing <strong>Rock Creek / Keefer Slough Bifurcation</strong>. Red dashed lines show the two overland corridors: <strong>Sand Creek North (~6 mi)</strong>, rejoining Rock Creek near SR 99 via Sand Creek, and <strong>Sand Creek South (~4.4 mi)</strong>. Cyan dashed lines trace <strong>Rock Creek</strong> and <strong>Keefer Slough</strong>. Hundreds of low rock weirs along both corridors would slow flow, spread it, and promote infiltration. Land control across the 4 corridor landowners (1 major NRCS-easement holder + 3 smaller) is a foundational early-work item.
-        </div>
-      </figure>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">~6,000 <span class="unit">AF/yr</span></div><div class="stat-lbl">new recharge, central case (order-of-magnitude)</div></div>
+    <div class="stat"><div class="stat-num">~$30&thinsp;<span class="unit">M</span></div><div class="stat-lbl">one-time capital, central case &mdash; nothing recurs locally</div></div>
+    <div class="stat"><div class="stat-num">~75<span class="unit">%</span></div><div class="stat-lbl">plausibly grant-fundable across current state &amp; federal programs</div></div>
+    <div class="stat"><div class="stat-num">$77<span class="unit">/AF</span></div><div class="stat-lbl">levelized cost to local beneficiaries</div></div>
+  </div>
 
-      <div class="callouts">
-        <div class="callout">
-          <div class="h">Treated corridor length</div>
-          <div class="v">~10.4&nbsp;mi</div>
-          <div class="l">6 mi north + 4.4 mi south</div>
-        </div>
-        <div class="callout">
-          <div class="h">Rock Cr. watershed at intake</div>
-          <div class="v">~25&nbsp;sq mi</div>
-          <div class="l">~1.1 mi upstream of bifurcation</div>
-        </div>
-        <div class="callout">
-          <div class="h">Bifurcation split (Q100)</div>
-          <div class="v">39 / 61</div>
-          <div class="l">Rock Cr. / Keefer Sl., DWR&nbsp;2D &mdash; shifted from 56/44 in 2011 FIS</div>
-        </div>
-        <div class="callout">
-          <div class="h">Favorable surface infiltration</div>
-          <div class="v">0.7&nbsp;ft/day</div>
-          <div class="l">RCRD Infiltration Study max for favorable Sand Cr. sites</div>
-        </div>
-      </div>
+  <div class="actions">
+    <a class="btn primary" href="report/Rock-Creek-Concept-Evaluation-Report-July-2026.pdf">Read the report (PDF, 36 pp)</a>
+    <a class="btn ghost" href="technical.html">Technical annex &mdash; full deliverables</a>
+  </div>
 
-      <figure class="figure">
-        <img src="assets/fig-00-concept-schematic.svg" alt="Schematic of the Rock Creek concept: a diversion on Rock Creek about 1.1 miles upstream of the Rock Creek / Keefer Slough bifurcation activates only above a flow trigger and routes high flow into two overland corridors — Sand Creek North, about 6 miles, rejoining Rock Creek near SR 99, and Sand Creek South, about 4.4 miles, returning to Rock Creek — each treated with hundreds of 2 to 3 foot rock weirs that slow, spread, and infiltrate water to the Tuscan aquifer, while the bifurcation currently splits remaining flow 39/61 between Rock Creek and Keefer Slough.">
-        <figcaption>
-          <strong>The concept in one schematic.</strong> A controlled diversion ~1.1 mi upstream of the Rock Creek / Keefer Slough bifurcation activates only above a flow trigger; normal and low flows pass downstream undisturbed. Diverted high flow spreads through two overland corridors &mdash; <strong>Sand Creek North (~6 mi)</strong>, rejoining Rock Creek near SR 99 via Sand Creek, and <strong>Sand Creek South (~4.4 mi)</strong> &mdash; across hundreds of low rock weirs (2&ndash;3 ft; 200 ft spacing illustrative per Deliverable 06), recharging the Tuscan aquifer and trading flood intensity for flood duration. The bifurcation currently splits Q100 flow 39/61 (Rock Creek / Keefer Slough). <em>Diagrammatic, not to scale. Sources: Deliverable 01 &sect;2; Deliverable 02 &sect;3.4.</em>
-        </figcaption>
-      </figure>
+  <figure class="fig">
+    <div id="vicinity-map" aria-label="Interactive vicinity map"></div>
+    <figcaption><strong>Project vicinity.</strong> Rock Creek and Keefer Slough in blue-green dash; the two proposed overland corridors in red &mdash; Sand Creek North (~6&nbsp;mi) and Sand Creek South (~4.4&nbsp;mi) &mdash; from a diversion ~1.1&nbsp;mi upstream of the bifurcation, returning to Rock Creek near SR&nbsp;99. Basemap switcher at top right.</figcaption>
+  </figure>
+</section>
 
-      <div id="md-readme" class="markdown-body"><div class="md-loading">Loading overview&hellip;</div></div>
+<!-- ============ PROBLEM ============ -->
+<section class="panel" id="tab-problem" role="tabpanel">
+  <h2 class="message">Keefer Slough now takes 61% of Rock Creek's flood water &mdash; and SR&nbsp;99 pays the price</h2>
+  <p class="lede">Four published datasets disagree about the size of Rock Creek's floods &mdash; by roughly 43% at the 100-year event. What is not in dispute: the bifurcation has shifted. Sediment and vegetation have cut Rock Creek's share of the split from 56% to 39%, sending the majority of every major flood down Keefer Slough &mdash; where the State's current 2D model shows <strong>3.5&times; more water at Garner Lane</strong> than the FEMA maps in force today assume. The maps are expected to catch up in 2027.</p>
 
-      <details class="source-list">
-        <summary>Source documents referenced throughout</summary>
-        <ul>
-          <li><strong>CONCEPT</strong> &mdash; <a href="Rock-Creek-Floodplain-Reactivation-Concept-DRAFT.md">Rock-Creek-Floodplain-Reactivation-Concept-DRAFT.md</a> (this project's stakeholder draft)</li>
-          <li><strong>NORD_A, B1&ndash;B5</strong> &mdash; Town of Nord Small Communities Flood Risk Reduction Program Feasibility Study, Wood Rodgers for Butte County / DWR, Aug 2023 &mdash; <a href="Nord_Feasibility_Study_Part_A.md">Part A</a>, <a href="Nord_PartB_1_Geotechnical_Memo.md">B1 Geotechnical</a>, <a href="Nord_PartB_2_Geomorphic_Assessment.md">B2 Geomorphic</a>, <a href="Nord_PartB_3_Environmental_Constraints.md">B3 Environmental</a>, <a href="Nord_PartB_4_Appendix7.md">B4 Appendix 7</a>, <a href="Nord_PartB_5_Appendices_8-11.md">B5 Appendices 8&ndash;11</a></li>
-          <li><strong>RCRD_INF</strong> &mdash; <a href="RockCreek_Reclamation_District-Infiltration_Feasibility_Study_Oct2023.md">Rock Creek Reclamation District Infiltration Feasibility Study</a> (<a href="RockCreek_Reclamation_District-Infiltration_Feasibility_Study_Oct2023.pdf">PDF</a>), Wood Rodgers / GeoSystems Analysis, Oct 2023</li>
-          <li><strong>SINGER</strong> &mdash; <a href="Singer_Creek_HDP_Vol_1.md">Singer Creek Preserve Habitat Development Plan Vol. 1</a>, Restoration Resources for BCAG, 2008&ndash;2009</li>
-          <li><strong>CT_D3</strong> &mdash; <a href="Flooding_Issues_Along_Hwy99_Mud_Creek_to_Rock_Creek.md"><em>Studying the Flooding Issues Along Hwy 99 from Mud Creek to Rock Creek</em></a> (<a href="Flooding_Issues_Along_Hwy99_Mud_Creek_to_Rock_Creek.pdf">PDF</a>), Sungho Lee PE, Caltrans D3 Hydraulic Branch, Nov 2025</li>
-        </ul>
-      </details>
-    </div>
-  </section>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">3.52&times;</div><div class="stat-lbl">DWR-modeled Q100 vs. current FEMA value at Garner Lane (2,391 vs. 680 cfs)</div></div>
+    <div class="stat"><div class="stat-num">39&thinsp;/&thinsp;61</div><div class="stat-lbl">today's Rock Creek / Keefer split at the bifurcation &mdash; was 56/44 in the 2011 study</div></div>
+    <div class="stat"><div class="stat-num">5,600&ndash;8,020 <span class="unit">cfs</span></div><div class="stat-lbl">Q100 range across the published datasets, upstream of the bifurcation</div></div>
+    <div class="stat"><div class="stat-num">525 <span class="unit">cfs</span></div><div class="stat-lbl">Keefer Slough channel capacity at SR&nbsp;99 &mdash; everything above it floods</div></div>
+  </div>
 
-  <!-- DELIVERABLE 01 -->
-  <section class="tab-panel" id="tab-d01" role="tabpanel" aria-labelledby="tab-d01">
-    <div class="panel">
-      <div id="md-d01" class="markdown-body"><div class="md-loading">Loading deliverable 01&hellip;</div></div>
-    </div>
-  </section>
+  <figure class="fig">
+    <img src="assets/fig-02-bifurcation-shift.svg" alt="Stacked bars comparing the bifurcation flow split: 56/44 Rock Creek/Keefer Slough per the 2011 FIS versus 39/61 per the DWR 2D model.">
+    <figcaption><strong>The channel that was built to carry most of the water now carries the minority of it.</strong> Flow split at the Rock Creek / Keefer Slough bifurcation: 2011 FEMA study vs. current DWR 2D model. Sources: FEMA 2011 FIS via Nord Feasibility Study; Caltrans D3 memorandum (Lee, Nov 2025).</figcaption>
+  </figure>
 
-  <!-- DELIVERABLE 02 -->
-  <section class="tab-panel" id="tab-d02" role="tabpanel" aria-labelledby="tab-d02">
-    <div class="panel">
+  <p class="detail-line">Full analysis: <a href="report/Rock-Creek-Concept-Evaluation-Report-July-2026.pdf">Report &sect;3 (PDF)</a> &middot; <a href="technical.html">Annex, Deliverable 02 &mdash; Discharge Dataset Comparison</a></p>
+</section>
 
-      <div class="callouts">
-        <div class="callout">
-          <div class="h">Q100 spread (upstream)</div>
-          <div class="v">5,600&ndash;8,020&nbsp;cfs</div>
-          <div class="l">~43% across FIS / StreamStats / Nord &mdash; &sect;2</div>
-        </div>
-        <div class="callout">
-          <div class="h">Garner Ln Q100</div>
-          <div class="v">3.52&times;</div>
-          <div class="l">DWR 2D 2,391 cfs vs FEMA FIS 680 cfs &mdash; &sect;3.3</div>
-        </div>
-        <div class="callout">
-          <div class="h">Bifurcation split</div>
-          <div class="v">39&nbsp;/&nbsp;61</div>
-          <div class="l">RC / KS today (DWR 2D) &mdash; was 56/44 in the 2011 FIS &mdash; &sect;3.4</div>
-        </div>
-        <div class="callout">
-          <div class="h">Governing datasets</div>
-          <div class="v">Track A&nbsp;+&nbsp;B</div>
-          <div class="l">Nord HEC-HMS upstream &middot; DWR 2D downstream &mdash; &sect;5</div>
-        </div>
-      </div>
+<!-- ============ CONCEPT ============ -->
+<section class="panel" id="tab-concept" role="tabpanel">
+  <h2 class="message">Divert flood peaks a mile upstream &mdash; spread them across ten miles of waiting floodplain</h2>
+  <p class="lede">A controlled intake ~1.1 miles above the bifurcation takes water only during high flows. Two overland corridors carry it across the plain through <strong>hundreds of low rock weirs</strong> that slow it, spread it, pond it, and hold it against the ground long enough to soak in. What doesn't soak in returns to Rock Creek as a longer, lower, later flood wave. No dams and no reservoir: every structure sits far below the 6-foot state dam-safety threshold, and a displaced weir affects one reach &mdash; not a valley.</p>
 
-      <figure class="figure">
-        <img src="assets/caltrans-fig2-flow-split.png" alt="DWR HEC-RAS 2D RASMapper plot of the 100-yr flow split at the Rock Creek / Keefer Slough bifurcation showing 6,413 cfs combined upstream divided into 2,483 cfs (39%) to Rock Creek and 3,867 cfs (61%) to Keefer Slough.">
-        <figcaption>
-          <strong>DWR HEC-RAS 2D model &mdash; Q100 flow split at the Rock Creek / Keefer Slough bifurcation.</strong>
-          Combined RC+KS upstream: 6,413 cfs. Downstream Rock Creek: 2,483 cfs (39%). Downstream Keefer Slough: 3,867 cfs (61%). The 2011 FEMA FIS used a 56/44 split; sediment and vegetation accumulation at the bifurcation have shifted this materially. <em>Source: Caltrans D3, Fig. 2.</em>
-        </figcaption>
-      </figure>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">~1.1 <span class="unit">mi</span></div><div class="stat-lbl">intake upstream of the bifurcation &mdash; bracketed by the two Nord study precedents</div></div>
+    <div class="stat"><div class="stat-num">10.4 <span class="unit">mi</span></div><div class="stat-lbl">two treated corridors: Sand Creek North ~6 mi, Sand Creek South ~4.4 mi</div></div>
+    <div class="stat"><div class="stat-num">2&ndash;3 <span class="unit">ft</span></div><div class="stat-lbl">weir height &mdash; hundreds of rock structures at roughly 200-ft spacing</div></div>
+    <div class="stat"><div class="stat-num">~300 <span class="unit">ac</span></div><div class="stat-lbl">floodplain reactivated, central case (200&ndash;400 ac bracket)</div></div>
+  </div>
 
-      <div id="md-d02" class="markdown-body"><div class="md-loading">Loading deliverable 02&hellip;</div></div>
+  <figure class="fig">
+    <img src="assets/fig-00-concept-schematic.svg" alt="Schematic of the concept: diversion on Rock Creek 1.1 miles upstream of the Keefer Slough bifurcation feeding two overland corridors treated with rock weirs, both returning to Rock Creek near SR 99.">
+    <figcaption><strong>The concept in one drawing.</strong> Divert only at high flow; spread across two weir-treated corridors; recharge and slow the balance; return it to Rock Creek near SR&nbsp;99 after the main peak has passed. Diagrammatic &mdash; not to scale.</figcaption>
+  </figure>
 
-      <div class="figure-grid">
-        <figure class="figure">
-          <img src="assets/caltrans-fig4a-firm.png" alt="FEMA FIRM panels 310, 320, 330, 340 (combined) showing the 100-yr flood discharge labels at Keefer Slough (560 / 525 / 680 cfs) and the project location, January 6, 2011 effective.">
-          <figcaption>
-            <strong>FEMA effective FIRM (Jan 6, 2011) &mdash; Q100 labels along Keefer Slough.</strong>
-            Keefer Slough Q100 = 525 cfs at SR 99 (channel capacity), 560 cfs at Hicks Lane, 680 cfs at Garner Lane. These are the currently effective FEMA discharges; the DWR 2D model places Q100 at Garner Lane at 2,391 cfs &mdash; 3.52× larger. <em>Source: Caltrans D3, Fig. 4.</em>
-          </figcaption>
-        </figure>
-        <figure class="figure">
-          <img src="assets/caltrans-fig4b-bam.png" alt="DWR BAM map of Keefer Slough flooding condition near Hwy 99, showing 155 cfs overflow east of the Keefer Slough bridge and the project location near the Butte County Fire Station.">
-          <figcaption>
-            <strong>DWR BAM flooding condition near Hwy 99 and Keefer Slough.</strong>
-            Aerial flood extent shows 155 cfs overflowing east of Keefer Slough at SR 99; the reach is highly flood-constrained at the current channel capacity. <em>Source: Caltrans D3, Fig. 4 cont.</em>
-          </figcaption>
-        </figure>
-      </div>
+  <p class="detail-line">Full description and reach drawings: <a href="report/Rock-Creek-Concept-Evaluation-Report-July-2026.pdf">Report &sect;4 (PDF)</a> &middot; <a href="technical.html">Annex, Deliverables 01 &amp; 06</a></p>
+</section>
 
-      <figure class="figure">
-        <img src="assets/caltrans-fig1-bifurcation.png" alt="Aerial imagery (1999 and 2018) and March 5, 2019 ground photos showing the gravel bar / vegetation blockage of the Rock Creek channel at the bifurcation, with flow now going 100% into Keefer Slough.">
-        <figcaption>
-          <strong>Bifurcation channel blockage &mdash; before and after.</strong>
-          1999 aerial (left) and 2018 Google Earth (right) of the same location, with March 5, 2019 ground photos. The Rock Creek channel is now choked at the bifurcation by gravel and vegetation; on that day flow was 100% in Keefer Slough. Bifurcation maintenance is a parallel and reinforcing project to the upstream-diversion concept on this dashboard. <em>Source: Caltrans D3, Fig. 1.</em>
-        </figcaption>
-      </figure>
+<!-- ============ WATER ============ -->
+<section class="panel" id="tab-water" role="tabpanel">
+  <h2 class="message">Recharge where the County's own plan says it matters most</h2>
+  <p class="lede">The Board-adopted <strong>Butte County Recharge Action Plan</strong> (February 2024) calls for ~20,000 acre-feet a year of new recharge, prioritizes the Vina Subbasin, and lists "spreading and slowing flood flows" first among its strategies. The County's 2026 Component&nbsp;5 pilot program found some of the subbasin's most favorable infiltration <strong>at the Keefer Slough&ndash;Rock Creek confluence</strong>. This concept's central case would deliver roughly a quarter to a third of the countywide goal from a single project &mdash; alongside, not instead of, the County's own basin projects on the same corridor.</p>
 
-      <template data-fig-anchor="2. Side-by-Side Comparison — Rock Creek ~0.91 mi Upstream of the Bifurcation">
-        <figure class="figure">
-          <img src="assets/fig-02-dataset-fan.svg" alt="Line chart of Rock Creek peak discharge at five events (Q10 through Q500) for three datasets: Nord HEC-HMS Current Study runs highest (5,185 to 10,220 cfs), USGS StreamStats in the middle (3,580 to 10,000 cfs), and the 2011 FIS Effective lowest (2,300 to 7,800 cfs, with no Q25 value), with the lines converging toward the rarest events and the Q100 column highlighted.">
-          <figcaption>
-            <strong>The datasets disagree most where the concept works best.</strong> At Q10 the spread is widest (2,300 / 3,580 / 5,185 cfs — a &minus;56% FIS-to-Nord gap); by Q500 the three converge (7,800 / 10,000 / 10,220 cfs, &minus;24%). Q100 (highlighted): 5,600 / 7,170 / 8,020 cfs — a ~43% relative spread. The StreamStats &ldquo;1%-Plus&rdquo; value of 17,100 cfs is excluded as a regression-tail artifact per &sect;2. The 2011 FIS has no Q25 value. <em>Source: Deliverable 02 &sect;2; values from Nord Feasibility Study Tables 10&ndash;12.</em>
-          </figcaption>
-        </figure>
-      </template>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">5,000&ndash;7,000 <span class="unit">AF/yr</span></div><div class="stat-lbl">central-case recharge band (130 low / 18,700 capacity high)</div></div>
+    <div class="stat"><div class="stat-num">&ge;20,000 <span class="unit">AFY</span></div><div class="stat-lbl">County Recharge Action Plan goal, adopted Feb 2024</div></div>
+    <div class="stat"><div class="stat-num">~8,000 <span class="unit">AF/yr</span></div><div class="stat-lbl">current Vina Subbasin storage growth (WY 2025 Annual Report)</div></div>
+    <div class="stat"><div class="stat-num">0.7 <span class="unit">ft/day</span></div><div class="stat-lbl">best same-area long-term infiltration rate (Sand Creek study, 2023)</div></div>
+  </div>
 
-      <template data-fig-anchor="3. Side-by-Side Comparison — Keefer Slough (Multiple Locations)">
-        <div class="figure-grid">
-          <figure class="figure">
-            <img src="assets/fig-02-bifurcation-shift.svg" alt="Two stacked bars comparing the Rock Creek / Keefer Slough flow split: 56 percent to 44 percent in the 2011 FEMA FIS versus 39 percent to 61 percent in the current DWR HEC-RAS 2D model, a shift driven by sediment and vegetation at the bifurcation.">
-            <figcaption>
-              <strong>The bifurcation split has shifted ~17 points toward Keefer Slough.</strong> 2011 FIS: 56% Rock Creek / 44% Keefer Slough. DWR 2D (current): 39% / 61% &mdash; driven by sediment deposition and vegetation at the bifurcation. The DWR rating awaits FEMA adoption (anticipated 2027). <em>Source: Deliverable 02 &sect;3.4.</em>
-            </figcaption>
-          </figure>
-          <figure class="figure">
-            <img src="assets/fig-02-garner-lane.svg" alt="Bar chart: Keefer Slough Q100 near Garner Lane is 680 cfs in the effective FEMA 2011 FIS versus 2,391 cfs in the DWR HEC-RAS 2D model — 3.52 times larger.">
-            <figcaption>
-              <strong>The largest disagreement in any dataset: 3.52&times; at Garner Lane.</strong> FEMA 2011 FIS Q100: 680 cfs. DWR HEC-RAS 2D: 2,390.90 cfs at the same Keefer Slough cross-section (~1,099 ft upstream of the Garner Lane bridge). This is why the concept&rsquo;s downstream benefit story is framed against DWR 2D, not the FIS. <em>Source: Deliverable 02 &sect;3.3.</em>
-            </figcaption>
-          </figure>
-        </div>
-      </template>
+  <figure class="fig">
+    <img src="assets/fig-07-recharge-context.svg" alt="Band chart showing the concept's central-case 5,000 to 7,000 acre-feet per year recharge against the Vina Subbasin's 8,000 acre-feet per year current storage growth.">
+    <figcaption><strong>One project, 60&ndash;90% of the subbasin's current annual storage growth.</strong> Central-case recharge vs. the WY 2025 storage trend. Order-of-magnitude, concept-stage; the corridor-specific subsurface survey is the first fieldwork item.</figcaption>
+  </figure>
 
-    </div>
-  </section>
+  <p class="detail-line">Water balance and the &sect;1242.1 diversion-day analysis: <a href="report/Rock-Creek-Concept-Evaluation-Report-July-2026.pdf">Report &sect;7 (PDF)</a> &middot; <a href="technical.html">Annex, Deliverable 07 &sect;2</a></p>
+</section>
 
-  <!-- DELIVERABLE 03 -->
-  <section class="tab-panel" id="tab-d03" role="tabpanel" aria-labelledby="tab-d03">
-    <div class="panel">
-      <figure class="hero-fig">
-        <img src="assets/caltrans-fig6-watershed.png" alt="DWR HEC-RAS 2D hydraulic model result showing color-shaded water surface elevation across the Rock Creek and Keefer Slough watershed, covering Hwy 99, Nord, Wilson Landing Road, Mud Creek, and the western edge of Chico.">
-        <div class="cap">
-          <strong>DWR HEC-RAS 2D hydraulic model &mdash; basin-wide water-surface-elevation result.</strong> The benchmarked precedent watershed: pink/red zones along Keefer Slough and Rock Creek are the highest-risk reaches. The concept on this dashboard sits upstream of this view and seeks to reduce volume and intensity reaching the regulated floodplain shown here. <em>Source: Caltrans D3, Fig. 6.</em>
-        </div>
-      </figure>
-      <div id="md-d03" class="markdown-body"><div class="md-loading">Loading deliverable 03&hellip;</div></div>
-      <template data-fig-anchor="6. Cross-Tier Summary — Where This Concept Sits">
-        <figure class="figure">
-          <img src="assets/fig-03-linear-scale.svg" alt="Horizontal bars comparing miles of treated reach: USGS RDS pilots at about 0.6 miles shown hollow with a dashed outline and a VERIFY external-source flag, Nord diversion channels as a range from 0.69 to 1.4 miles, Singer Creek Preserve at about 2 miles, and this concept's two corridors at 10.4 miles.">
-          <figcaption>
-            <strong>Linear scale of treatment vs the precedents.</strong> USGS RDS pilots ~0.6 mi (~1 km typical &mdash; <code>[VERIFY: external source]</code>, rendered dashed/hollow per the dashboard&rsquo;s unconfirmed-value convention) &middot; Nord diversion channels 0.69&ndash;1.4 mi (3,620&ndash;7,440 ft) &middot; Singer Creek ~2 mi &middot; <strong>this concept 10.4 mi</strong>. The mechanism is well-supported at reach scale; the watershed-scale application (~10&times; the documented RDS linear extent) is the part with less direct precedent. <em>Source: Deliverable 03 &sect;2.1, &sect;4, &sect;6.</em>
-          </figcaption>
-        </figure>
-      </template>
-    </div>
-  </section>
+<!-- ============ MONEY ============ -->
+<section class="panel" id="tab-money" role="tabpanel">
+  <h2 class="message">$77 per acre-foot to local beneficiaries &mdash; grants plausibly carry ~75%</h2>
+  <p class="lede"><strong>AGUBC and partners contribute ~$8&nbsp;M to a ~$30&nbsp;M project, and in return receive ~6,000 AF/yr of new recharge &mdash; about $77 per acre-foot</strong>, well below the $300&ndash;2,000/AF California surface-water market. Same water, three honest lenses: $77/AF to the local beneficiaries, $212/AF to the grant funders, $308/AF counting every dollar. And nothing recurs: a ~$3&nbsp;M endowment inside the capital covers the ~$120&nbsp;K/yr of operations, so there is no annual assessment.</p>
 
-  <!-- DELIVERABLE 04 -->
-  <section class="tab-panel" id="tab-d04" role="tabpanel" aria-labelledby="tab-d04">
-    <div class="panel">
-      <div class="domain-tiles" role="navigation" aria-label="Jump to a feasibility domain">
-        <button type="button" data-open-heading="1. Hydraulics / Flood Routing"><span class="n">1</span><span class="t">Hydraulics / Flood Routing</span></button>
-        <button type="button" data-open-heading="2. Recharge Feasibility (Lead with Sand Creek Infiltration Study and the Shallow-Clay-Layer Check)"><span class="n">2</span><span class="t">Recharge Feasibility</span></button>
-        <button type="button" data-open-heading="3. Land / Site Control"><span class="n">3</span><span class="t">Land / Site Control</span></button>
-        <button type="button" data-open-heading="4. Water Rights, CEQA, and Permitting Pathway"><span class="n">4</span><span class="t">Water Rights &amp; Permitting</span></button>
-        <button type="button" data-open-heading="5. Sediment and Maintenance"><span class="n">5</span><span class="t">Sediment &amp; Maintenance</span></button>
-        <button type="button" data-open-heading="6. Cost and Funding"><span class="n">6</span><span class="t">Cost &amp; Funding</span></button>
-      </div>
-      <div id="md-d04" class="markdown-body"><div class="md-loading">Loading deliverable 04&hellip;</div></div>
-      <template data-fig-anchor="1. Hydraulics / Flood Routing">
-        <figure class="figure">
-          <img src="assets/fig-04-master-sequence.svg" alt="Gantt-style timeline of the six roadmap phases from month 0 to month 60 and beyond: Phase 0 Concept Synthesis months 0 to 3; Phase 1 Foundational Data and Relationships months 3 to 9; Phase 2 Hydraulic Screening and Subsurface Confirmation months 6 to 18, carrying a gold diamond marking the major-landowner go/no-go gate; Phase 3 Regulatory Pathway and Detailed Design months 12 to 30; Phase 4 first construction months 30 to 48; Phase 5 Long-term Stewardship from month 48 into perpetuity.">
-          <figcaption>
-            <strong>Master sequence at a glance.</strong> Phase 0 &mdash; Concept Synthesis (months 0&ndash;3, current); Phase 1 &mdash; Foundational Data &amp; Relationships (3&ndash;9); Phase 2 &mdash; Hydraulic Screening + Subsurface Confirmation (6&ndash;18), carrying the <strong>major-landowner conversation (L-3) &mdash; the project&rsquo;s primary go/no-go gate</strong>; Phase 3 &mdash; Regulatory Pathway + Detailed Design (12&ndash;30); Phase 4 &mdash; Phase-1 Construction, likely the north-corridor pilot reach (30&ndash;48); Phase 5 &mdash; Long-term Stewardship (48+, perpetuity). Phases overlap by design; full activities and outputs are in the Master Sequence table (&sect;7) below. <em>Source: Deliverable 04 &sect;7, &sect;3.5.</em>
-          </figcaption>
-        </figure>
-      </template>
-    </div>
-  </section>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">$77<span class="unit">/AF</span></div><div class="stat-lbl">beneficiary share &mdash; the local number (~$8 M incl. endowment)</div></div>
+    <div class="stat"><div class="stat-num">$212<span class="unit">/AF</span></div><div class="stat-lbl">grant-funded share (~$22 M)</div></div>
+    <div class="stat"><div class="stat-num">$308<span class="unit">/AF</span></div><div class="stat-lbl">total project, society-wide benchmark (~$30 M)</div></div>
+    <div class="stat"><div class="stat-num">$0<span class="unit">/yr</span></div><div class="stat-lbl">recurring local assessment &mdash; endowment yield covers O&amp;M</div></div>
+  </div>
 
-  <!-- DELIVERABLE 05 -->
-  <section class="tab-panel" id="tab-d05" role="tabpanel" aria-labelledby="tab-d05">
-    <div class="panel">
-      <div id="md-d05" class="markdown-body"><div class="md-loading">Loading deliverable 05&hellip;</div></div>
-      <template data-fig-anchor="3. README Sheet">
-        <figure class="figure">
-          <img src="assets/fig-05-sheet-flow.svg" alt="Data-flow diagram of the five-sheet screening workbook: a README metadata box; shaded user-editable Inputs_Hydrology and Inputs_Design sheets feeding Calc_Peak_Reduction (Q_upstream across 4 datasets and 5 events; diversion, trigger, corridor and weir parameters) and Calc_Recharge_Volume (infiltration rates, favorable fraction, days wetted); both calculation sheets feed the gold-outlined Output_Summary page, delivering the peak-reduction 60-case sweep and the annual acre-feet-per-year three-scenario result.">
-          <figcaption>
-            <strong>How the screening tool computes.</strong> Only the two shaded input sheets (<code>Inputs_Hydrology</code>, <code>Inputs_Design</code>) are user-editable; <code>Calc_Peak_Reduction</code> runs the 4 datasets &times; 5 events &times; 3 attenuation cases = 60-case sweep, <code>Calc_Recharge_Volume</code> produces the three-scenario annual estimate, and both land on the single-page <code>Output_Summary</code> stakeholders see. <em>Source: Deliverable 05 &sect;2, &sect;6, &sect;7, &sect;9.</em>
-          </figcaption>
-        </figure>
-      </template>
+  <figure class="fig">
+    <img src="assets/fig-07-three-framings.svg" alt="Bar chart of the three cost framings: 77 dollars per acre-foot beneficiary share, 212 grant-funded, 308 total project, against the 300 to 2,000 dollar California surface-water market band.">
+    <figcaption><strong>Three framings, beneficiary share first.</strong> Levelized $/AF at 30-year life, 4% discount, ~6,000 AF/yr central yield. The County's own Component&nbsp;5 report prices its neighboring corridor project (Site N6) at $100&ndash;700/AF total &mdash; $30&ndash;150/AF where capital is grant-funded &mdash; bracketing these numbers.</figcaption>
+  </figure>
 
-      <template data-fig-anchor="10. Limits of This Screening">
-        <figure class="figure">
-          <img src="assets/fig-05-decision-ladder.svg" alt="Three nested chevrons reading Screening (worth 2D routing?), 2D routing (worth designing?), and Design (worth building?) — each step gates the next.">
-          <figcaption>
-            <strong>Each step is the go / no-go input to the next.</strong> &ldquo;The screening is for deciding whether the concept is worth 2D routing. The 2D routing is for deciding whether the concept is worth designing. Designing is for deciding whether the concept is worth building.&rdquo; <em>Source: Deliverable 05 &sect;10.</em>
-          </figcaption>
-        </figure>
-      </template>
-    </div>
-  </section>
+  <p class="detail-line">Cost build-up, funding stack, and sensitivities: <a href="report/Rock-Creek-Concept-Evaluation-Report-July-2026.pdf">Report &sect;8 (PDF)</a> &middot; <a href="technical.html">Annex, Deliverable 07</a></p>
+</section>
 
-  <!-- DELIVERABLE 06 -->
-  <section class="tab-panel" id="tab-d06" role="tabpanel" aria-labelledby="tab-d06">
-    <div class="panel">
-      <div class="status-banner">
-        <strong>Concept-stage best-guess illustration.</strong> Three diagrams (plan view + two cross sections) at one assumed weir spacing of 200 ft. Dimensions, materials, and species are reasonable working placeholders &mdash; not engineering. See <code>[VERIFY]</code> table at the end for what needs to be confirmed before construction.
-      </div>
-      <div id="md-d06" class="markdown-body"><div class="md-loading">Loading deliverable 06&hellip;</div></div>
-    </div>
-  </section>
+<!-- ============ PATH ============ -->
+<section class="panel" id="tab-path" role="tabpanel">
+  <h2 class="message">One conversation decides this project: the owner of 87% of the corridor</h2>
+  <p class="lede">The corridor is understood to involve just <strong>four landowners</strong> [VERIFY &mdash; the project's first work item]. One holds ~9 of the 10.4 miles under an existing <strong>NRCS conservation easement</strong> &mdash; a single go/no-go partner, on land already committed to conservation. The roadmap spends its first year on inexpensive verification &mdash; county records, a geophysical survey of the corridors, four landowner conversations &mdash; and gates every major commitment on that answer at roughly month twelve. A yes opens both corridors; a no ends the concept at a sunk cost measured in the low hundreds of thousands, not millions.</p>
 
-  <!-- DELIVERABLE 07 -->
-  <section class="tab-panel" id="tab-d07" role="tabpanel" aria-labelledby="tab-d07">
-    <div class="panel">
-      <div class="status-banner">
-        <strong>Order-of-magnitude only.</strong> Three-scenario bracket (low / central / high). Headline central case: <strong>~5,000&ndash;7,000 AF/yr of recharge</strong> at <strong>~$25&ndash;35 M total capital</strong>, of which <strong>~75% is plausibly grant-fundable</strong> &mdash; leaving an <strong>~$8 M beneficiary share</strong>. Levelized cost depends on whose money is counted: <strong>~$308/AF total project</strong>, or <strong>~$77/AF beneficiary-share-only</strong> (the stakeholder-pitch number). Annual operating (~$120K/yr) covered by endowment yield &mdash; no recurring assessment. See Section 2.3a for central-case calibration defense; Section 6.1 for the three levelized-cost framings.
-      </div>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">landowners across the corridor [VERIFY via Assessor + NRCS records]</div></div>
+    <div class="stat"><div class="stat-num">~87<span class="unit">%</span></div><div class="stat-lbl">of the corridor held by one owner under an NRCS easement</div></div>
+    <div class="stat"><div class="stat-num">Mo. 12</div><div class="stat-lbl">go/no-go gate: the major-landowner decision, informed by the subsurface screen</div></div>
+    <div class="stat"><div class="stat-num">~60 <span class="unit">mo</span></div><div class="stat-lbl">Phase 0&ndash;5 master sequence to built pilot reach + stewardship</div></div>
+  </div>
 
-      <div class="callouts">
-        <div class="callout">
-          <div class="h">Annual recharge (central)</div>
-          <div class="v">~5,000&ndash;7,000&nbsp;AF/yr</div>
-          <div class="l">~60&ndash;90% of Vina Subbasin annual storage growth &mdash; &sect;1</div>
-        </div>
-        <div class="callout">
-          <div class="h">Total capital (central)</div>
-          <div class="v">~$30&nbsp;M</div>
-          <div class="l">low ~$17.5 M &middot; high ~$50 M &mdash; &sect;3</div>
-        </div>
-        <div class="callout">
-          <div class="h">Grant-fundable share</div>
-          <div class="v">~75%</div>
-          <div class="l">~$22 M across Prop 4, Flood-MAR, BRIC, NRCS &mdash; &sect;5.2</div>
-        </div>
-        <div class="callout">
-          <div class="h">Beneficiary cost</div>
-          <div class="v">~$77/AF</div>
-          <div class="l">beneficiary-share levelized &middot; total-project ~$308 &middot; grant-funded ~$212 &mdash; &sect;6.1.4</div>
-        </div>
-      </div>
+  <figure class="fig">
+    <img src="assets/fig-04-master-sequence.svg" alt="Gantt-style master sequence of Phases 0 through 5 over 60 months with a gold go/no-go diamond at month 12.">
+    <figcaption><strong>Cheap questions first; the gate before the money.</strong> Phases 0&ndash;5 over ~60 months. The gold diamond is the major-landowner go/no-go at ~month 12. Construction (Phase 4) starts only after routing, permitting pathway, and land control are in hand.</figcaption>
+  </figure>
 
-      <div id="md-d07" class="markdown-body"><div class="md-loading">Loading deliverable 07&hellip;</div></div>
+  <p class="detail-line">Roadmap, responsible parties, and the first-12-months action list: <a href="report/Rock-Creek-Concept-Evaluation-Report-July-2026.pdf">Report &sect;9 (PDF)</a> &middot; <a href="technical.html">Annex, Deliverable 04</a></p>
+</section>
 
-      <template data-fig-anchor="2. How Much Water Can We Pull Off Rock Creek?">
-        <figure class="figure">
-          <img src="assets/fig-07-recharge-context.svg" alt="Horizontal scale from 0 to 10,000 acre-feet per year with a shaded band from 5,000 to 7,000 marking the concept's central-case annual recharge, and a gold reference line at 8,000 marking the Vina Subbasin's current annual storage growth per the WY 2025 Vina GSA Annual Report; an annotation notes the full bracket of roughly 130 low to 18,700 high.">
-          <figcaption>
-            <strong>The central case is ~60&ndash;90% of the Vina Subbasin&rsquo;s current annual storage growth.</strong> Central-case annual diverted-and-recharged water: ~5,000&ndash;7,000 AF/yr (band), against ~8,000 AF/yr of current annual storage growth (gold line; WY 2025 Vina GSA Annual Report). Full bracket: ~130 AF/yr low &middot; ~18,700 AF/yr high (capacity &mdash; supply-capped in most years). <em>Concept-stage OOM &mdash; central case; see the Headline Result bracket (&sect;1) for the full table. Source: Deliverable 07 &sect;1.</em>
-          </figcaption>
-        </figure>
-      </template>
+<!-- ============ METHODS ============ -->
+<section class="panel" id="tab-methods" role="tabpanel">
+  <h2 class="message">Every number traces to a published study &mdash; or is flagged</h2>
+  <p class="lede">Three rules govern the analysis behind this site. Every value is <strong>cited to a source or marked [VERIFY]</strong> &mdash; nothing is filled in silently. All quantities are <strong>order-of-magnitude screening values</strong>, not engineering. And nothing is transferred from the dam-based precedents where the physics differ. The 36-page Concept Evaluation Report is the document of record; the technical annex carries the eight underlying deliverables and the full 50-parameter cited reference table.</p>
 
-      <template data-fig-anchor="4. Capital vs. Annual — What’s One-Time, What Recurs">
-        <figure class="figure">
-          <img src="assets/fig-07-cost-categories.svg" alt="Horizontal bar chart of central-case capital by category: intake and diversion 4.5 million dollars, conveyance 2.5, rock weirs 3.5, plantings and restoration 3.5, engineering 1.5, permitting 2.0, land control 2.0, monitoring 0.7, endowment 3.0, and contingency 6.5 million dollars in a distinct muted color — totaling approximately 30 million dollars.">
-          <figcaption>
-            <strong>Where the ~$30 M goes.</strong> Central-case capital by category (A&ndash;J): intake/diversion $4.5 M &middot; conveyance $2.5 M &middot; rock weirs $3.5 M &middot; plantings/restoration $3.5 M &middot; engineering $1.5 M &middot; permitting $2.0 M &middot; land control $2.0 M &middot; monitoring $0.7 M &middot; O&amp;M endowment seed $3.0 M &middot; contingency $6.5 M (shown muted &mdash; an allowance, not a work item). Total &asymp; $30 M central (low ~$17.5 M &middot; high ~$50 M). <em>Concept-stage OOM &mdash; central case; see the Headline Result bracket (&sect;1) for low/high. Source: Deliverable 07 &sect;3.</em>
-          </figcaption>
-        </figure>
-      </template>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">independent hydrology datasets compared, disagreement quantified</div></div>
+    <div class="stat"><div class="stat-num">50</div><div class="stat-lbl">parameters in the cited reference table &mdash; each sourced or [VERIFY]-flagged</div></div>
+    <div class="stat"><div class="stat-num">36 <span class="unit">pp</span></div><div class="stat-lbl">Concept Evaluation Report, July 2026</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-lbl">technical deliverables in the annex behind every claim</div></div>
+  </div>
 
-      <template data-fig-anchor="5.1 Grant-eligibility by cost category">
-        <figure class="figure">
-          <img src="assets/fig-07-funding-stack.svg" alt="A single stacked bar dividing the roughly 30 million dollar central-case capital into a roughly 22 million dollar (75 percent) grant-funded share and a roughly 8 million dollar one-time beneficiary share, of which 3 million dollars is a hatched segment for the perpetual operations and maintenance endowment seed, whose roughly 4 percent yield covers the roughly 120 thousand dollars per year of operating cost.">
-          <figcaption>
-            <strong>Who funds the ~$30 M central case.</strong> ~$22 M (~75%) plausibly grant-fundable across Prop 4, DWR Flood-MAR, FEMA BRIC, NRCS, WCB/CDFW, USACE, and a Caltrans partnership &mdash; leaving an ~$8 M one-time beneficiary share, of which ~$3 M seeds the perpetual O&amp;M endowment. Endowment yield (~4% on $3 M &asymp; ~$120 K/yr) covers annual O&amp;M &mdash; <strong>no recurring assessment on beneficiaries</strong>. <em>Concept-stage OOM &mdash; central case; see the Headline Result bracket (&sect;1) for low/high. Source: Deliverable 07 &sect;1, &sect;5.2, &sect;4.2.</em>
-          </figcaption>
-        </figure>
-      </template>
+  <div class="actions">
+    <a class="btn primary" href="report/Rock-Creek-Concept-Evaluation-Report-July-2026.pdf">Concept Evaluation Report (PDF)</a>
+    <a class="btn ghost" href="technical.html">Technical annex</a>
+  </div>
 
-      <template data-fig-anchor="6.1.4 Putting the three framings together">
-        <figure class="figure">
-          <img src="assets/fig-07-three-framings.svg" alt="Three bars showing levelized cost per acre-foot under three framings: about 77 dollars per acre-foot for the 8 million dollar beneficiary share, about 212 dollars for the 22 million dollar grant-funded share, and about 308 dollars for the 30 million dollar total project, all sitting below a shaded band marking the typical California surface-water transaction range of 300 to 2,000 dollars per acre-foot.">
-          <figcaption>
-            <strong>Whose money you count changes the number &mdash; deliberately kept as three framings.</strong> ~$77/AF beneficiary-share-only ($8 M incl. $3 M endowment) &middot; ~$212/AF grant-funded ($22 M) &middot; ~$308/AF total project ($30 M) &mdash; against the typical California surface-water transaction range of $300&ndash;2,000/AF. As Deliverable 07 &sect;6.1.2 puts it: &ldquo;AGUBC and partners contribute ~$8M to a $30M project, and in return receive ~6,000 AF/yr of new recharge &mdash; a local cost of about $77 per acre-foot, well below the California surface-water market range of $300&ndash;2,000/AF.&rdquo; <em>Concept-stage OOM &mdash; central case; see the Headline Result bracket (&sect;1) for low/high. Source: Deliverable 07 &sect;6.1.4, &sect;6.2.</em>
-          </figcaption>
-        </figure>
-      </template>
-    </div>
-  </section>
+  <h3 class="blockhead">Source studies</h3>
+  <ul class="srcs">
+    <li><strong>Nord Feasibility Study</strong> &mdash; Wood Rodgers for Butte County / DWR, Aug 2023. Watershed hydrology, geomorphology, environmental constraints, unit costs. <em>Dam-based results not transferred.</em></li>
+    <li><strong>Rock Creek Reclamation District Infiltration Feasibility Study</strong> &mdash; Wood Rodgers / GeoSystems Analysis, Oct 2023. Same-area infiltration rates, subsurface screening method, permitting findings. <a href="RockCreek_Reclamation_District-Infiltration_Feasibility_Study_Oct2023.pdf">PDF</a></li>
+    <li><strong>Singer Creek Preserve Habitat Development Plan, Vol. 1</strong> &mdash; Restoration Resources for BCAG, 2008&ndash;09. Land control, stewardship-endowment model, restoration permitting pathway.</li>
+    <li><strong>Caltrans District 3 Hydraulic Branch memorandum</strong> &mdash; Lee, Nov 2025. Current-conditions 2D results: the 3.52&times; Garner Lane finding and the 39/61 bifurcation split. <a href="Flooding_Issues_Along_Hwy99_Mud_Creek_to_Rock_Creek.pdf">PDF</a></li>
+    <li><strong>Geosyntec Component 5 Recharge Investigation</strong> &mdash; for Butte County WRC, June 2026. Confluence infiltration finding; Water Code &sect;1242.1 FloodMAR pathway; corridor basin projects N4/N5/N6; Recharge Action Plan context.</li>
+    <li><strong>Vina Subbasin GSP (2021) and WY 2025 Annual Report</strong> &mdash; sustainable-yield context and the ~8,000 AF/yr storage trend.</li>
+  </ul>
+  <p class="detail-line">Full linked citations, including the Nord source transcriptions, are on the <a href="technical.html">annex Overview tab</a>.</p>
 
+  <div class="note"><strong>Status.</strong> Concept-stage synthesis prepared by AGUBC for discussion with Butte County. Not an engineering design, a legal opinion, or water-rights advice; no professional engineering stamp is expressed or implied. Order-of-magnitude values refine through the Phase 1&ndash;2 fieldwork described in the report.</div>
+</section>
+
+</div>
 </main>
 
 <footer class="site">
-  Prepared as concept-stage technical synthesis for AGUBC stakeholder discussion. Not engineering, legal, or water-rights advice.
-  &nbsp;&middot;&nbsp; Source repository: AGUBC-vina/rock-creek-floodplain (private)
+  Prepared by the Agricultural Groundwater Users of Butte County (AGUBC) &middot; July 2026<br>
+  Concept-stage synthesis for stakeholder discussion. Not engineering, legal, or water-rights advice.
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
+// ===== Tabs =====
+(function () {
+  const buttons = document.querySelectorAll('nav.tabs button[data-tab]');
+  const panels = document.querySelectorAll('section.panel');
+  function activate(key, push) {
+    buttons.forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === key)));
+    panels.forEach(p => p.classList.toggle('active', p.id === 'tab-' + key));
+    if (push) history.replaceState(null, '', '#' + key);
+    if (key === 'overview' && window.__vicinityMap) {
+      setTimeout(() => window.__vicinityMap.invalidateSize(), 60);
+    }
+    window.scrollTo({ top: 0 });
+  }
+  buttons.forEach(b => b.addEventListener('click', () => activate(b.dataset.tab, true)));
+  const initial = (location.hash || '').replace('#', '');
+  if (initial && document.getElementById('tab-' + initial)) activate(initial, false);
+})();
+
 // ===== Vicinity map =====
 (function buildVicinityMap() {
   if (typeof L === 'undefined') {
@@ -877,8 +373,8 @@
   if (!mapEl) return;
 
   const map = L.map(mapEl, { zoomControl: true, scrollWheelZoom: true, attributionControl: true });
+  window.__vicinityMap = map;
 
-  // Basemaps
   const carto = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd', maxZoom: 20
@@ -900,7 +396,6 @@
     { position: 'topright', collapsed: false }).addTo(map);
   L.control.scale({ position: 'bottomleft', metric: false }).addTo(map);
 
-  // Helper — parse KML <coordinates> into [lat, lng] array
   function parseCoords(text) {
     return text.trim().split(/\s+/).map(pt => {
       const parts = pt.split(',');
@@ -908,7 +403,6 @@
     }).filter(c => isFinite(c[0]) && isFinite(c[1]));
   }
 
-  // Place an invisible marker that carries a permanent text label
   function placeLabel(latlng, text, klass, dir) {
     L.marker(latlng, { opacity: 0, interactive: false, keyboard: false })
       .addTo(map)
@@ -923,7 +417,6 @@
 
       dom.querySelectorAll('Placemark').forEach(p => {
         const name = (p.querySelector('name') || {}).textContent || '';
-        // Skip the small Polygon markers — we use our own pins
         if (p.querySelector('Polygon')) return;
 
         const lineEl = p.querySelector('LineString coordinates');
@@ -943,13 +436,11 @@
           const layer = L.polyline(coords, style).addTo(map);
           layers.push(layer);
 
-          // Route labels at midpoint
           if (name === 'Rock-Sand Diversion') {
             placeLabel(coords[Math.floor(coords.length * 0.45)], 'Sand Creek North (~6 mi)', 'map-label-route', 'top');
           } else if (name === 'Rock Sand 2 Diversion') {
             placeLabel(coords[Math.floor(coords.length * 0.55)], 'Sand Creek South (~4.4 mi)', 'map-label-route', 'bottom');
           } else if (name === 'Rock Creek') {
-            // Three labels along the long Rock Creek line
             [0.08, 0.55, 0.92].forEach(f => {
               placeLabel(coords[Math.floor(coords.length * f)], 'Rock Creek', 'map-label-stream', 'top');
             });
@@ -987,323 +478,5 @@
     });
 })();
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/marked@13.0.3/marked.min.js"></script>
-<script>
-(function () {
-  // Configure marked
-  marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
-
-  // Preprocess markdown to escape single tildes so marked doesn't render
-  // "~5,000 AF/yr ... ~$25 M" as strikethrough. marked v13's del tokenizer
-  // greedily matches ~text~ on top of GFM's intended ~~text~~. We use "~"
-  // heavily as the "approximately" symbol throughout the deliverables.
-  //
-  // Strategy: replace every single tilde (not part of ~~) with \~ so marked
-  // sees an escaped literal. Pairs of tildes (~~) are preserved in case
-  // strikethrough is ever intentional.
-  function escapeApproxTildes(md) {
-    return md.replace(/(^|[^~])~(?!~)/g, '$1\\~');
-  }
-
-  // ===== Progressive-disclosure fold configuration =====
-  // Matched against rendered heading textContent (trimmed, whitespace-collapsed,
-  // case-insensitive), so bold/code spans inside headings are irrelevant.
-  // A config entry whose heading is not found FAILS OPEN: the section renders
-  // visible as before and a console warning is logged. Content is never lost.
-  const FOLD_CONFIG = {
-    readme: [
-      { level: 'h2', match: 'Source Document Index', hint: 'same list as the "Source documents" panel below' }
-    ],
-    d01: [
-      { level: 'h2', match: '3. Hydrology Inputs (For Screening Routing)', hint: 'watershed areas · four-dataset design discharges · precipitation basis · available models' },
-      { level: 'h2', match: '4. Recharge-Feasibility Inputs (Subsurface)', hint: '0.7 ft/day favorable max · shallow-hardpan reconciliation · +50% channel bonus · vadose storage' },
-      { level: 'h2', match: '5. Parameter Table — Concept-Stage Reference', hint: '50 parameters in 9 groups, each cited or flagged [VERIFY]' },
-      { level: 'h2', match: '7. What Is NOT Transferable from the Source Projects — Explicit Flags', hint: '7 explicit do-not-carry-over flags from Nord / RCRD / Singer' },
-      { level: 'h2', match: '8. Cross-References to Other Deliverables' }
-    ],
-    d02: [
-      { level: 'h2', match: '2. Side-by-Side Comparison — Rock Creek ~0.91 mi Upstream of the Bifurcation', hint: 'full Q10–Q500 table across the three datasets, with Δ columns' },
-      { level: 'h2', match: '3. Side-by-Side Comparison — Keefer Slough (Multiple Locations)', hint: 'four locations · the 3.52× Garner Lane discrepancy · the 56/44 → 39/61 split shift' },
-      { level: 'h2', match: '4. Why the Datasets Disagree — Per the Nord Study’s Own Discussion', hint: 'the Nord study’s own reconciliation of the differences' },
-      { level: 'h3', match: 'Why not the 2011 FIS Effective Flows as the design basis' },
-      { level: 'h3', match: 'Why not USGS StreamStats as the design basis' },
-      { level: 'h2', match: '6. Recommended Comparison Table for the Routing Screen', hint: 'the 4-dataset × location table for Deliverable 5' },
-      { level: 'h2', match: '8. Open Questions for Subsequent Phases' }
-    ],
-    d03: [
-      { level: 'h3', match: '2.1 Matrix', hint: '17 attributes × 5 projects (this concept, two Nord alternatives, RCRD, Singer)' },
-      { level: 'h3', match: '2.3 Singer Creek Lessons — Targeted', hint: '7 transferable lessons: land control, endowment, phasing, NWP 27, monitoring' },
-      { level: 'h3', match: '2.4 Sand Creek (RCRD) Infiltration Study Lessons — Targeted', hint: '7 transferable findings: 0.7 ft/day, +50% channel bonus, FDEM sequence, NRCS easements' },
-      { level: 'h2', match: '3. Tier B — California Flood-MAR Floodplain-Reactivation Projects', hint: 'statewide framework fit · [VERIFY] external Merced values' },
-      { level: 'h2', match: '4. Tier C — USGS Rock Detention Structures (RDS) Pilots', hint: 'arid-Southwest precedents · ~10× smaller linear scale than this concept' },
-      { level: 'h2', match: '7. Direct Stakeholder-Framing Quotes', hint: 'seven attributable quotes for stakeholder materials' },
-      { level: 'h2', match: '8. Open Items — External Sources Needed' }
-    ],
-    d04: [
-      { level: 'h2', match: '1. Hydraulics / Flood Routing', hint: 'diversion + corridors must measurably cut peaks at Q10–Q50, honestly modeled at Q100/Q500, with FEMA no-rise' },
-      { level: 'h2', match: '2. Recharge Feasibility (Lead with Sand Creek Infiltration Study and the Shallow-Clay-Layer Check)', hint: 'enough reaches must have favorable subsurface — the FDEM screen is the key step' },
-      { level: 'h2', match: '3. Land / Site Control', hint: '4 landowners; the major NRCS-easement holder (~87% of corridor) is the go/no-go partner' },
-      { level: 'h2', match: '4. Water Rights, CEQA, and Permitting Pathway', hint: 'SWRCB recharge permit · CEQA lead agency · ESA/CDFW consultations · CLOMR sequencing' },
-      { level: 'h2', match: '5. Sediment and Maintenance', hint: 'corridor must absorb the sediment load; perpetual funded maintenance on the Singer Creek model' },
-      { level: 'h2', match: '6. Cost and Funding', hint: 'OOM cost must match a real funding pathway — Prop 4 / Flood-MAR / NRCS stack' }
-    ],
-    d05: [
-      { level: 'h2', match: '3. README Sheet', hint: 'version block, decision rules, units, disclaimers' },
-      { level: 'h2', match: '4. Inputs_Hydrology Sheet', hint: 'the four discharge datasets, split ratings, and precipitation as input tables' },
-      { level: 'h2', match: '5. Inputs_Design Sheet', hint: 'diversion, corridor, weir, and infiltration parameters with screening ranges' },
-      { level: 'h2', match: '6. Calc_Peak_Reduction Sheet — Logic', hint: 'peak-reduction logic · 4 datasets × 5 events × 3 attenuation cases = 60-case sweep' },
-      { level: 'h2', match: '7. Calc_Recharge_Volume Sheet — Logic', hint: 'recharge-volume logic · illustrative worked example (placeholder inputs)' },
-      { level: 'h2', match: '9. Translation to an .xlsx Workbook' }
-    ],
-    d06: [
-      { level: 'h2', match: '6. Planting Palette — by Hydrologic Zone', hint: '5 hydrologic zones · ~30 native species with planting densities' },
-      { level: 'h2', match: '7. Habitat / Wildlife Design Considerations', hint: 'design implications for 9 sensitive species / groups' },
-      { level: 'h2', match: '8. Construction Approach (One Reach)', hint: '8-step single-reach sequence · dry-season window' },
-      { level: 'h2', match: '10. Cross-References' }
-    ],
-    d07: [
-      { level: 'h2', match: '2. How Much Water Can We Pull Off Rock Creek?', hint: 'supply vs. capacity buildup · why the central case is ~5,800 AF/yr, not 2,700 (§2.3a)' },
-      { level: 'h2', match: '4. Capital vs. Annual — What’s One-Time, What Recurs', hint: 'everything is one-time capital · ~$120K/yr O&M covered by endowment yield' },
-      { level: 'h3', match: '5.1 Grant-eligibility by cost category', hint: 'eligibility % and best-fit programs for each cost line' },
-      { level: 'h3', match: '5.3 Beneficiary share — who pays the residual?', hint: 'starting-point shares across Vina GSA, County, Caltrans, AGUBC, TWD' },
-      { level: 'h3', match: '5.4 Funding-strategy notes', hint: 'multi-tranche strategy · match-stacking · the endowment is hardest to fund' },
-      { level: 'h3', match: '5.5 Could the Project Be a Mitigation Bank? — Three Paths, One Recommendation', hint: 'full bank not recommended; Caltrans single-buyer + in-lieu-fee worth pursuing (~$3M central)' },
-      { level: 'h3', match: '5.6 Best-fit programs — quick reference', hint: '16 candidate programs with sponsors and typical awards' },
-      { level: 'h4', match: '6.1.1 Total project cost (society-wide levelized cost)', hint: 'derivation table' },
-      { level: 'h4', match: '6.1.2 Beneficiary-share levelized cost — what AGUBC members + Vina GSA + Butte County actually pay', hint: 'derivation table' },
-      { level: 'h4', match: '6.1.3 Grant-funded levelized cost — what state and federal taxpayers contribute', hint: 'derivation table' },
-      { level: 'h3', match: '6.2 Comparison to alternatives', hint: 'banking, transfers, off-stream storage, stormwater capture $/AF ranges' },
-      { level: 'h2', match: '8. Key Sensitivities (What Moves the Answer)', hint: '7 drivers, led by land-control confirmation and favorable-subsurface fraction' },
-      { level: 'h2', match: '9. Open [VERIFY] Items Specific to This OOM' },
-      { level: 'h2', match: '10. Cross-References' }
-    ]
-  };
-
-  const HEAD_RANK = { H1: 1, H2: 2, H3: 3, H4: 4, H5: 5, H6: 6 };
-
-  function normHead(s) {
-    return s
-      .replace(/[‘’]/g, "'")   // curly → straight apostrophes
-      .replace(/[“”]/g, '"')   // curly → straight double quotes
-      .replace(/\s+/g, ' ')
-      .trim()
-      .toLowerCase();
-  }
-
-  function findHeading(container, level, match) {
-    const want = normHead(match);
-    const heads = container.querySelectorAll(level);
-    for (let i = 0; i < heads.length; i++) {
-      if (normHead(heads[i].textContent) === want) return heads[i];
-    }
-    return null;
-  }
-
-  // Wrap each configured heading + its section content into <details class="fold">.
-  function applyFolds(container, key) {
-    (FOLD_CONFIG[key] || []).forEach(entry => {
-      const target = findHeading(container, entry.level, entry.match);
-      if (!target) {
-        console.warn('[fold] heading not found on tab "' + key + '": ' + entry.match);
-        return; // fail open — section stays visible
-      }
-      const rank = HEAD_RANK[target.tagName];
-      const details = document.createElement('details');
-      details.className = 'fold fold-' + entry.level;
-      const summary = document.createElement('summary');
-      const body = document.createElement('div');
-      body.className = 'fold-body';
-      target.parentNode.insertBefore(details, target);
-      summary.appendChild(target);
-      if (entry.hint) {
-        const hintEl = document.createElement('span');
-        hintEl.className = 'fold-hint';
-        hintEl.textContent = entry.hint;
-        summary.appendChild(hintEl);
-      }
-      details.appendChild(summary);
-      details.appendChild(body);
-      // Consume following siblings until the next heading of same-or-higher level.
-      let sib = details.nextSibling;
-      while (sib) {
-        if (sib.nodeType === 1 && HEAD_RANK[sib.tagName] && HEAD_RANK[sib.tagName] <= rank) break;
-        const next = sib.nextSibling;
-        body.appendChild(sib);
-        sib = next;
-      }
-      // Keep the trailing section-divider <hr> outside the fold so separators
-      // between sections stay visible when the fold is collapsed.
-      if (body.lastElementChild && body.lastElementChild.tagName === 'HR') {
-        details.parentNode.insertBefore(body.lastElementChild, details.nextSibling);
-      }
-    });
-  }
-
-  // Move <template data-fig-anchor="..."> figures (hardcoded per panel) to sit
-  // immediately before their anchor heading — or before that heading's fold.
-  function applyTemplates(panel, container) {
-    if (!panel) return;
-    panel.querySelectorAll('template[data-fig-anchor]').forEach(tpl => {
-      const frag = tpl.content.cloneNode(true);
-      let target = null;
-      const heads = container.querySelectorAll('h2,h3,h4');
-      const want = normHead(tpl.dataset.figAnchor);
-      for (let i = 0; i < heads.length; i++) {
-        if (normHead(heads[i].textContent) === want) { target = heads[i]; break; }
-      }
-      if (target) {
-        const fold = target.closest('details.fold');
-        const anchorEl = (fold && container.contains(fold)) ? fold : target;
-        anchorEl.parentNode.insertBefore(frag, anchorEl);
-      } else {
-        console.warn('[fig] anchor heading not found: ' + tpl.dataset.figAnchor);
-        container.appendChild(frag); // fail visible — never lose a figure
-      }
-      tpl.remove();
-    });
-  }
-
-  // One small "Expand all / Collapse all" toggle per panel that contains folds.
-  function ensureFoldToggle(panel) {
-    if (!panel) return;
-    const inner = panel.querySelector('.panel') || panel;
-    if (inner.querySelector('.fold-toggle')) return;
-    if (!inner.querySelector('details')) return;
-    const bar = document.createElement('div');
-    bar.className = 'fold-toggle';
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.textContent = 'Expand all sections';
-    btn.addEventListener('click', () => {
-      const all = inner.querySelectorAll('details');
-      let anyClosed = false;
-      all.forEach(d => { if (!d.open) anyClosed = true; });
-      all.forEach(d => { d.open = anyClosed; });
-      btn.textContent = anyClosed ? 'Collapse all sections' : 'Expand all sections';
-    });
-    bar.appendChild(btn);
-    inner.insertBefore(bar, inner.firstChild);
-  }
-
-  const tabMap = {
-    readme: '00-README-Deliverables.md',
-    d01: '01-Refined-Concept-and-Parameter-Table.md',
-    d02: '02-Discharge-Dataset-Comparison.md',
-    d03: '03-Benchmarking-Matrix.md',
-    d04: '04-Feasibility-and-Next-Steps-Roadmap.md',
-    d05: '05-Flood-Routing-Screening-Spreadsheet-Structure.md',
-    d06: '06-Typical-Reach-Design-Concept.md',
-    d07: '07-Order-of-Magnitude-Cost-Benefit.md',
-  };
-
-  const loaded = new Set();
-  const pending = new Set();
-
-  // Per-load cache buster. GitHub Pages serves through Fastly which caches by URL
-  // (not by auth state), so a 404 captured during the initial build window can be
-  // served to authenticated users until the TTL expires. A unique query string on
-  // each fetch sidesteps that cache.
-  const cacheBust = '?_=' + Date.now();
-
-  async function loadTab(key) {
-    if (loaded.has(key) || pending.has(key)) return;
-    const target = document.getElementById('md-' + key);
-    if (!target) return;
-    const file = tabMap[key];
-    pending.add(key);
-    try {
-      const resp = await fetch(file + cacheBust, { cache: 'no-cache' });
-      if (!resp.ok) throw new Error(resp.status + ' ' + resp.statusText);
-      const text = await resp.text();
-      target.innerHTML = marked.parse(escapeApproxTildes(text));
-      const panel = document.getElementById('tab-' + key);
-      applyFolds(target, key);
-      applyTemplates(panel, target);
-      ensureFoldToggle(panel);
-      loaded.add(key);
-    } catch (e) {
-      target.innerHTML = '<p style="color:#b35c1e"><strong>Could not load <code>' + file + '</code>.</strong> ' +
-        'If you are previewing locally via <code>file://</code>, run a small static server (e.g. <code>python3 -m http.server</code>) and refresh. ' +
-        'Error: ' + (e.message || e) + '</p>';
-    } finally {
-      pending.delete(key);
-    }
-  }
-
-  function activateTab(key) {
-    document.querySelectorAll('nav.tabs button[role="tab"]').forEach(b => {
-      const selected = b.dataset.tab === key;
-      b.setAttribute('aria-selected', selected ? 'true' : 'false');
-    });
-    document.querySelectorAll('section.tab-panel').forEach(p => {
-      p.classList.toggle('active', p.id === 'tab-' + key);
-    });
-    loadTab(key);
-    // update hash without jumping
-    if (history.replaceState) {
-      history.replaceState(null, '', '#' + key);
-    }
-    // scroll to top of main content on tab change
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }
-
-  document.querySelectorAll('nav.tabs button[role="tab"]').forEach(b => {
-    b.addEventListener('click', () => activateTab(b.dataset.tab));
-  });
-
-  // Domain tiles (tab 04): open the matching fold and scroll to it.
-  document.querySelectorAll('[data-open-heading]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const panel = btn.closest('section.tab-panel');
-      const container = panel && panel.querySelector('.markdown-body');
-      if (!container) return;
-      const target = findHeading(container, 'h2,h3,h4', btn.dataset.openHeading);
-      if (!target) return;
-      const fold = target.closest('details.fold');
-      if (fold) fold.open = true;
-      (fold || target).scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  // Initial tab from hash or default readme
-  const initial = (location.hash || '#readme').slice(1);
-  activateTab(tabMap[initial] ? initial : 'readme');
-
-  // ===== Print: force every fold open, restore after =====
-  // CSS alone cannot render the contents of a closed <details> in print.
-  let printSnapshot = null;
-  function openAllForPrint() {
-    if (printSnapshot) return; // guard: beforeprint + matchMedia may both fire
-    Object.keys(tabMap).forEach(loadTab); // ensure every panel has content
-    printSnapshot = [];
-    document.querySelectorAll('main details').forEach(d => {
-      printSnapshot.push([d, d.open]);
-      d.open = true;
-    });
-  }
-  function restoreAfterPrint() {
-    if (!printSnapshot) return;
-    printSnapshot.forEach(pair => { pair[0].open = pair[1]; });
-    printSnapshot = null;
-  }
-  window.addEventListener('beforeprint', openAllForPrint);
-  window.addEventListener('afterprint', restoreAfterPrint);
-  if (window.matchMedia) {
-    const mql = window.matchMedia('print');
-    const onPrintChange = e => { if (e.matches) openAllForPrint(); else restoreAfterPrint(); };
-    if (mql.addEventListener) mql.addEventListener('change', onPrintChange);
-    else if (mql.addListener) mql.addListener(onPrintChange);
-  }
-
-  // ===== Background-preload all tabs =====
-  // Guarantees print completeness (all 8 panels render even if never clicked)
-  // and removes the tab-switch loading flash.
-  const preloadAll = () => Object.keys(tabMap).forEach(loadTab);
-  if ('requestIdleCallback' in window) requestIdleCallback(preloadAll, { timeout: 4000 });
-  else setTimeout(preloadAll, 1500);
-})();
-</script>
-
 </body>
 </html>
