@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Three-step decision ladder: screening decides whether the concept is worth 2D routing, 2D routing decides whether it is worth designing, and designing decides whether it is worth building">
+
+  <!-- Background -->
+  <rect width="760" height="150" fill="#ffffff"/>
+
+  <!-- ====== Chevron row: y 20 (top) to 100 (bottom), mid-line y=60, point/notch depth 20 ====== -->
+
+  <!-- Chevron 1: Screening — flat left edge, pointed right edge -->
+  <polygon points="77.5,20 272.5,20 292.5,60 272.5,100 77.5,100" fill="#e6eef1" stroke="#2c5f73" stroke-width="1.5"/>
+
+  <!-- Chevron 2: 2D routing — notched left edge, pointed right edge -->
+  <polygon points="272.5,20 467.5,20 487.5,60 467.5,100 272.5,100 292.5,60" fill="#2c5f73" stroke="#2c5f73" stroke-width="1.5"/>
+
+  <!-- Chevron 3: Design — notched left edge, pointed right edge -->
+  <polygon points="467.5,20 662.5,20 682.5,60 662.5,100 467.5,100 487.5,60" fill="#1e4554" stroke="#1e4554" stroke-width="1.5"/>
+
+  <!-- ====== Chevron text (centered on each polygon's visual centroid: 180, 380, 575) ====== -->
+
+  <!-- Chevron 1 text -->
+  <text x="180" y="55" text-anchor="middle" font-size="15" font-weight="700" fill="#1e4554">Screening</text>
+  <text x="180" y="72" text-anchor="middle" font-size="13" fill="#4a5a66">worth 2D routing?</text>
+
+  <!-- Chevron 2 text -->
+  <text x="380" y="55" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">2D routing</text>
+  <text x="380" y="72" text-anchor="middle" font-size="13" fill="#ffffff">worth designing?</text>
+
+  <!-- Chevron 3 text -->
+  <text x="575" y="55" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Design</text>
+  <text x="575" y="72" text-anchor="middle" font-size="13" fill="#ffffff">worth building?</text>
+
+  <!-- ====== Caption ====== -->
+  <text x="380" y="130" text-anchor="middle" font-size="13" fill="#4a5a66">Screening &#8594; 2D routing &#8594; design &#8594; build &#8212; each step gates the next.</text>
+
+</svg>

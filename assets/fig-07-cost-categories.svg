@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Horizontal bar chart of central-case capital cost by category for the approximately 30 million dollar Rock Creek concept: A intake and diversion structure 4.5 million dollars; B conveyance to corridor heads 2.5 million dollars; C rock weirs 3.5 million dollars; D plantings and corridor restoration 3.5 million dollars; E engineering, design, and project management 1.5 million dollars; F permitting including CEQA, ESA, CDFW, and FEMA CLOMR 2.0 million dollars; G land control easements 2.0 million dollars; H pre-construction monitoring and establishment 0.7 million dollars; I perpetual operations and maintenance endowment 3.0 million dollars; J contingency 6.5 million dollars, shown in a distinct muted color as an allowance rather than a work item. Total approximately 30 million dollars central case, with a low estimate of approximately 17.5 million dollars and a high estimate of approximately 50 million dollars">
+
+  <!-- Title -->
+  <text x="24" y="26" font-size="16" font-weight="700" fill="#1f2a33">Where the ~$30 M goes — central-case capital by category</text>
+
+  <!-- ===================== PLOT GEOMETRY ===================== -->
+  <!-- Plot area: x = 260 (0 $M) to x = 700 (7 $M); 1 $M = 440/7 = 62.857 units -->
+  <!-- 10 rows, y = 46 to y = 342; row height 29.6, bar height 17.76, centered in row -->
+
+  <!-- Gridlines every 1 $M, from y=46 to y=342 -->
+  <line x1="260.00" y1="46" x2="260.00" y2="342" stroke="#e2dccf" stroke-width="1"/>
+  <line x1="322.86" y1="46" x2="322.86" y2="342" stroke="#e2dccf" stroke-width="1"/>
+  <line x1="385.71" y1="46" x2="385.71" y2="342" stroke="#e2dccf" stroke-width="1"/>
+  <line x1="448.57" y1="46" x2="448.57" y2="342" stroke="#e2dccf" stroke-width="1"/>
+  <line x1="511.43" y1="46" x2="511.43" y2="342" stroke="#e2dccf" stroke-width="1"/>
+  <line x1="574.29" y1="46" x2="574.29" y2="342" stroke="#e2dccf" stroke-width="1"/>
+  <line x1="637.14" y1="46" x2="637.14" y2="342" stroke="#e2dccf" stroke-width="1"/>
+  <line x1="700.00" y1="46" x2="700.00" y2="342" stroke="#e2dccf" stroke-width="1"/>
+
+  <!-- Baseline (0 $M axis) drawn slightly heavier for readability -->
+  <line x1="260.00" y1="46" x2="260.00" y2="342" stroke="#7a8894" stroke-width="1"/>
+
+  <!-- ===================== ROW A — Intake / diversion structure: 4.5 $M ===================== -->
+  <text x="12" y="65.30" font-size="13" fill="#1f2a33">A — Intake / diversion structure</text>
+  <rect x="260.00" y="51.92" width="282.86" height="17.76" fill="#2c5f73"/>
+  <text x="550.86" y="65.30" font-size="13" font-weight="700" fill="#1f2a33">$4.5 M</text>
+
+  <!-- ===================== ROW B — Conveyance to corridor heads: 2.5 $M ===================== -->
+  <text x="12" y="94.90" font-size="13" fill="#1f2a33">B — Conveyance to corridor heads</text>
+  <rect x="260.00" y="81.52" width="157.14" height="17.76" fill="#2c5f73"/>
+  <text x="425.14" y="94.90" font-size="13" font-weight="700" fill="#1f2a33">$2.5 M</text>
+
+  <!-- ===================== ROW C — Rock weirs: 3.5 $M ===================== -->
+  <text x="12" y="124.50" font-size="13" fill="#1f2a33">C — Rock weirs</text>
+  <rect x="260.00" y="111.12" width="220.00" height="17.76" fill="#2c5f73"/>
+  <text x="488.00" y="124.50" font-size="13" font-weight="700" fill="#1f2a33">$3.5 M</text>
+
+  <!-- ===================== ROW D — Plantings + restoration: 3.5 $M ===================== -->
+  <text x="12" y="154.10" font-size="13" fill="#1f2a33">D — Plantings + restoration</text>
+  <rect x="260.00" y="140.72" width="220.00" height="17.76" fill="#2c5f73"/>
+  <text x="488.00" y="154.10" font-size="13" font-weight="700" fill="#1f2a33">$3.5 M</text>
+
+  <!-- ===================== ROW E — Engineering / design / PM: 1.5 $M ===================== -->
+  <text x="12" y="183.70" font-size="13" fill="#1f2a33">E — Engineering / design / PM</text>
+  <rect x="260.00" y="170.32" width="94.29" height="17.76" fill="#2c5f73"/>
+  <text x="362.29" y="183.70" font-size="13" font-weight="700" fill="#1f2a33">$1.5 M</text>
+
+  <!-- ===================== ROW F — Permitting + CEQA/ESA/FEMA: 2.0 $M ===================== -->
+  <text x="12" y="213.30" font-size="13" fill="#1f2a33">F — Permitting + CEQA/ESA/FEMA</text>
+  <rect x="260.00" y="199.92" width="125.71" height="17.76" fill="#2c5f73"/>
+  <text x="393.71" y="213.30" font-size="13" font-weight="700" fill="#1f2a33">$2.0 M</text>
+
+  <!-- ===================== ROW G — Land control (easements): 2.0 $M ===================== -->
+  <text x="12" y="242.90" font-size="13" fill="#1f2a33">G — Land control (easements)</text>
+  <rect x="260.00" y="229.52" width="125.71" height="17.76" fill="#2c5f73"/>
+  <text x="393.71" y="242.90" font-size="13" font-weight="700" fill="#1f2a33">$2.0 M</text>
+
+  <!-- ===================== ROW H — Pre-construction monitoring: 0.7 $M ===================== -->
+  <text x="12" y="272.50" font-size="13" fill="#1f2a33">H — Pre-construction monitoring</text>
+  <rect x="260.00" y="259.12" width="44.00" height="17.76" fill="#2c5f73"/>
+  <text x="312.00" y="272.50" font-size="13" font-weight="700" fill="#1f2a33">$0.7 M</text>
+
+  <!-- ===================== ROW I — Perpetual O&M endowment: 3.0 $M ===================== -->
+  <text x="12" y="302.10" font-size="13" fill="#1f2a33">I — Perpetual O&amp;M endowment</text>
+  <rect x="260.00" y="288.72" width="188.57" height="17.76" fill="#2c5f73"/>
+  <text x="456.57" y="302.10" font-size="13" font-weight="700" fill="#1f2a33">$3.0 M</text>
+
+  <!-- ===================== ROW J — Contingency: 6.5 $M (distinct muted color — allowance, not a work item) ===================== -->
+  <text x="12" y="331.70" font-size="13" fill="#1f2a33">J — Contingency</text>
+  <rect x="260.00" y="318.32" width="408.57" height="17.76" fill="#7a8894"/>
+  <text x="676.57" y="331.70" font-size="13" font-weight="700" fill="#1f2a33">$6.5 M</text>
+
+  <!-- ===================== X-AXIS TICK LABELS (0–7 $M) ===================== -->
+  <text x="260.00" y="356" text-anchor="middle" font-size="13" fill="#4a5a66">0</text>
+  <text x="322.86" y="356" text-anchor="middle" font-size="13" fill="#4a5a66">1</text>
+  <text x="385.71" y="356" text-anchor="middle" font-size="13" fill="#4a5a66">2</text>
+  <text x="448.57" y="356" text-anchor="middle" font-size="13" fill="#4a5a66">3</text>
+  <text x="511.43" y="356" text-anchor="middle" font-size="13" fill="#4a5a66">4</text>
+  <text x="574.29" y="356" text-anchor="middle" font-size="13" fill="#4a5a66">5</text>
+  <text x="637.14" y="356" text-anchor="middle" font-size="13" fill="#4a5a66">6</text>
+  <text x="700.00" y="356" text-anchor="middle" font-size="13" fill="#4a5a66">7</text>
+
+  <!-- Axis title -->
+  <text x="480.00" y="376" text-anchor="middle" font-size="13" fill="#4a5a66">central-case capital, $M</text>
+
+  <!-- ===================== BOTTOM SUMMARY LINE ===================== -->
+  <line x1="24" y1="390" x2="736" y2="390" stroke="#e2dccf" stroke-width="1"/>
+  <text x="24" y="410" font-size="14" font-weight="700" fill="#1f2a33">Total ≈ $30 M central (low ~$17.5 M · high ~$50 M)</text>
+
+</svg>

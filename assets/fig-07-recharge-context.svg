@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Horizontal scale from 0 to 10,000 acre-feet per year. A shaded band from 5,000 to 7,000 marks the Rock Creek concept's central-case annual recharge (concept-stage order of magnitude). A gold reference line at 8,000 marks the Vina Subbasin's current annual storage growth, per the WY 2025 Vina GSA Annual Report. The full bracket runs from a low of about 130 acre-feet per year to a high capacity of about 18,700 acre-feet per year, supply-capped in most years.">
+
+  <!-- ===================== Title ===================== -->
+  <text x="12" y="24" font-size="16" font-weight="700" fill="#1f2a33">Concept recharge in context — central case vs current Vina storage growth</text>
+
+  <!-- ===================== Gold reference-line label (two lines), upper-right, clear of band label ===================== -->
+  <g text-anchor="end" font-size="13" font-weight="700" fill="#1f2a33">
+    <text x="728" y="46">Vina Subbasin current annual storage growth</text>
+    <text x="728" y="63">~8,000 AF/yr (WY 2025 Vina GSA Annual Report)</text>
+  </g>
+
+  <!-- ===================== Central-case band label (two lines), centered over the band, clear of the gold line ===================== -->
+  <g text-anchor="middle" font-size="14" font-weight="700" fill="#1e4554">
+    <text x="458" y="84">central case — ~5,000&#8211;7,000 AF/yr</text>
+    <text x="458" y="102">(concept-stage OOM)</text>
+  </g>
+
+  <!-- ===================== Plot area: vertical gridlines (light, above axis) ===================== -->
+  <!-- Scale: x(v) = 70 + (v/10000)*660 -->
+  <g stroke="#e2dccf" stroke-width="1">
+    <line x1="202" y1="108" x2="202" y2="172"/>
+    <line x1="334" y1="108" x2="334" y2="172"/>
+    <line x1="466" y1="108" x2="466" y2="172"/>
+    <!-- gridline at 8,000 omitted: the bold gold reference line at x=598 marks this position -->
+  </g>
+
+  <!-- ===================== Central-case band: 5,000-7,000 AF/yr, vertically centered in plot area ===================== -->
+  <rect x="400" y="112" width="132" height="56" fill="#2c5f73" fill-opacity="0.3" stroke="#2c5f73" stroke-width="1.5"/>
+
+  <!-- ===================== Gold reference line: 8,000 AF/yr, full plot height ===================== -->
+  <line x1="598" y1="108" x2="598" y2="172" stroke="#b08d4a" stroke-width="3"/>
+
+  <!-- ===================== Axis baseline ===================== -->
+  <line x1="70" y1="172" x2="730" y2="172" stroke="#1f2a33" stroke-width="1.5"/>
+
+  <!-- ===================== Axis ticks ===================== -->
+  <g stroke="#1f2a33" stroke-width="1.5">
+    <line x1="70" y1="172" x2="70" y2="178"/>
+    <line x1="202" y1="172" x2="202" y2="178"/>
+    <line x1="334" y1="172" x2="334" y2="178"/>
+    <line x1="466" y1="172" x2="466" y2="178"/>
+    <line x1="598" y1="172" x2="598" y2="178"/>
+    <line x1="730" y1="172" x2="730" y2="178"/>
+  </g>
+
+  <!-- ===================== Tick labels ===================== -->
+  <g text-anchor="middle" font-size="13" fill="#7a8894">
+    <text x="70" y="193">0</text>
+    <text x="202" y="193">2,000</text>
+    <text x="334" y="193">4,000</text>
+    <text x="466" y="193">6,000</text>
+    <text x="598" y="193">8,000</text>
+    <text x="730" y="193">10,000</text>
+  </g>
+
+  <!-- ===================== Bracket annotation ===================== -->
+  <text x="70" y="216" font-size="13" fill="#4a5a66">bracket: ~130 AF/yr low &#183; ~18,700 AF/yr high (capacity; supply-capped in most years)</text>
+
+</svg>

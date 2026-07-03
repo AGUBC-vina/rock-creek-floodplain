@@ -1,0 +1,88 @@
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="760" height="420" fill="#ffffff" />
+
+  <!-- Q100 highlight band, painted first, behind everything -->
+  <rect x="384.5" y="60" width="56" height="295" fill="#e6eef1" opacity="0.6" />
+
+  <!-- Y gridlines (0 - 10,000 by 2,000) and tick labels -->
+  <g stroke="#e2dccf" stroke-width="1">
+    <line x1="90" y1="355" x2="520" y2="355" />
+    <line x1="90" y1="301.36" x2="520" y2="301.36" />
+    <line x1="90" y1="247.73" x2="520" y2="247.73" />
+    <line x1="90" y1="194.09" x2="520" y2="194.09" />
+    <line x1="90" y1="140.45" x2="520" y2="140.45" />
+    <line x1="90" y1="86.82" x2="520" y2="86.82" />
+  </g>
+  <g font-size="13" fill="#7a8894" text-anchor="end">
+    <text x="80" y="359">0</text>
+    <text x="80" y="305.36">2,000</text>
+    <text x="80" y="251.73">4,000</text>
+    <text x="80" y="198.09">6,000</text>
+    <text x="80" y="144.45">8,000</text>
+    <text x="80" y="90.82">10,000</text>
+  </g>
+
+  <!-- X-axis categorical labels -->
+  <g font-size="13" fill="#7a8894" text-anchor="middle">
+    <text x="90" y="378">Q10</text>
+    <text x="197.5" y="378">Q25</text>
+    <text x="305" y="378">Q50</text>
+    <text x="412.5" y="378">Q100</text>
+    <text x="520" y="378">Q500</text>
+  </g>
+
+  <!-- 2011 FIS Effective — gap at Q25, drawn first (lightest weight, behind heavier lines) -->
+  <g>
+    <!-- Q10 marker only (isolated point, no segment before it) -->
+    <circle cx="90" cy="293.32" r="3.5" fill="#7a8894" />
+    <!-- absence of path between Q10 and Q50: no element drawn here -->
+    <!-- connected segments Q50 -> Q100 -> Q500 -->
+    <path d="M 305 237.00 L 412.5 204.82 L 520 145.82" fill="none" stroke="#7a8894" stroke-width="2" />
+    <circle cx="305" cy="237.00" r="3.5" fill="#7a8894" />
+    <circle cx="412.5" cy="204.82" r="3.5" fill="#7a8894" />
+    <circle cx="520" cy="145.82" r="3.5" fill="#7a8894" />
+  </g>
+
+  <!-- USGS StreamStats -->
+  <g>
+    <path d="M 90 258.99 L 197.5 224.40 L 305 194.09 L 412.5 162.71 L 520 86.82" fill="none" stroke="#2c5f73" stroke-width="2.25" />
+    <circle cx="90" cy="258.99" r="4" fill="#2c5f73" />
+    <circle cx="197.5" cy="224.40" r="4" fill="#2c5f73" />
+    <circle cx="305" cy="194.09" r="4" fill="#2c5f73" />
+    <circle cx="412.5" cy="162.71" r="4" fill="#2c5f73" />
+    <circle cx="520" cy="86.82" r="4" fill="#2c5f73" />
+  </g>
+
+  <!-- Nord HEC-HMS "Current Study" — heaviest, drawn last (on top) -->
+  <g>
+    <path d="M 90 215.95 L 197.5 188.33 L 305 164.19 L 412.5 139.92 L 520 80.92" fill="none" stroke="#1e4554" stroke-width="3" />
+    <circle cx="90" cy="215.95" r="4.5" fill="#1e4554" />
+    <circle cx="197.5" cy="188.33" r="4.5" fill="#1e4554" />
+    <circle cx="305" cy="164.19" r="4.5" fill="#1e4554" />
+    <circle cx="412.5" cy="139.92" r="4.5" fill="#1e4554" />
+    <circle cx="520" cy="80.92" r="4.5" fill="#1e4554" />
+  </g>
+
+  <!-- "no Q25 value" note near the FIS gap -->
+  <text x="197.5" y="272" font-size="13" fill="#7a8894" text-anchor="middle">no Q25 value</text>
+
+  <!-- Direct series labels with leader lines, staggered to avoid collision at right convergence -->
+  <!-- Nord: line end (520, 80.92) -> label pushed up -->
+  <line x1="520" y1="80.92" x2="528" y2="64" stroke="#1e4554" stroke-width="1" />
+  <text x="531" y="68" font-size="13" font-weight="bold" fill="#1e4554">Nord HEC-HMS (Current Study)</text>
+
+  <!-- StreamStats: line end (520, 86.82) -> label pushed down -->
+  <line x1="520" y1="86.82" x2="528" y2="106" stroke="#2c5f73" stroke-width="1" />
+  <text x="531" y="110" font-size="13" font-weight="bold" fill="#2c5f73">USGS StreamStats</text>
+
+  <!-- FIS: line end (520, 145.82) -> label near its own point -->
+  <line x1="520" y1="145.82" x2="528" y2="148" stroke="#7a8894" stroke-width="1" />
+  <text x="531" y="152" font-size="13" font-weight="bold" fill="#7a8894">2011 FIS Effective</text>
+
+  <!-- Title (wrapped to two lines to stay within viewBox width) -->
+  <text x="24" y="26" font-size="16" font-weight="bold" fill="#1f2a33">Rock Creek peak discharge — three datasets, five events</text>
+  <text x="24" y="46" font-size="16" font-weight="bold" fill="#1f2a33">(~25 sq mi at the concept intake)</text>
+
+</svg>

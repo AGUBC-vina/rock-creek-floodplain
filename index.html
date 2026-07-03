@@ -472,9 +472,41 @@
     border-bottom: 1px solid rgba(44,95,115,.25);
   }
   .fold-toggle button:hover { color: var(--accent-dark); border-bottom-color: var(--accent-dark); }
+  .domain-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 0 0 20px;
+  }
+  .domain-tiles button {
+    appearance: none;
+    font-family: inherit;
+    text-align: left;
+    background: var(--accent-soft);
+    border: 1px solid #cfdce0;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 12px;
+    cursor: pointer;
+  }
+  .domain-tiles button:hover { background: #dbe7ec; }
+  .domain-tiles button .n {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    letter-spacing: .08em;
+  }
+  .domain-tiles button .t {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 2px;
+  }
   /* print friendly */
   @media print {
-    nav.tabs, header.site, footer.site, .status-banner, .fold-toggle { display: none; }
+    nav.tabs, header.site, footer.site, .status-banner, .fold-toggle, .domain-tiles { display: none; }
     section.tab-panel { display: block !important; page-break-after: always; }
     .panel { box-shadow: none; border: 0; padding: 0; }
     body { background: #fff; }
@@ -649,6 +681,15 @@
         </figcaption>
       </figure>
 
+      <template data-fig-anchor="2. Side-by-Side Comparison — Rock Creek ~0.91 mi Upstream of the Bifurcation">
+        <figure class="figure">
+          <img src="assets/fig-02-dataset-fan.svg" alt="Line chart of Rock Creek peak discharge at five events (Q10 through Q500) for three datasets: Nord HEC-HMS Current Study runs highest (5,185 to 10,220 cfs), USGS StreamStats in the middle (3,580 to 10,000 cfs), and the 2011 FIS Effective lowest (2,300 to 7,800 cfs, with no Q25 value), with the lines converging toward the rarest events and the Q100 column highlighted.">
+          <figcaption>
+            <strong>The datasets disagree most where the concept works best.</strong> At Q10 the spread is widest (2,300 / 3,580 / 5,185 cfs — a &minus;56% FIS-to-Nord gap); by Q500 the three converge (7,800 / 10,000 / 10,220 cfs, &minus;24%). Q100 (highlighted): 5,600 / 7,170 / 8,020 cfs — a ~43% relative spread. The StreamStats &ldquo;1%-Plus&rdquo; value of 17,100 cfs is excluded as a regression-tail artifact per &sect;2. The 2011 FIS has no Q25 value. <em>Source: Deliverable 02 &sect;2; values from Nord Feasibility Study Tables 10&ndash;12.</em>
+          </figcaption>
+        </figure>
+      </template>
+
       <template data-fig-anchor="3. Side-by-Side Comparison — Keefer Slough (Multiple Locations)">
         <div class="figure-grid">
           <figure class="figure">
@@ -679,12 +720,28 @@
         </div>
       </figure>
       <div id="md-d03" class="markdown-body"><div class="md-loading">Loading deliverable 03&hellip;</div></div>
+      <template data-fig-anchor="6. Cross-Tier Summary — Where This Concept Sits">
+        <figure class="figure">
+          <img src="assets/fig-03-linear-scale.svg" alt="Horizontal bars comparing miles of treated reach: USGS RDS pilots at about 0.6 miles shown hollow with a dashed outline and a VERIFY external-source flag, Nord diversion channels as a range from 0.69 to 1.4 miles, Singer Creek Preserve at about 2 miles, and this concept's two corridors at 10.4 miles.">
+          <figcaption>
+            <strong>Linear scale of treatment vs the precedents.</strong> USGS RDS pilots ~0.6 mi (~1 km typical &mdash; <code>[VERIFY: external source]</code>, rendered dashed/hollow per the dashboard&rsquo;s unconfirmed-value convention) &middot; Nord diversion channels 0.69&ndash;1.4 mi (3,620&ndash;7,440 ft) &middot; Singer Creek ~2 mi &middot; <strong>this concept 10.4 mi</strong>. The mechanism is well-supported at reach scale; the watershed-scale application (~10&times; the documented RDS linear extent) is the part with less direct precedent. <em>Source: Deliverable 03 &sect;2.1, &sect;4, &sect;6.</em>
+          </figcaption>
+        </figure>
+      </template>
     </div>
   </section>
 
   <!-- DELIVERABLE 04 -->
   <section class="tab-panel" id="tab-d04" role="tabpanel" aria-labelledby="tab-d04">
     <div class="panel">
+      <div class="domain-tiles" role="navigation" aria-label="Jump to a feasibility domain">
+        <button type="button" data-open-heading="1. Hydraulics / Flood Routing"><span class="n">1</span><span class="t">Hydraulics / Flood Routing</span></button>
+        <button type="button" data-open-heading="2. Recharge Feasibility (Lead with Sand Creek Infiltration Study and the Shallow-Clay-Layer Check)"><span class="n">2</span><span class="t">Recharge Feasibility</span></button>
+        <button type="button" data-open-heading="3. Land / Site Control"><span class="n">3</span><span class="t">Land / Site Control</span></button>
+        <button type="button" data-open-heading="4. Water Rights, CEQA, and Permitting Pathway"><span class="n">4</span><span class="t">Water Rights &amp; Permitting</span></button>
+        <button type="button" data-open-heading="5. Sediment and Maintenance"><span class="n">5</span><span class="t">Sediment &amp; Maintenance</span></button>
+        <button type="button" data-open-heading="6. Cost and Funding"><span class="n">6</span><span class="t">Cost &amp; Funding</span></button>
+      </div>
       <div id="md-d04" class="markdown-body"><div class="md-loading">Loading deliverable 04&hellip;</div></div>
       <template data-fig-anchor="1. Hydraulics / Flood Routing">
         <figure class="figure">
@@ -701,6 +758,23 @@
   <section class="tab-panel" id="tab-d05" role="tabpanel" aria-labelledby="tab-d05">
     <div class="panel">
       <div id="md-d05" class="markdown-body"><div class="md-loading">Loading deliverable 05&hellip;</div></div>
+      <template data-fig-anchor="3. README Sheet">
+        <figure class="figure">
+          <img src="assets/fig-05-sheet-flow.svg" alt="Data-flow diagram of the five-sheet screening workbook: a README metadata box; shaded user-editable Inputs_Hydrology and Inputs_Design sheets feeding Calc_Peak_Reduction (Q_upstream across 4 datasets and 5 events; diversion, trigger, corridor and weir parameters) and Calc_Recharge_Volume (infiltration rates, favorable fraction, days wetted); both calculation sheets feed the gold-outlined Output_Summary page, delivering the peak-reduction 60-case sweep and the annual acre-feet-per-year three-scenario result.">
+          <figcaption>
+            <strong>How the screening tool computes.</strong> Only the two shaded input sheets (<code>Inputs_Hydrology</code>, <code>Inputs_Design</code>) are user-editable; <code>Calc_Peak_Reduction</code> runs the 4 datasets &times; 5 events &times; 3 attenuation cases = 60-case sweep, <code>Calc_Recharge_Volume</code> produces the three-scenario annual estimate, and both land on the single-page <code>Output_Summary</code> stakeholders see. <em>Source: Deliverable 05 &sect;2, &sect;6, &sect;7, &sect;9.</em>
+          </figcaption>
+        </figure>
+      </template>
+
+      <template data-fig-anchor="10. Limits of This Screening">
+        <figure class="figure">
+          <img src="assets/fig-05-decision-ladder.svg" alt="Three nested chevrons reading Screening (worth 2D routing?), 2D routing (worth designing?), and Design (worth building?) — each step gates the next.">
+          <figcaption>
+            <strong>Each step is the go / no-go input to the next.</strong> &ldquo;The screening is for deciding whether the concept is worth 2D routing. The 2D routing is for deciding whether the concept is worth designing. Designing is for deciding whether the concept is worth building.&rdquo; <em>Source: Deliverable 05 &sect;10.</em>
+          </figcaption>
+        </figure>
+      </template>
     </div>
   </section>
 
@@ -745,6 +819,24 @@
       </div>
 
       <div id="md-d07" class="markdown-body"><div class="md-loading">Loading deliverable 07&hellip;</div></div>
+
+      <template data-fig-anchor="2. How Much Water Can We Pull Off Rock Creek?">
+        <figure class="figure">
+          <img src="assets/fig-07-recharge-context.svg" alt="Horizontal scale from 0 to 10,000 acre-feet per year with a shaded band from 5,000 to 7,000 marking the concept's central-case annual recharge, and a gold reference line at 8,000 marking the Vina Subbasin's current annual storage growth per the WY 2025 Vina GSA Annual Report; an annotation notes the full bracket of roughly 130 low to 18,700 high.">
+          <figcaption>
+            <strong>The central case is ~60&ndash;90% of the Vina Subbasin&rsquo;s current annual storage growth.</strong> Central-case annual diverted-and-recharged water: ~5,000&ndash;7,000 AF/yr (band), against ~8,000 AF/yr of current annual storage growth (gold line; WY 2025 Vina GSA Annual Report). Full bracket: ~130 AF/yr low &middot; ~18,700 AF/yr high (capacity &mdash; supply-capped in most years). <em>Concept-stage OOM &mdash; central case; see the Headline Result bracket (&sect;1) for the full table. Source: Deliverable 07 &sect;1.</em>
+          </figcaption>
+        </figure>
+      </template>
+
+      <template data-fig-anchor="4. Capital vs. Annual — What’s One-Time, What Recurs">
+        <figure class="figure">
+          <img src="assets/fig-07-cost-categories.svg" alt="Horizontal bar chart of central-case capital by category: intake and diversion 4.5 million dollars, conveyance 2.5, rock weirs 3.5, plantings and restoration 3.5, engineering 1.5, permitting 2.0, land control 2.0, monitoring 0.7, endowment 3.0, and contingency 6.5 million dollars in a distinct muted color — totaling approximately 30 million dollars.">
+          <figcaption>
+            <strong>Where the ~$30 M goes.</strong> Central-case capital by category (A&ndash;J): intake/diversion $4.5 M &middot; conveyance $2.5 M &middot; rock weirs $3.5 M &middot; plantings/restoration $3.5 M &middot; engineering $1.5 M &middot; permitting $2.0 M &middot; land control $2.0 M &middot; monitoring $0.7 M &middot; O&amp;M endowment seed $3.0 M &middot; contingency $6.5 M (shown muted &mdash; an allowance, not a work item). Total &asymp; $30 M central (low ~$17.5 M &middot; high ~$50 M). <em>Concept-stage OOM &mdash; central case; see the Headline Result bracket (&sect;1) for low/high. Source: Deliverable 07 &sect;3.</em>
+          </figcaption>
+        </figure>
+      </template>
 
       <template data-fig-anchor="5.1 Grant-eligibility by cost category">
         <figure class="figure">
@@ -1158,6 +1250,20 @@
 
   document.querySelectorAll('nav.tabs button[role="tab"]').forEach(b => {
     b.addEventListener('click', () => activateTab(b.dataset.tab));
+  });
+
+  // Domain tiles (tab 04): open the matching fold and scroll to it.
+  document.querySelectorAll('[data-open-heading]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.closest('section.tab-panel');
+      const container = panel && panel.querySelector('.markdown-body');
+      if (!container) return;
+      const target = findHeading(container, 'h2,h3,h4', btn.dataset.openHeading);
+      if (!target) return;
+      const fold = target.closest('details.fold');
+      if (fold) fold.open = true;
+      (fold || target).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
 
   // Initial tab from hash or default readme

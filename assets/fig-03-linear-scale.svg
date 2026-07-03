@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Horizontal bar chart comparing linear extent of treated stream reach across precedent projects and this concept, on a 0 to 11 mile scale. USGS RDS pilots, an unconfirmed external value, shown hollow with a dashed orange outline at approximately 0.6 miles, about 1 kilometer typical, flagged VERIFY external source. Nord diversion channels shown as a range from 0.69 to 1.4 miles, 3,620 to 7,440 feet. Singer Creek Preserve at approximately 2 miles. This concept, two corridors combined, at 10.4 miles, roughly ten times the documented RDS linear extent.">
+
+  <!-- Title -->
+  <text x="24" y="24" font-size="16" font-weight="700" fill="#1f2a33">Linear extent of treatment — this concept vs its precedents</text>
+
+  <!-- ===================== GRIDLINES (0–10 mi shown, 2-mi interval; axis scale runs 0–11 mi) ===================== -->
+  <!-- x0 (0 mi) = 236, scale = 40.3636 units/mi, so 11 mi = 680 -->
+  <g stroke="#e2dccf" stroke-width="1">
+    <line x1="236.00" y1="46" x2="236.00" y2="190"/>
+    <line x1="316.73" y1="46" x2="316.73" y2="190"/>
+    <line x1="397.45" y1="46" x2="397.45" y2="190"/>
+    <line x1="478.18" y1="46" x2="478.18" y2="190"/>
+    <line x1="558.91" y1="46" x2="558.91" y2="190"/>
+    <line x1="639.64" y1="46" x2="639.64" y2="190"/>
+  </g>
+
+  <!-- ===================== AXIS BASELINE + TICKS ===================== -->
+  <line x1="236.00" y1="190" x2="680.00" y2="190" stroke="#1f2a33" stroke-width="1.25"/>
+  <g stroke="#1f2a33" stroke-width="1">
+    <line x1="236.00" y1="190" x2="236.00" y2="195"/>
+    <line x1="316.73" y1="190" x2="316.73" y2="195"/>
+    <line x1="397.45" y1="190" x2="397.45" y2="195"/>
+    <line x1="478.18" y1="190" x2="478.18" y2="195"/>
+    <line x1="558.91" y1="190" x2="558.91" y2="195"/>
+    <line x1="639.64" y1="190" x2="639.64" y2="195"/>
+  </g>
+  <g font-size="13" fill="#7a8894" text-anchor="middle">
+    <text x="236.00" y="209">0</text>
+    <text x="316.73" y="209">2</text>
+    <text x="397.45" y="209">4</text>
+    <text x="478.18" y="209">6</text>
+    <text x="558.91" y="209">8</text>
+    <text x="639.64" y="209">10</text>
+  </g>
+  <text x="458" y="226" text-anchor="middle" font-size="13" fill="#4a5a66">miles of treated reach</text>
+
+  <!-- ===================== ROW 1 — USGS RDS pilots (Tier C) — UNCONFIRMED / [VERIFY] treatment ===================== -->
+  <!-- Bar: 0 to 0.6 mi -> x=236 to x=260.22. Hollow fill, dashed warn-colored stroke. Dashes appear ONLY on this bar. -->
+  <text x="228" y="59.5" text-anchor="end" font-size="13" fill="#1f2a33">USGS RDS pilots (Tier C)</text>
+  <rect x="236.00" y="46" width="24.22" height="20" fill="#ffffff" stroke="#b35c1e" stroke-width="1.75" stroke-dasharray="5 4"/>
+  <text x="268" y="59.5" font-size="13" fill="#b35c1e">~0.6 mi (~1 km typical) [VERIFY: external source]</text>
+
+  <!-- ===================== ROW 2 — Nord diversion channels — RANGE bar ===================== -->
+  <!-- Whisker anchors range to axis origin: 0 to 0.69 mi -> x=236 to x=263.85 -->
+  <!-- Range bar: 0.69 to 1.4 mi -> x=263.85 to x=292.51 -->
+  <text x="228" y="95.5" text-anchor="end" font-size="13" fill="#1f2a33">Nord diversion channels</text>
+  <line x1="236.00" y1="92" x2="263.85" y2="92" stroke="#7a8894" stroke-width="1.5"/>
+  <rect x="263.85" y="82" width="28.66" height="20" fill="#7a8894"/>
+  <text x="301" y="95.5" font-size="13" fill="#4a5a66">0.69–1.4 mi (3,620–7,440 ft)</text>
+
+  <!-- ===================== ROW 3 — Singer Creek Preserve ===================== -->
+  <!-- Bar: 0 to 2 mi -> x=236 to x=316.73. -->
+  <text x="228" y="131.5" text-anchor="end" font-size="13" fill="#1f2a33">Singer Creek Preserve</text>
+  <rect x="236.00" y="118" width="80.73" height="20" fill="#b08d4a"/>
+  <text x="325" y="131.5" font-size="13" fill="#4a5a66">~2 mi</text>
+
+  <!-- ===================== ROW 4 — THIS CONCEPT — two corridors ===================== -->
+  <!-- Bar: 0 to 10.4 mi -> x=236 to x=655.78. Taller than rows 1-3 (h=24 vs 20). -->
+  <text x="228" y="168" text-anchor="end" font-size="13" font-weight="700" fill="#1f2a33">THIS CONCEPT — two corridors</text>
+  <rect x="236.00" y="154" width="419.78" height="24" fill="#1e4554"/>
+  <!-- End label placed inside the bar's right end, white, to avoid clipping against the viewBox edge -->
+  <text x="647.78" y="169.5" text-anchor="end" font-size="15" font-weight="700" fill="#ffffff">10.4 mi</text>
+
+  <!-- ===================== BOTTOM NOTE (wrapped to two lines to stay within viewBox width at 13px minimum) ===================== -->
+  <line x1="24" y1="248" x2="736" y2="248" stroke="#e2dccf" stroke-width="1"/>
+  <text x="24" y="266" font-size="13" fill="#4a5a66">Mechanism proven at reach scale; this concept applies it at ~10&#xD7; the documented RDS linear extent</text>
+  <text x="24" y="284" font-size="13" fill="#4a5a66">(Deliverable 03 §4).</text>
+
+</svg>

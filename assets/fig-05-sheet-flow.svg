@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Data-flow diagram of the five-sheet flood-routing screening spreadsheet: README metadata sheet; two user-editable input sheets (Inputs_Hydrology, Inputs_Design) feeding two calculation sheets (Calc_Peak_Reduction, Calc_Recharge_Volume); both calculation sheets feed the single Output_Summary sheet stakeholders see">
+
+  <!-- Background -->
+  <rect width="760" height="380" fill="#ffffff"/>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5a66"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="4" y="20" font-size="16" font-weight="700" fill="#1f2a33">Screening-tool architecture &#x2014; five sheets, one summary</text>
+
+  <!-- ============================================================ -->
+  <!-- README box: small, top-left, below title -->
+  <!-- ============================================================ -->
+  <rect x="4" y="34" width="220" height="46" fill="#ffffff" stroke="#7a8894" stroke-width="1.5"/>
+  <text x="114" y="52" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#1e4554">README</text>
+  <text x="114" y="70" text-anchor="middle" font-size="13" fill="#4a5a66">decision rules &#183; units &#183; disclaimers</text>
+
+  <!-- ============================================================ -->
+  <!-- Left column: input sheets (user-editable), accent-soft fill -->
+  <!-- x 4-160 -->
+  <!-- ============================================================ -->
+
+  <!-- Inputs_Hydrology: (4,108)-(160,160) -->
+  <rect x="4" y="108" width="156" height="52" fill="#e6eef1" stroke="#2c5f73" stroke-width="1.5"/>
+  <text x="82" y="130" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#1e4554">Inputs_Hydrology</text>
+  <text x="82" y="147" text-anchor="middle" font-size="13" fill="#4a5a66">user-editable</text>
+
+  <!-- Inputs_Design: (4,286)-(160,338) -->
+  <rect x="4" y="286" width="156" height="52" fill="#e6eef1" stroke="#2c5f73" stroke-width="1.5"/>
+  <text x="82" y="308" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#1e4554">Inputs_Design</text>
+  <text x="82" y="325" text-anchor="middle" font-size="13" fill="#4a5a66">user-editable</text>
+
+  <!-- ============================================================ -->
+  <!-- Middle column: calc sheets (computed), white fill -->
+  <!-- x 372-556 -->
+  <!-- ============================================================ -->
+
+  <!-- Calc_Peak_Reduction: (372,96)-(556,148) -->
+  <rect x="372" y="96" width="184" height="52" fill="#ffffff" stroke="#2c5f73" stroke-width="1.5"/>
+  <text x="464" y="118" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#1e4554">Calc_Peak_Reduction</text>
+  <text x="464" y="135" text-anchor="middle" font-size="13" fill="#4a5a66">computed</text>
+
+  <!-- Calc_Recharge_Volume: (372,298)-(556,350) -->
+  <rect x="372" y="298" width="184" height="52" fill="#ffffff" stroke="#2c5f73" stroke-width="1.5"/>
+  <text x="464" y="320" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#1e4554">Calc_Recharge_Volume</text>
+  <text x="464" y="337" text-anchor="middle" font-size="13" fill="#4a5a66">computed</text>
+
+  <!-- ============================================================ -->
+  <!-- Right column: Output_Summary, gold stroke -->
+  <!-- x 636-756 -->
+  <!-- ============================================================ -->
+
+  <!-- Output_Summary: (636,193)-(756,257) -->
+  <rect x="636" y="193" width="120" height="64" fill="#ffffff" stroke="#b08d4a" stroke-width="2.5"/>
+  <text x="696" y="217" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#1e4554">Output_</text>
+  <text x="696" y="233" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#1e4554">Summary</text>
+  <text x="696" y="249" text-anchor="middle" font-size="13" fill="#4a5a66">stakeholder page</text>
+
+  <!-- ============================================================ -->
+  <!-- Arrows -->
+  <!-- ============================================================ -->
+  <g stroke="#4a5a66" stroke-width="2" fill="none">
+    <!-- 1. Inputs_Hydrology -> Calc_Peak_Reduction (gentle downward slope, upper lane) -->
+    <line x1="160" y1="122" x2="368" y2="110" marker-end="url(#arrow)"/>
+
+    <!-- 2. Inputs_Design -> Calc_Peak_Reduction (long diagonal, rising through the middle) -->
+    <line x1="160" y1="300" x2="368" y2="136" marker-end="url(#arrow)"/>
+
+    <!-- 3. Inputs_Design -> Calc_Recharge_Volume (gentle upward slope, lower lane) -->
+    <line x1="160" y1="322" x2="368" y2="326" marker-end="url(#arrow)"/>
+
+    <!-- 4. Calc_Peak_Reduction -> Output_Summary: elbow polyline (short horizontal run -->
+    <!-- clear of the box, then a shorter/shallower diagonal into Output_Summary's top edge). -->
+    <!-- This opens a wide flat lane above the path for the label. -->
+    <polyline points="556,140 600,140 660,193" marker-end="url(#arrow)"/>
+
+    <!-- 5. Calc_Recharge_Volume -> Output_Summary: mirrored elbow polyline, opening a -->
+    <!-- wide flat lane below the path for the label. -->
+    <polyline points="556,306 600,306 660,257" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- Arrow labels -->
+  <!-- All placed in dedicated open lanes clear of boxes, lines, and each other -->
+  <!-- ============================================================ -->
+  <g font-size="13" fill="#4a5a66">
+    <!-- Label 1: above arrow 1's line, in the band between README bottom (80) and Row-A box top (108) -->
+    <text x="264" y="98" text-anchor="middle">Q_upstream &#x2014; 4 datasets &#215; 5 events</text>
+
+    <!-- Label 2: on the long diagonal from Inputs_Design up to Calc_Peak_Reduction; -->
+    <!-- left-anchored in the wedge to the left of the line, three short lines that -->
+    <!-- stay clear of the line's x-position at each height (line_x ranges ~277-315 -->
+    <!-- across y=178-208; longest label line here is ~101px wide from x=163) -->
+    <text x="163" y="178" text-anchor="start">Q_div, trigger,</text>
+    <text x="163" y="193" text-anchor="start">corridor &amp; weir</text>
+    <text x="163" y="208" text-anchor="start">params</text>
+
+    <!-- Label 3: below arrow 3's line, in the band between Row-B box bottom (338) and legend (378); -->
+    <!-- nudged up from the legend baseline for full clearance -->
+    <text x="264" y="350" text-anchor="middle">infiltration rates, favorable</text>
+    <text x="264" y="364" text-anchor="middle">fraction, days wetted</text>
+
+    <!-- Label 4: sits in the flat lane above the elbow polyline (horizontal run at y=140, -->
+    <!-- diagonal drops away to the right after x=600, so this stays clear of it for the -->
+    <!-- text's full width; label bottom edge ~y=126 vs. horizontal line at y=140 -> 14px clear); -->
+    <!-- x nudged to 566 for extra clearance from the Calc_Peak_Reduction box's right edge (556) -->
+    <text x="566" y="112" text-anchor="start">peak-reduction % &#x2014;</text>
+    <text x="566" y="127" text-anchor="start">60-case sweep</text>
+
+    <!-- Label 5: mirrored, sits in the flat lane below the elbow polyline (horizontal run -->
+    <!-- at y=306); label top edge ~y=320 vs. line at y=306 -> 14px clear; x nudged to 566 -->
+    <text x="566" y="331" text-anchor="start">annual ac-ft/yr &#x2014;</text>
+    <text x="566" y="346" text-anchor="start">3 scenarios</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- Legend -->
+  <!-- ============================================================ -->
+  <text x="4" y="378" font-size="13" fill="#4a5a66">Shaded = user-editable input sheets; everything else computes. Gold = the single-page summary stakeholders see.</text>
+
+</svg>
