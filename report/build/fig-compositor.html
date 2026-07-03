@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1804px; font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background:#fff; }
+  .map { position:relative; width:1804px; height:1076px; }
+  .map img { width:1804px; height:1076px; display:block; }
+  .chip {
+    position:absolute; width:52px; height:52px; border-radius:50%;
+    background:#1e4554; border:3.5px solid #fff; color:#fff;
+    font-size:30px; font-weight:800; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.55); transform:translate(-50%,-50%);
+  }
+  svg.overlay { position:absolute; left:0; top:0; width:1804px; height:1076px; }
+  .strip {
+    width:1804px; background:#1e4554; color:#fff; padding:22px 34px 20px;
+    display:flex; align-items:flex-start; gap:34px;
+  }
+  .step { flex:1; display:flex; gap:13px; align-items:flex-start; }
+  .step .n {
+    flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:#fff; color:#1e4554;
+    font-weight:800; font-size:23px; display:flex; align-items:center; justify-content:center; margin-top:2px;
+  }
+  .step .t { font-size:20.5px; line-height:1.32; }
+  .step .t b { display:block; font-size:22px; margin-bottom:3px; color:#fff; }
+  .step .t span { color:#c7d6de; }
+  .foot {
+    width:1804px; background:#16333f; color:#9fb6c1; font-size:17.5px; padding:9px 34px 11px; letter-spacing:.01em;
+  }
+</style></head>
+<body>
+  <div class="map">
+    <img src="file:///Users/toveygiezentanner/Library/Mobile%20Documents/com~apple~CloudDocs/00%20COWORK/Projects/tag%20agubc/rock-creek-concept/assets/project-vicinity-map.png">
+    <svg class="overlay" viewBox="0 0 1804 1076" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ah" markerUnits="userSpaceOnUse" markerWidth="30" markerHeight="24" refX="24" refY="12" orient="auto">
+          <path d="M0,0 L30,12 L0,24 z" fill="#ffffff"/>
+        </marker>
+        <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+          <feDropShadow dx="0" dy="1.5" stdDeviation="2.4" flood-color="#000" flood-opacity="0.85"/>
+        </filter>
+      </defs>
+      <line x1="1706" y1="248" x2="1556" y2="398" stroke="#ffffff" stroke-width="5.5" stroke-dasharray="15 10" marker-end="url(#ah)" filter="url(#ds)"/>
+      <text x="1652" y="308" font-size="22" font-weight="700" fill="#ffffff" filter="url(#ds)" transform="rotate(45 1652 308)" text-anchor="middle">flood flow</text>
+    </svg>
+    <div class="chip" style="left:1568px; top:86px;">1</div>
+    <div class="chip" style="left:705px; top:297px;">2</div>
+    <div class="chip" style="left:893px; top:472px;">3</div>
+    <div class="chip" style="left:438px; top:605px;">4</div>
+  </div>
+  <div class="strip">
+    <div class="step"><div class="n">1</div><div class="t"><b>Divert — only at high flow</b><span>~1.1 mi upstream of the Keefer Slough bifurcation; normal flows pass untouched</span></div></div>
+    <div class="step"><div class="n">2</div><div class="t"><b>Spread &amp; slow</b><span>hundreds of 2&ndash;3 ft rock weirs across two corridors &mdash; no dams, no reservoir</span></div></div>
+    <div class="step"><div class="n">3</div><div class="t"><b>Soak in &amp; reactivate</b><span>recharge + seasonal wetland habitat along ~10.4 miles of floodplain</span></div></div>
+    <div class="step"><div class="n">4</div><div class="t"><b>Return &mdash; lower, slower, later</b><span>back to Rock Creek near SR 99, after the main flood peak has passed</span></div></div>
+  </div>
+  <div class="foot">Flood flow runs northeast &rarr; southwest &nbsp;&middot;&nbsp; Red dashes: proposed overland corridors &nbsp;&middot;&nbsp; Blue dashes: existing streams &nbsp;&middot;&nbsp; Same base map as Figure 1 &nbsp;&middot;&nbsp; Diagram is conceptual &mdash; alignments refine with survey &amp; landowner input</div>
+</body></html>
