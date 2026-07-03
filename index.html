@@ -422,12 +422,76 @@
     font-size: 14px;
     font-style: italic;
   }
+  /* ----- Progressive-disclosure folds (generated post-render; see fold config in script) ----- */
+  details.fold {
+    margin: 16px 0;
+    background: #fafaf6;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+  details.fold.fold-h2 { margin: 24px 0; }
+  details.fold > summary {
+    cursor: pointer;
+    padding: 11px 14px;
+    border-radius: 6px;
+  }
+  details.fold.fold-h3 > summary,
+  details.fold.fold-h4 > summary { padding: 8px 12px; }
+  details.fold > summary:hover { background: var(--accent-soft); }
+  details.fold[open] > summary {
+    border-bottom: 1px solid var(--rule);
+    border-radius: 6px 6px 0 0;
+  }
+  .markdown-body details.fold > summary h2,
+  .markdown-body details.fold > summary h3,
+  .markdown-body details.fold > summary h4 {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .fold-hint {
+    margin-left: 10px;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .fold-body { padding: 2px 16px 12px; }
+  .fold-body > :first-child { margin-top: 12px; }
+  .fold-toggle { text-align: right; margin: 0 0 10px; }
+  .fold-toggle button {
+    appearance: none;
+    background: none;
+    border: 0;
+    color: var(--accent);
+    font-size: 12.5px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(44,95,115,.25);
+  }
+  .fold-toggle button:hover { color: var(--accent-dark); border-bottom-color: var(--accent-dark); }
   /* print friendly */
   @media print {
-    nav.tabs, header.site, footer.site, .status-banner { display: none; }
+    nav.tabs, header.site, footer.site, .status-banner, .fold-toggle { display: none; }
     section.tab-panel { display: block !important; page-break-after: always; }
     .panel { box-shadow: none; border: 0; padding: 0; }
     body { background: #fff; }
+    /* Folds are force-opened by JS on beforeprint; strip their chrome so printed
+       sections are indistinguishable from normal document flow. */
+    details.fold { background: none; border: 0; margin: 0; }
+    details.fold > summary { padding: 0; cursor: default; list-style: none; }
+    details.fold > summary::-webkit-details-marker { display: none; }
+    details.fold[open] > summary { border-bottom: 0; }
+    .fold-hint { display: none; }
+    .fold-body { padding: 0; }
+    .markdown-body details.fold > summary h2 {
+      display: block; margin: 36px 0 10px; padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .markdown-body details.fold > summary h3 { display: block; margin: 28px 0 8px; }
+    .markdown-body details.fold > summary h4 { display: block; margin: 22px 0 6px; }
   }
 </style>
 </head>
@@ -753,6 +817,186 @@
     return md.replace(/(^|[^~])~(?!~)/g, '$1\\~');
   }
 
+  // ===== Progressive-disclosure fold configuration =====
+  // Matched against rendered heading textContent (trimmed, whitespace-collapsed,
+  // case-insensitive), so bold/code spans inside headings are irrelevant.
+  // A config entry whose heading is not found FAILS OPEN: the section renders
+  // visible as before and a console warning is logged. Content is never lost.
+  const FOLD_CONFIG = {
+    readme: [
+      { level: 'h2', match: 'Source Document Index', hint: 'same list as the "Source documents" panel below' }
+    ],
+    d01: [
+      { level: 'h2', match: '3. Hydrology Inputs (For Screening Routing)', hint: 'watershed areas · four-dataset design discharges · precipitation basis · available models' },
+      { level: 'h2', match: '4. Recharge-Feasibility Inputs (Subsurface)', hint: '0.7 ft/day favorable max · shallow-hardpan reconciliation · +50% channel bonus · vadose storage' },
+      { level: 'h2', match: '5. Parameter Table — Concept-Stage Reference', hint: '50 parameters in 9 groups, each cited or flagged [VERIFY]' },
+      { level: 'h2', match: '7. What Is NOT Transferable from the Source Projects — Explicit Flags', hint: '7 explicit do-not-carry-over flags from Nord / RCRD / Singer' },
+      { level: 'h2', match: '8. Cross-References to Other Deliverables' }
+    ],
+    d02: [
+      { level: 'h2', match: '2. Side-by-Side Comparison — Rock Creek ~0.91 mi Upstream of the Bifurcation', hint: 'full Q10–Q500 table across the three datasets, with Δ columns' },
+      { level: 'h2', match: '3. Side-by-Side Comparison — Keefer Slough (Multiple Locations)', hint: 'four locations · the 3.52× Garner Lane discrepancy · the 56/44 → 39/61 split shift' },
+      { level: 'h2', match: '4. Why the Datasets Disagree — Per the Nord Study’s Own Discussion', hint: 'the Nord study’s own reconciliation of the differences' },
+      { level: 'h3', match: 'Why not the 2011 FIS Effective Flows as the design basis' },
+      { level: 'h3', match: 'Why not USGS StreamStats as the design basis' },
+      { level: 'h2', match: '6. Recommended Comparison Table for the Routing Screen', hint: 'the 4-dataset × location table for Deliverable 5' },
+      { level: 'h2', match: '8. Open Questions for Subsequent Phases' }
+    ],
+    d03: [
+      { level: 'h3', match: '2.1 Matrix', hint: '17 attributes × 5 projects (this concept, two Nord alternatives, RCRD, Singer)' },
+      { level: 'h3', match: '2.3 Singer Creek Lessons — Targeted', hint: '7 transferable lessons: land control, endowment, phasing, NWP 27, monitoring' },
+      { level: 'h3', match: '2.4 Sand Creek (RCRD) Infiltration Study Lessons — Targeted', hint: '7 transferable findings: 0.7 ft/day, +50% channel bonus, FDEM sequence, NRCS easements' },
+      { level: 'h2', match: '3. Tier B — California Flood-MAR Floodplain-Reactivation Projects', hint: 'statewide framework fit · [VERIFY] external Merced values' },
+      { level: 'h2', match: '4. Tier C — USGS Rock Detention Structures (RDS) Pilots', hint: 'arid-Southwest precedents · ~10× smaller linear scale than this concept' },
+      { level: 'h2', match: '7. Direct Stakeholder-Framing Quotes', hint: 'seven attributable quotes for stakeholder materials' },
+      { level: 'h2', match: '8. Open Items — External Sources Needed' }
+    ],
+    d04: [
+      { level: 'h2', match: '1. Hydraulics / Flood Routing', hint: 'diversion + corridors must measurably cut peaks at Q10–Q50, honestly modeled at Q100/Q500, with FEMA no-rise' },
+      { level: 'h2', match: '2. Recharge Feasibility (Lead with Sand Creek Infiltration Study and the Shallow-Clay-Layer Check)', hint: 'enough reaches must have favorable subsurface — the FDEM screen is the key step' },
+      { level: 'h2', match: '3. Land / Site Control', hint: '4 landowners; the major NRCS-easement holder (~87% of corridor) is the go/no-go partner' },
+      { level: 'h2', match: '4. Water Rights, CEQA, and Permitting Pathway', hint: 'SWRCB recharge permit · CEQA lead agency · ESA/CDFW consultations · CLOMR sequencing' },
+      { level: 'h2', match: '5. Sediment and Maintenance', hint: 'corridor must absorb the sediment load; perpetual funded maintenance on the Singer Creek model' },
+      { level: 'h2', match: '6. Cost and Funding', hint: 'OOM cost must match a real funding pathway — Prop 4 / Flood-MAR / NRCS stack' }
+    ],
+    d05: [
+      { level: 'h2', match: '3. README Sheet', hint: 'version block, decision rules, units, disclaimers' },
+      { level: 'h2', match: '4. Inputs_Hydrology Sheet', hint: 'the four discharge datasets, split ratings, and precipitation as input tables' },
+      { level: 'h2', match: '5. Inputs_Design Sheet', hint: 'diversion, corridor, weir, and infiltration parameters with screening ranges' },
+      { level: 'h2', match: '6. Calc_Peak_Reduction Sheet — Logic', hint: 'peak-reduction logic · 4 datasets × 5 events × 3 attenuation cases = 60-case sweep' },
+      { level: 'h2', match: '7. Calc_Recharge_Volume Sheet — Logic', hint: 'recharge-volume logic · illustrative worked example (placeholder inputs)' },
+      { level: 'h2', match: '9. Translation to an .xlsx Workbook' }
+    ],
+    d06: [
+      { level: 'h2', match: '6. Planting Palette — by Hydrologic Zone', hint: '5 hydrologic zones · ~30 native species with planting densities' },
+      { level: 'h2', match: '7. Habitat / Wildlife Design Considerations', hint: 'design implications for 9 sensitive species / groups' },
+      { level: 'h2', match: '8. Construction Approach (One Reach)', hint: '8-step single-reach sequence · dry-season window' },
+      { level: 'h2', match: '10. Cross-References' }
+    ],
+    d07: [
+      { level: 'h2', match: '2. How Much Water Can We Pull Off Rock Creek?', hint: 'supply vs. capacity buildup · why the central case is ~5,800 AF/yr, not 2,700 (§2.3a)' },
+      { level: 'h2', match: '4. Capital vs. Annual — What’s One-Time, What Recurs', hint: 'everything is one-time capital · ~$120K/yr O&M covered by endowment yield' },
+      { level: 'h3', match: '5.1 Grant-eligibility by cost category', hint: 'eligibility % and best-fit programs for each cost line' },
+      { level: 'h3', match: '5.3 Beneficiary share — who pays the residual?', hint: 'starting-point shares across Vina GSA, County, Caltrans, AGUBC, TWD' },
+      { level: 'h3', match: '5.4 Funding-strategy notes', hint: 'multi-tranche strategy · match-stacking · the endowment is hardest to fund' },
+      { level: 'h3', match: '5.5 Could the Project Be a Mitigation Bank? — Three Paths, One Recommendation', hint: 'full bank not recommended; Caltrans single-buyer + in-lieu-fee worth pursuing (~$3M central)' },
+      { level: 'h3', match: '5.6 Best-fit programs — quick reference', hint: '16 candidate programs with sponsors and typical awards' },
+      { level: 'h4', match: '6.1.1 Total project cost (society-wide levelized cost)', hint: 'derivation table' },
+      { level: 'h4', match: '6.1.2 Beneficiary-share levelized cost — what AGUBC members + Vina GSA + Butte County actually pay', hint: 'derivation table' },
+      { level: 'h4', match: '6.1.3 Grant-funded levelized cost — what state and federal taxpayers contribute', hint: 'derivation table' },
+      { level: 'h3', match: '6.2 Comparison to alternatives', hint: 'banking, transfers, off-stream storage, stormwater capture $/AF ranges' },
+      { level: 'h2', match: '8. Key Sensitivities (What Moves the Answer)', hint: '7 drivers, led by land-control confirmation and favorable-subsurface fraction' },
+      { level: 'h2', match: '9. Open [VERIFY] Items Specific to This OOM' },
+      { level: 'h2', match: '10. Cross-References' }
+    ]
+  };
+
+  const HEAD_RANK = { H1: 1, H2: 2, H3: 3, H4: 4, H5: 5, H6: 6 };
+
+  function normHead(s) {
+    return s
+      .replace(/[‘’]/g, "'")   // curly → straight apostrophes
+      .replace(/[“”]/g, '"')   // curly → straight double quotes
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+  }
+
+  function findHeading(container, level, match) {
+    const want = normHead(match);
+    const heads = container.querySelectorAll(level);
+    for (let i = 0; i < heads.length; i++) {
+      if (normHead(heads[i].textContent) === want) return heads[i];
+    }
+    return null;
+  }
+
+  // Wrap each configured heading + its section content into <details class="fold">.
+  function applyFolds(container, key) {
+    (FOLD_CONFIG[key] || []).forEach(entry => {
+      const target = findHeading(container, entry.level, entry.match);
+      if (!target) {
+        console.warn('[fold] heading not found on tab "' + key + '": ' + entry.match);
+        return; // fail open — section stays visible
+      }
+      const rank = HEAD_RANK[target.tagName];
+      const details = document.createElement('details');
+      details.className = 'fold fold-' + entry.level;
+      const summary = document.createElement('summary');
+      const body = document.createElement('div');
+      body.className = 'fold-body';
+      target.parentNode.insertBefore(details, target);
+      summary.appendChild(target);
+      if (entry.hint) {
+        const hintEl = document.createElement('span');
+        hintEl.className = 'fold-hint';
+        hintEl.textContent = entry.hint;
+        summary.appendChild(hintEl);
+      }
+      details.appendChild(summary);
+      details.appendChild(body);
+      // Consume following siblings until the next heading of same-or-higher level.
+      let sib = details.nextSibling;
+      while (sib) {
+        if (sib.nodeType === 1 && HEAD_RANK[sib.tagName] && HEAD_RANK[sib.tagName] <= rank) break;
+        const next = sib.nextSibling;
+        body.appendChild(sib);
+        sib = next;
+      }
+      // Keep the trailing section-divider <hr> outside the fold so separators
+      // between sections stay visible when the fold is collapsed.
+      if (body.lastElementChild && body.lastElementChild.tagName === 'HR') {
+        details.parentNode.insertBefore(body.lastElementChild, details.nextSibling);
+      }
+    });
+  }
+
+  // Move <template data-fig-anchor="..."> figures (hardcoded per panel) to sit
+  // immediately before their anchor heading — or before that heading's fold.
+  function applyTemplates(panel, container) {
+    if (!panel) return;
+    panel.querySelectorAll('template[data-fig-anchor]').forEach(tpl => {
+      const frag = tpl.content.cloneNode(true);
+      let target = null;
+      const heads = container.querySelectorAll('h2,h3,h4');
+      const want = normHead(tpl.dataset.figAnchor);
+      for (let i = 0; i < heads.length; i++) {
+        if (normHead(heads[i].textContent) === want) { target = heads[i]; break; }
+      }
+      if (target) {
+        const fold = target.closest('details.fold');
+        const anchorEl = (fold && container.contains(fold)) ? fold : target;
+        anchorEl.parentNode.insertBefore(frag, anchorEl);
+      } else {
+        console.warn('[fig] anchor heading not found: ' + tpl.dataset.figAnchor);
+        container.appendChild(frag); // fail visible — never lose a figure
+      }
+      tpl.remove();
+    });
+  }
+
+  // One small "Expand all / Collapse all" toggle per panel that contains folds.
+  function ensureFoldToggle(panel) {
+    if (!panel) return;
+    const inner = panel.querySelector('.panel') || panel;
+    if (inner.querySelector('.fold-toggle')) return;
+    if (!inner.querySelector('details')) return;
+    const bar = document.createElement('div');
+    bar.className = 'fold-toggle';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = 'Expand all sections';
+    btn.addEventListener('click', () => {
+      const all = inner.querySelectorAll('details');
+      let anyClosed = false;
+      all.forEach(d => { if (!d.open) anyClosed = true; });
+      all.forEach(d => { d.open = anyClosed; });
+      btn.textContent = anyClosed ? 'Collapse all sections' : 'Expand all sections';
+    });
+    bar.appendChild(btn);
+    inner.insertBefore(bar, inner.firstChild);
+  }
+
   const tabMap = {
     readme: '00-README-Deliverables.md',
     d01: '01-Refined-Concept-and-Parameter-Table.md',
@@ -765,6 +1009,7 @@
   };
 
   const loaded = new Set();
+  const pending = new Set();
 
   // Per-load cache buster. GitHub Pages serves through Fastly which caches by URL
   // (not by auth state), so a 404 captured during the initial build window can be
@@ -773,20 +1018,27 @@
   const cacheBust = '?_=' + Date.now();
 
   async function loadTab(key) {
-    if (loaded.has(key)) return;
+    if (loaded.has(key) || pending.has(key)) return;
     const target = document.getElementById('md-' + key);
     if (!target) return;
     const file = tabMap[key];
+    pending.add(key);
     try {
       const resp = await fetch(file + cacheBust, { cache: 'no-cache' });
       if (!resp.ok) throw new Error(resp.status + ' ' + resp.statusText);
       const text = await resp.text();
       target.innerHTML = marked.parse(escapeApproxTildes(text));
+      const panel = document.getElementById('tab-' + key);
+      applyFolds(target, key);
+      applyTemplates(panel, target);
+      ensureFoldToggle(panel);
       loaded.add(key);
     } catch (e) {
       target.innerHTML = '<p style="color:#b35c1e"><strong>Could not load <code>' + file + '</code>.</strong> ' +
         'If you are previewing locally via <code>file://</code>, run a small static server (e.g. <code>python3 -m http.server</code>) and refresh. ' +
         'Error: ' + (e.message || e) + '</p>';
+    } finally {
+      pending.delete(key);
     }
   }
 
@@ -814,6 +1066,39 @@
   // Initial tab from hash or default readme
   const initial = (location.hash || '#readme').slice(1);
   activateTab(tabMap[initial] ? initial : 'readme');
+
+  // ===== Print: force every fold open, restore after =====
+  // CSS alone cannot render the contents of a closed <details> in print.
+  let printSnapshot = null;
+  function openAllForPrint() {
+    if (printSnapshot) return; // guard: beforeprint + matchMedia may both fire
+    Object.keys(tabMap).forEach(loadTab); // ensure every panel has content
+    printSnapshot = [];
+    document.querySelectorAll('main details').forEach(d => {
+      printSnapshot.push([d, d.open]);
+      d.open = true;
+    });
+  }
+  function restoreAfterPrint() {
+    if (!printSnapshot) return;
+    printSnapshot.forEach(pair => { pair[0].open = pair[1]; });
+    printSnapshot = null;
+  }
+  window.addEventListener('beforeprint', openAllForPrint);
+  window.addEventListener('afterprint', restoreAfterPrint);
+  if (window.matchMedia) {
+    const mql = window.matchMedia('print');
+    const onPrintChange = e => { if (e.matches) openAllForPrint(); else restoreAfterPrint(); };
+    if (mql.addEventListener) mql.addEventListener('change', onPrintChange);
+    else if (mql.addListener) mql.addListener(onPrintChange);
+  }
+
+  // ===== Background-preload all tabs =====
+  // Guarantees print completeness (all 8 panels render even if never clicked)
+  // and removes the tab-switch loading flash.
+  const preloadAll = () => Object.keys(tabMap).forEach(loadTab);
+  if ('requestIdleCallback' in window) requestIdleCallback(preloadAll, { timeout: 4000 });
+  else setTimeout(preloadAll, 1500);
 })();
 </script>
 
