@@ -78,9 +78,8 @@
     max-width: var(--max);
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     gap: 2px;
-    overflow-x: auto;
-    scrollbar-width: thin;
   }
   nav.tabs button {
     appearance: none;
@@ -266,6 +265,8 @@
   .figure-grid .figure { margin: 0; }
   @media (max-width: 720px) {
     .figure-grid { grid-template-columns: 1fr; }
+    nav.tabs button { padding: 10px 10px; font-size: 12.5px; }
+    nav.tabs button .tnum { margin-right: 4px; }
   }
   .hero-fig {
     margin: 0 0 24px;
@@ -498,11 +499,11 @@
       <details class="source-list">
         <summary>Source documents referenced throughout</summary>
         <ul>
-          <li><strong>CONCEPT</strong> &mdash; Rock-Creek-Floodplain-Reactivation-Concept-DRAFT.md (this project's stakeholder draft)</li>
-          <li><strong>NORD_A, B1&ndash;B5</strong> &mdash; Town of Nord Small Communities Flood Risk Reduction Program Feasibility Study, Wood Rodgers for Butte County / DWR, Aug 2023 (Part A + 5 Part B appendices)</li>
-          <li><strong>RCRD_INF</strong> &mdash; Rock Creek Reclamation District Infiltration Feasibility Study, Wood Rodgers / GeoSystems Analysis, Oct 2023</li>
-          <li><strong>SINGER</strong> &mdash; Singer Creek Preserve Habitat Development Plan Vol. 1, Restoration Resources for BCAG, 2008&ndash;2009</li>
-          <li><strong>CT_D3</strong> &mdash; <em>Studying the Flooding Issues Along Hwy 99 from Mud Creek to Rock Creek</em>, Sungho Lee PE, Caltrans D3 Hydraulic Branch, Nov 2025</li>
+          <li><strong>CONCEPT</strong> &mdash; <a href="Rock-Creek-Floodplain-Reactivation-Concept-DRAFT.md">Rock-Creek-Floodplain-Reactivation-Concept-DRAFT.md</a> (this project's stakeholder draft)</li>
+          <li><strong>NORD_A, B1&ndash;B5</strong> &mdash; Town of Nord Small Communities Flood Risk Reduction Program Feasibility Study, Wood Rodgers for Butte County / DWR, Aug 2023 &mdash; <a href="Nord_Feasibility_Study_Part_A.md">Part A</a>, <a href="Nord_PartB_1_Geotechnical_Memo.md">B1 Geotechnical</a>, <a href="Nord_PartB_2_Geomorphic_Assessment.md">B2 Geomorphic</a>, <a href="Nord_PartB_3_Environmental_Constraints.md">B3 Environmental</a>, <a href="Nord_PartB_4_Appendix7.md">B4 Appendix 7</a>, <a href="Nord_PartB_5_Appendices_8-11.md">B5 Appendices 8&ndash;11</a></li>
+          <li><strong>RCRD_INF</strong> &mdash; <a href="RockCreek_Reclamation_District-Infiltration_Feasibility_Study_Oct2023.md">Rock Creek Reclamation District Infiltration Feasibility Study</a>, Wood Rodgers / GeoSystems Analysis, Oct 2023</li>
+          <li><strong>SINGER</strong> &mdash; <a href="Singer_Creek_HDP_Vol_1.md">Singer Creek Preserve Habitat Development Plan Vol. 1</a>, Restoration Resources for BCAG, 2008&ndash;2009</li>
+          <li><strong>CT_D3</strong> &mdash; <a href="Flooding_Issues_Along_Hwy99_Mud_Creek_to_Rock_Creek.md"><em>Studying the Flooding Issues Along Hwy 99 from Mud Creek to Rock Creek</em></a>, Sungho Lee PE, Caltrans D3 Hydraulic Branch, Nov 2025</li>
         </ul>
       </details>
     </div>
@@ -608,7 +609,7 @@
 
 <footer class="site">
   Prepared as concept-stage technical synthesis for AGUBC stakeholder discussion. Not engineering, legal, or water-rights advice.
-  &nbsp;&middot;&nbsp; Repository: <a href="https://github.com/AGUBC-vina/rock-creek-floodplain">AGUBC-vina/rock-creek-floodplain</a>
+  &nbsp;&middot;&nbsp; Source repository: AGUBC-vina/rock-creek-floodplain (private)
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
