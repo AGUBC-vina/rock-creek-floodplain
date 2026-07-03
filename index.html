@@ -467,7 +467,7 @@
       <figure class="hero-fig">
         <div id="vicinity-map" role="img" aria-label="Interactive vicinity map showing the proposed Rock Creek diversion, the existing Rock Creek / Keefer Slough bifurcation, and the two overland diversion corridors with Rock Creek and Keefer Slough traced downstream"></div>
         <div class="cap">
-          <strong>Project vicinity &mdash; interactive map.</strong> Toggle the basemap (<strong>Carto</strong> default / <strong>Street</strong> / <strong>Standard</strong>) using the control in the upper right. Yellow pins mark the proposed <strong>Diversion</strong> on Rock Creek and the existing <strong>Rock Creek / Keefer Slough Bifurcation</strong>. Red dashed lines show the two overland corridors: <strong>Sand Creek North (~6 mi)</strong>, rejoining Rock Creek near SR 99 via Sand Creek, and <strong>Sand Creek South (~4.4 mi)</strong>. Cyan dashed lines trace <strong>Rock Creek</strong> and <strong>Keefer Slough</strong>. Hundreds of low rock weirs along both corridors would slow flow, spread it, and promote infiltration. Land control across the 4 corridor landowners (1 major NRCS-easement holder + 3 smaller) is a foundational early-work item.
+          <strong>Project vicinity &mdash; interactive map.</strong> Toggle the basemap (<strong>Carto</strong> default / <strong>Street</strong> / <strong>Standard</strong> / <strong>Topo</strong>) using the control in the upper right. Yellow pins mark the proposed <strong>Diversion</strong> on Rock Creek and the existing <strong>Rock Creek / Keefer Slough Bifurcation</strong>. Red dashed lines show the two overland corridors: <strong>Sand Creek North (~6 mi)</strong>, rejoining Rock Creek near SR 99 via Sand Creek, and <strong>Sand Creek South (~4.4 mi)</strong>. Cyan dashed lines trace <strong>Rock Creek</strong> and <strong>Keefer Slough</strong>. Hundreds of low rock weirs along both corridors would slow flow, spread it, and promote infiltration. Land control across the 4 corridor landowners (1 major NRCS-easement holder + 3 smaller) is a foundational early-work item.
         </div>
       </figure>
 
@@ -638,8 +638,12 @@
     attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics',
     maxZoom: 19
   });
+  const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri, DeLorme, NAVTEQ',
+    maxZoom: 19
+  });
   carto.addTo(map);
-  L.control.layers({ 'Carto': carto, 'Street': street, 'Standard': standard }, null,
+  L.control.layers({ 'Carto': carto, 'Street': street, 'Standard': standard, 'Topo': topo }, null,
     { position: 'topright', collapsed: false }).addTo(map);
   L.control.scale({ position: 'bottomleft', metric: false }).addTo(map);
 
